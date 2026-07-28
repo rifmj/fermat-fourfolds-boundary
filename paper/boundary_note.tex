@@ -247,10 +247,14 @@ every residue degree of $L$ above $67$ is divisible by $6$. (No hypothesis on th
 of $L/\Q(\zt_{33})$ enters: the eigenline's character is unramified at $67$ over the base, so
 inertia at $\mathfrak q$ acts trivially and Frobenius acts through
 $u^{f(\mathfrak q/\mathfrak p)}$.)
-\end{corollary} (The same machinery, run at the closed
-levels, computes values of order $9$ at $m=45$ and of orders $42$ and $7$ at $m=105$ at sampled
-split primes --- computational observations, not part of any theorem here; they indicate that
-the cycles of Theorem~\ref{thm:Aprime} likewise cannot be $\Q(\zt_m)$-rational.)
+\end{corollary}
+
+\begin{remark}
+The same machinery, run at the closed levels, computes values of order $9$ at $m=45$ and of
+orders $42$ and $7$ at $m=105$ at sampled split primes --- computational observations, not part
+of any theorem here; they indicate that the cycles of Theorem~\ref{thm:Aprime} likewise cannot
+be $\Q(\zt_m)$-rational.
+\end{remark}
 
 \begin{proposition}[standard $=$ AP]\label{prop:D}
 Let $m$ be odd. Aoki's standard characters $\sigma_{p,x}$ for an odd prime $p\mid m$ --- defined for
@@ -729,8 +733,9 @@ and a standalone verifier of every closure identity in this paper are provided a
 (\texttt{anc/}; \texttt{run\_all.sh} reproduces the smoke tier --- identities, census anchors, both
 lattice verdicts, the Theorem~\ref{thm:C} certificate, the engine calibrations, the
 re-verification of all stored per-orbit witnesses including the survivor negatives, the
-independent census at anchor levels, and the level-summary cross-check on a fresh sub-range ---
-in under a minute on the reference machine whose measured runtimes the ancillary README reports;
+independent census at anchor levels, the level-summary cross-check on a fresh sub-range, and the
+direct brute-force generator on every census level through $m=45$ ---
+in seconds on the reference machine whose measured runtimes the ancillary README reports;
 \texttt{run\_full\_census.sh} is the archival tier, the
 complete from-scratch independent regeneration of all $89$ levels against the pinned summary
 hashes; the README records the reference configuration and the measured runtimes quoted in
@@ -803,7 +808,7 @@ generator-by-generator (his \S2 also proves, via Theorem~2.1, that $2\alpha\in S
 $\alpha\in B_m$ --- the doubling our $2u$-certificates instantiate).
 \end{itemize}
 
-\section{The implemented lattice is Aoki's $S_m$}\label{app:ident}
+\section{\texorpdfstring{The implemented lattice is Aoki's $S_m$}{The implemented lattice is Aoki's S\_m}}\label{app:ident}
 
 Proved here because the odd-degree novelty labels of \S\ref{sec:intro} rest on it (\S\ref{sec:even}).
 

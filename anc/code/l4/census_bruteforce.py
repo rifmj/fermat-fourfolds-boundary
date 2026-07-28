@@ -10,7 +10,8 @@ zero-sum sorted sextuple arises exactly once; no meet-in-the-middle, no profile 
 then test the Hodge grade-3 condition directly (the sum of least positive residues of t*a
 equals 3m for EVERY unit t — no half-unit shortcut), canonize each survivor by the minimum
 sorted Galois conjugate, and compare the resulting representative list — count and canonical
-SHA-256 — against the pinned per-level summaries (census_level_summaries.json).
+SHA-256 (printed IN FULL, so this log is itself an archival certificate) — against the
+pinned per-level summaries (census_level_summaries.json).
 Classification is deliberately NOT reimplemented here: this tier certifies the GENERATOR
 (no missed and no spurious orbit); the classifications are certified by the witness tier and
 the independent implementation.
@@ -73,7 +74,7 @@ def main():
             f"m={m}: brute-force found {len(reps)} orbits, pinned {ref['n_reps']}"
         assert h == ref["sha256_reps"], f"m={m}: canonical hash mismatch"
         print(f"m={m}: brute force reproduces the census — {len(reps)} orbits, "
-              f"sha256 {h[:16]}... MATCH", flush=True)
+              f"sha256 {h} MATCH", flush=True)
     print(f"census_bruteforce: {len(ms)} level(s) reproduced by direct enumeration "
           f"(third method): counts and canonical hashes all match.")
 

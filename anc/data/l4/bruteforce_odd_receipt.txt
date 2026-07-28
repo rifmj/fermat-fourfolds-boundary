@@ -1,77 +1,78 @@
 === BRUTE-FORCE (THIRD METHOD) CENSUS RECEIPT — all 61 census levels 21 <= m <= 143 (m != 23) ===
 Generated 2026-07-28 on Apple M4 Max / 36 GB / macOS 15.7 / Python 3.13.13 by
     python3 code/l4/census_bruteforce.py <m>
-run level by level (7-way parallel); ~50 min wall clock in total, peak RSS ~2.3 GB at the top
+run level by level (7-way parallel); ~1 h wall clock in total, peak RSS ~3.2 GB at the top
 levels. Method: direct exhaustive enumeration of every sorted zero-sum sextuple of nonzero
 residues (the five smallest entries enumerated with combinations_with_replacement, the sixth
 forced by the zero-sum condition), Hodge grade-3 tested over ALL units, canonized by the minimum
 sorted Galois conjugate. NO meet-in-the-middle, NO profile buckets, NO code shared with
 census_scan_v2.py (the engine) or census_independent.py (the second implementation).
 Each line asserts, against data/l4/census_level_summaries.json, BOTH the representative count and
-the canonical SHA-256 of the sorted representative list; the script exits nonzero on any mismatch.
+the canonical SHA-256 of the sorted representative list, and prints the digest IN FULL, so this
+log is itself an archival certificate; the script exits nonzero on any mismatch.
 This is the artifact behind the paper's "third method ... every census level m <= 143".
 Runner step 14 re-executes the levels m <= 45 live on every invocation.
 
-m=21: brute force reproduces the census — 64 orbits, sha256 8e050471385fd2cf... MATCH
-m=25: brute force reproduces the census — 39 orbits, sha256 1afb5fd5c2e1af11... MATCH
-m=27: brute force reproduces the census — 68 orbits, sha256 b528d9bff3b5688c... MATCH
-m=29: brute force reproduces the census — 40 orbits, sha256 08a954cc48eecdc7... MATCH
-m=31: brute force reproduces the census — 46 orbits, sha256 b11e62cd768fd050... MATCH
-m=33: brute force reproduces the census — 104 orbits, sha256 d5ceaa95a64b2533... MATCH
-m=35: brute force reproduces the census — 92 orbits, sha256 1bc625b8ffd4e2a4... MATCH
-m=37: brute force reproduces the census — 64 orbits, sha256 0b47632b8c6bd3c6... MATCH
-m=39: brute force reproduces the census — 140 orbits, sha256 46bb9e70c3570d76... MATCH
-m=41: brute force reproduces the census — 77 orbits, sha256 7acdc0618e16110c... MATCH
-m=43: brute force reproduces the census — 85 orbits, sha256 b0ab265946804d06... MATCH
-m=45: brute force reproduces the census — 245 orbits, sha256 86a4e3913f61d02b... MATCH
-m=47: brute force reproduces the census — 100 orbits, sha256 b9e8f16c497b8b6a... MATCH
-m=49: brute force reproduces the census — 128 orbits, sha256 f59b639e99dedf77... MATCH
-m=51: brute force reproduces the census — 217 orbits, sha256 143264e8a663dec2... MATCH
-m=53: brute force reproduces the census — 126 orbits, sha256 51f9377cdc68a24e... MATCH
-m=55: brute force reproduces the census — 197 orbits, sha256 cead5862ebe9a721... MATCH
-m=57: brute force reproduces the census — 265 orbits, sha256 0608955f6e3cfb1c... MATCH
-m=59: brute force reproduces the census — 155 orbits, sha256 a2ce64a3e14c6940... MATCH
-m=61: brute force reproduces the census — 166 orbits, sha256 c5affc25723cd004... MATCH
-m=63: brute force reproduces the census — 407 orbits, sha256 6f1da3c01043248a... MATCH
-m=65: brute force reproduces the census — 268 orbits, sha256 e004dffe9bb3c9c4... MATCH
-m=67: brute force reproduces the census — 199 orbits, sha256 bb14e132146f76a5... MATCH
-m=69: brute force reproduces the census — 372 orbits, sha256 5a261d955745221e... MATCH
-m=71: brute force reproduces the census — 222 orbits, sha256 c11517a62b086b86... MATCH
-m=73: brute force reproduces the census — 235 orbits, sha256 ade33a938fad081b... MATCH
-m=75: brute force reproduces the census — 561 orbits, sha256 7dab9820d50f5010... MATCH
-m=77: brute force reproduces the census — 346 orbits, sha256 38a3b8139fae8855... MATCH
-m=79: brute force reproduces the census — 274 orbits, sha256 26b28312f4cf8a5a... MATCH
-m=81: brute force reproduces the census — 504 orbits, sha256 60700696e7e4d73c... MATCH
-m=83: brute force reproduces the census — 301 orbits, sha256 eb1ae59ad87def18... MATCH
-m=85: brute force reproduces the census — 437 orbits, sha256 84bec170c884a308... MATCH
-m=87: brute force reproduces the census — 570 orbits, sha256 23d9034ba142b973... MATCH
-m=89: brute force reproduces the census — 345 orbits, sha256 b4733f354d59e8aa... MATCH
-m=91: brute force reproduces the census — 473 orbits, sha256 be66ddee387a7c82... MATCH
-m=93: brute force reproduces the census — 646 orbits, sha256 a66b1a256833ae37... MATCH
-m=95: brute force reproduces the census — 539 orbits, sha256 b13761fd1b3d07af... MATCH
-m=97: brute force reproduces the census — 409 orbits, sha256 6316ea7507f72605... MATCH
-m=99: brute force reproduces the census — 825 orbits, sha256 0d686af402797f1b... MATCH
-m=101: brute force reproduces the census — 442 orbits, sha256 57dbf2d83ff77946... MATCH
-m=103: brute force reproduces the census — 460 orbits, sha256 7d40511094e2db9a... MATCH
-m=105: brute force reproduces the census — 1286 orbits, sha256 584345d7f41fd855... MATCH
-m=107: brute force reproduces the census — 495 orbits, sha256 740dbcc844302cd4... MATCH
-m=109: brute force reproduces the census — 514 orbits, sha256 e4f7d75c761beadf... MATCH
-m=111: brute force reproduces the census — 900 orbits, sha256 5c7a638fa53fb18c... MATCH
-m=113: brute force reproduces the census — 551 orbits, sha256 f3d943cc54c63951... MATCH
-m=115: brute force reproduces the census — 772 orbits, sha256 cffa40b36ecda3b9... MATCH
-m=117: brute force reproduces the census — 1117 orbits, sha256 5e6cdd3d2651e06f... MATCH
-m=119: brute force reproduces the census — 776 orbits, sha256 5dfda05307b7132c... MATCH
-m=121: brute force reproduces the census — 694 orbits, sha256 ba56b0ed88831242... MATCH
-m=123: brute force reproduces the census — 1091 orbits, sha256 e893f555a8ab6385... MATCH
-m=125: brute force reproduces the census — 866 orbits, sha256 d4a54de51c41fd51... MATCH
-m=127: brute force reproduces the census — 694 orbits, sha256 3a5d54445954dd6b... MATCH
-m=129: brute force reproduces the census — 1195 orbits, sha256 92d7b3f4b27b9acd... MATCH
-m=131: brute force reproduces the census — 737 orbits, sha256 ca2a5386ec288953... MATCH
-m=133: brute force reproduces the census — 960 orbits, sha256 8437c7884aac063f... MATCH
-m=135: brute force reproduces the census — 1767 orbits, sha256 a96b03ee34016530... MATCH
-m=137: brute force reproduces the census — 805 orbits, sha256 217d04dcf7ab0081... MATCH
-m=139: brute force reproduces the census — 829 orbits, sha256 947058803301b71c... MATCH
-m=141: brute force reproduces the census — 1414 orbits, sha256 b658dc0c3263b004... MATCH
-m=143: brute force reproduces the census — 1062 orbits, sha256 0ffdfaaad96c2a07... MATCH
+m=21: brute force reproduces the census — 64 orbits, sha256 8e050471385fd2cf7c53c1a53bfb2180f0c0ea29716f264c2e97ad3337443493 MATCH
+m=25: brute force reproduces the census — 39 orbits, sha256 1afb5fd5c2e1af113ee39e5807e379bff8ddb13e00a6e035794446a4d3f65cb1 MATCH
+m=27: brute force reproduces the census — 68 orbits, sha256 b528d9bff3b5688c7f2d44fec8b3b7f6c171b1c57a609ef0239231b102265cb2 MATCH
+m=29: brute force reproduces the census — 40 orbits, sha256 08a954cc48eecdc79e41427bb60f773a11d05a2edb77370d79f8c4277b879a28 MATCH
+m=31: brute force reproduces the census — 46 orbits, sha256 b11e62cd768fd050aef50b86e5b12ae4dc61d88a9aec5c7dbb3f811e0c55875d MATCH
+m=33: brute force reproduces the census — 104 orbits, sha256 d5ceaa95a64b2533677b791172dec62697cc6fd072ee202548c142a4d4b34902 MATCH
+m=35: brute force reproduces the census — 92 orbits, sha256 1bc625b8ffd4e2a41f484c23c028c98cce31654275b0fd96af8d717ba6872583 MATCH
+m=37: brute force reproduces the census — 64 orbits, sha256 0b47632b8c6bd3c6bb3710bd849435d9833fe99e5588e4cb2b23fcb506bdeafb MATCH
+m=39: brute force reproduces the census — 140 orbits, sha256 46bb9e70c3570d7614dd43ee8112e317bcbce40b0c4b3a90068030ba593b7fe7 MATCH
+m=41: brute force reproduces the census — 77 orbits, sha256 7acdc0618e16110c564fa81d1786e04f6007ebbd27a8f29883e5a11dc198649f MATCH
+m=43: brute force reproduces the census — 85 orbits, sha256 b0ab265946804d0632960df609f5ca168c4c1f943be315e0474e6ac484fa8d1a MATCH
+m=45: brute force reproduces the census — 245 orbits, sha256 86a4e3913f61d02be30dd3ffafcce496f6e6adf9d643854c8a9523a138b82d00 MATCH
+m=47: brute force reproduces the census — 100 orbits, sha256 b9e8f16c497b8b6a505c7075e9c65c69369a299a2d117ae72db2ab3b59f3600d MATCH
+m=49: brute force reproduces the census — 128 orbits, sha256 f59b639e99dedf77069c9867666d6f1fe2f5c334fea9a590c6a4a42e6e39ec35 MATCH
+m=51: brute force reproduces the census — 217 orbits, sha256 143264e8a663dec2fcea0883f28a968158380ddc5a9789e6c4db86d8548858f5 MATCH
+m=53: brute force reproduces the census — 126 orbits, sha256 51f9377cdc68a24e976e8e186b617682b570734fd426786d421ee9782d4d94c0 MATCH
+m=55: brute force reproduces the census — 197 orbits, sha256 cead5862ebe9a7219efe150f6b554e528706cbe7ed330acd127c786c113038f1 MATCH
+m=57: brute force reproduces the census — 265 orbits, sha256 0608955f6e3cfb1ca3e9729140b50e1f843a652f854b15d7acdc4c04e80c3862 MATCH
+m=59: brute force reproduces the census — 155 orbits, sha256 a2ce64a3e14c694059107b3346d8c6dca0fb46f7c7109e6985cf76f3a8df64da MATCH
+m=61: brute force reproduces the census — 166 orbits, sha256 c5affc25723cd00403d0c45ed3ca7c18d7426d629e2b5641415098657c3fc0ba MATCH
+m=63: brute force reproduces the census — 407 orbits, sha256 6f1da3c01043248a3f373968fa075c406e6d3986a544d070615066eb3ac0d5cc MATCH
+m=65: brute force reproduces the census — 268 orbits, sha256 e004dffe9bb3c9c4e64f2b8b93205994618d4c99f279c24ebca48b76382c0e6d MATCH
+m=67: brute force reproduces the census — 199 orbits, sha256 bb14e132146f76a54c6d4fbb267524bf16fc5624fc8aa0e1d3c3d4b2467cb594 MATCH
+m=69: brute force reproduces the census — 372 orbits, sha256 5a261d955745221e6e7626dbc822b1af461278281ea15443e5292c186f3162fb MATCH
+m=71: brute force reproduces the census — 222 orbits, sha256 c11517a62b086b86f0699b792a5b18f345b8eb6ecabae6e8f83454bd6cd1f3c6 MATCH
+m=73: brute force reproduces the census — 235 orbits, sha256 ade33a938fad081be7dbd7d629e15a6bd2ae078a3365bbc82f26e0d1d0db85b9 MATCH
+m=75: brute force reproduces the census — 561 orbits, sha256 7dab9820d50f5010818d177ef02119a162b3dfb708d8b78a047c04bbe61a922d MATCH
+m=77: brute force reproduces the census — 346 orbits, sha256 38a3b8139fae885569319ec371dec0a736d488e05e2250f37867321a175c4dc8 MATCH
+m=79: brute force reproduces the census — 274 orbits, sha256 26b28312f4cf8a5a0ca567245e784d3014acda37d5646501f79c837e36c8e13a MATCH
+m=81: brute force reproduces the census — 504 orbits, sha256 60700696e7e4d73c2e166a831b84395f8a8f4e8fc31243db2d30d1257b29d97c MATCH
+m=83: brute force reproduces the census — 301 orbits, sha256 eb1ae59ad87def18fbc4339bbe470031043596974da36e34cbdeb5340ab894d4 MATCH
+m=85: brute force reproduces the census — 437 orbits, sha256 84bec170c884a308094920506a853c484b34de888552e816eb96485084ffa8b7 MATCH
+m=87: brute force reproduces the census — 570 orbits, sha256 23d9034ba142b9738c5c21ad22ae6331594de7eec08697be1feb310508c73c11 MATCH
+m=89: brute force reproduces the census — 345 orbits, sha256 b4733f354d59e8aa307b531bb66e5ea10c5aebd8fbb6e757494716034f03aee8 MATCH
+m=91: brute force reproduces the census — 473 orbits, sha256 be66ddee387a7c8253ae58dd280d5fd90016d46ade6d35c26500b6470a6dcd84 MATCH
+m=93: brute force reproduces the census — 646 orbits, sha256 a66b1a256833ae37d6ac0327978a8977512b474fdb0c312a7ae7b6fe7ac203d4 MATCH
+m=95: brute force reproduces the census — 539 orbits, sha256 b13761fd1b3d07af326fcc645b551dd03eccf71c2bed0957e683268aedd3f881 MATCH
+m=97: brute force reproduces the census — 409 orbits, sha256 6316ea7507f726052354937db1ac061a39a29e47bd6cc4ddea58ab710cdfde77 MATCH
+m=99: brute force reproduces the census — 825 orbits, sha256 0d686af402797f1ba74ba974e746ee9fb6bf1bb5dda02b08c49207cdd544e9e8 MATCH
+m=101: brute force reproduces the census — 442 orbits, sha256 57dbf2d83ff7794619a151c05d7e727bcb79255c22a3c1b23369a577a7ff762f MATCH
+m=103: brute force reproduces the census — 460 orbits, sha256 7d40511094e2db9aed502d0cc79e6b9ad4ee62a6c015d2692f1ea9fe7902e029 MATCH
+m=105: brute force reproduces the census — 1286 orbits, sha256 584345d7f41fd855ad437f122f7646086a095ae8e7ffc9e8faeb726468bf1520 MATCH
+m=107: brute force reproduces the census — 495 orbits, sha256 740dbcc844302cd4e64aebb7f95b101fdeb19f8dc28cd71db4241d820d50ef6f MATCH
+m=109: brute force reproduces the census — 514 orbits, sha256 e4f7d75c761beadf3a069bacdbdf4904f3c0e4d26d9d994d8a92f1ac55212a3d MATCH
+m=111: brute force reproduces the census — 900 orbits, sha256 5c7a638fa53fb18c087f52e75a258f2b0a20d6f4690387afa86497a3c8989d98 MATCH
+m=113: brute force reproduces the census — 551 orbits, sha256 f3d943cc54c63951de66eb3fd951a6944471fde8b0cd42e8cd49cdbd6d168c8c MATCH
+m=115: brute force reproduces the census — 772 orbits, sha256 cffa40b36ecda3b9e1292c3e24e6d2eefa9f8a8ffb6906b506102d236921e0b7 MATCH
+m=117: brute force reproduces the census — 1117 orbits, sha256 5e6cdd3d2651e06f4c191c8c3871f0292534bd7ea69cd180f10e38fa5c5585f1 MATCH
+m=119: brute force reproduces the census — 776 orbits, sha256 5dfda05307b7132cf55ee2491cf8c209de881f542a0400f74cf2267e434d8b02 MATCH
+m=121: brute force reproduces the census — 694 orbits, sha256 ba56b0ed888312420afa4ca3989cb59f483859021c0fd0c9d7f4dbde807fbd00 MATCH
+m=123: brute force reproduces the census — 1091 orbits, sha256 e893f555a8ab6385a3ec46807ed6a9f31caa949c171d76cabb9c5d282019b2b2 MATCH
+m=125: brute force reproduces the census — 866 orbits, sha256 d4a54de51c41fd51118390580c74d1d9ad5f66bee1b44d4aa24b5e6f71ef8c0f MATCH
+m=127: brute force reproduces the census — 694 orbits, sha256 3a5d54445954dd6b247911e01cbb6d719573aa1bbb9a71542ec13994d724d068 MATCH
+m=129: brute force reproduces the census — 1195 orbits, sha256 92d7b3f4b27b9acd5414f2fa8d641ffa0c45bcf1cdf8b6298eeb865e0360b695 MATCH
+m=131: brute force reproduces the census — 737 orbits, sha256 ca2a5386ec28895323e26e48533de0afd68e2a6532a3d04d2efc23f02b00983c MATCH
+m=133: brute force reproduces the census — 960 orbits, sha256 8437c7884aac063fa68e9e2f9cf5d1e3fdc5e6cd612b97a035e016c80175e21c MATCH
+m=135: brute force reproduces the census — 1767 orbits, sha256 a96b03ee34016530513fe6c10edfd7ab618c5ab9c4da91f05becfd200e20f6e3 MATCH
+m=137: brute force reproduces the census — 805 orbits, sha256 217d04dcf7ab00814be75b878b25185c3956c3b970bf2a6a32714ae715ca407d MATCH
+m=139: brute force reproduces the census — 829 orbits, sha256 947058803301b71c05c80b3b86312cd074e28ae3df75e549e9162af3e00518b4 MATCH
+m=141: brute force reproduces the census — 1414 orbits, sha256 b658dc0c3263b004b4ce6152ff06585c03a63247199bd8f351d2953b997f3d4f MATCH
+m=143: brute force reproduces the census — 1062 orbits, sha256 0ffdfaaad96c2a07d268032fa4c5ef684c188522c161452e6d7a5da050b8a174 MATCH
 
-ALL 61 LEVELS: counts and canonical hashes reproduced by direct enumeration — MATCH.
+ALL 61 LEVELS: counts and full canonical hashes reproduced by direct enumeration — MATCH.

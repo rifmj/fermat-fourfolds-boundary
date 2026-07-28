@@ -17,7 +17,7 @@ deleted first), so "PASSED" always means *executed now*, never cached or skipped
 Python 3.10+; `pip install -r requirements.txt` (exact versions pinned to the ones used for the
 reported runs).
 
-## Verification (smoke tier, ~40 s on the reference machine below)
+## Verification (smoke tier, ~17 s on the reference machine below)
 
 ```
 sh run_all.sh
@@ -44,20 +44,25 @@ sh run_all.sh
 ## Reference machine and measured runtimes
 
 All reported timings: Apple M4 Max (14 cores), 36 GB RAM, macOS 15.7, Python 3.13.13, numpy per
-`requirements.txt` (the code is pure integer/numpy arithmetic — no GPU, single-process).
-Measured: smoke runner ~40 s; single-level engine at the largest level `m=199`: 158 s; the
+`requirements.txt` (pure integer/numpy arithmetic). No GPU is required. Most individual
+verifiers are single-process; the closure calibration (`fast_close.py`) uses a
+`multiprocessing.Pool`, and the archived full brute-force campaign was run with external CPU
+parallelism (one process per level).
+Measured: smoke runner 17 s (two consecutive timed runs: 16.8 s, 16.9 s); single-level engine
+at the largest level `m=199`: 158 s; the
 pinned two-engine 89-level receipt sweep: ≈36 min total (per-level `[m=… took …s]` lines are in
 the receipt itself); complete from-scratch independent regeneration (`sh run_full_census.sh`,
 all 89 levels checked against the pinned canonical hashes): ~12 min (measured 701 s). On other hardware
 scale accordingly; nothing is wall-clock-sensitive (every check is an exact assert). Peak
 memory: the independent implementation reaches ≈4 GB at the largest level `m=199`, and the
 brute-force third method ≈2.3 GB at `m=143`; on smaller machines run the top levels
-individually. The full brute-force sweep of all 61 census levels `m ≤ 143` took ≈50 min
-(7-way parallel) and ships as `data/l4/bruteforce_odd_receipt.txt`.
+individually. The full brute-force sweep of all 61 census levels `m ≤ 143` took ≈1 h
+(7-way parallel, peak RSS ≈3.2 GB at the top levels) and ships as
+`data/l4/bruteforce_odd_receipt.txt`, with the full canonical SHA-256 printed per level.
 
 ## Census receipt (Theorem B)
 
-Four artifacts, each SHA-pinned in `SHA256SUMS`:
+Five artifacts, each SHA-pinned in `SHA256SUMS`:
 
 - `data/l4/census_receipt_odd21_199.txt` — the complete fresh run of both census engines over all
   89 odd levels `21 ≤ m ≤ 199`, `m ≠ 23` (the omitted small levels are classical): per-level
@@ -87,14 +92,15 @@ python3 -c "print(' '.join(str(m) for m in range(21,200,2) if m!=23))" | xargs p
 (and the same for `census_scan_v3.py`). Reproducibility tiers: (1) the smoke runner above executes
 every check live — all 78,299 stored witnesses (incl. the survivor negative screenings), the
 anchor-level independent census, and a fresh independent regeneration of every odd level ≤ 45
-against the pinned canonical hashes — in ~35 s; (2) the complete 89-level independent
+against the pinned canonical hashes, and the direct brute-force generator on every census
+level through `m = 45` — in ~17 s; (2) the complete 89-level independent
 regeneration is one command, `sh run_full_census.sh` (~12 min on the reference machine),
 which must reproduce every pinned per-level count and canonical hash; the log of the campaign's
 own full run ships as the checksummed receipt `data/l4/witness_independent_run.txt`. The version
 pins record the environment of the reported runs; the code is pure integer arithmetic and is not
 version-sensitive (nearby versions work). The even key-level
 receipt (50/70/110/114/168) is pinned with its regeneration command in the receipts directory.
-Fresh-vs-historical: steps 0–13 are executed now on every run; SHA-verified historical receipts
+Fresh-vs-historical: steps 0–14 are executed now on every run; SHA-verified historical receipts
 certify file integrity of the long campaign sweeps, not their fresh recomputation. `census_independent.py` (bundled, runner step 11) is an
 algorithmically independent reimplementation covering all 89 levels; the original, methodologically
 independent implementation used during the verification campaign is not part of this package and

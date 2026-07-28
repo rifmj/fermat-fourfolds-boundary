@@ -106,8 +106,8 @@ bare toolchain — see `lean/README.md`).
 The top-level [`SHA256SUMS`](SHA256SUMS) pins both paper sources and `anc/SHA256SUMS`, which
 pins every ancillary file. The refereed arXiv submission tarballs (the submitted source packages; not tracked in this repository) are pinned by
 
-    03ec0235902b50b071eb18126664f1f0ae715a72434ae79dacf9fb1767208206  boundary_note_arxiv.tar.gz (460,501 B)
-    7a39fc21dd64516f77be62ddcf06bb9e9b2bcee6b27d90b556bf8fb6380aa2a8  even_boundary_arxiv.tar.gz (449,172 B)
+    5a682849573f416cf360fd75630997414c95257fb91ecb6b61d6cb092de63567  boundary_note_arxiv.tar.gz (427,586 B)
+    a964e86f350c23fd580e9cf93542bcbd73cf4e25f4fdcbf8e80aecb88495e9fb  even_boundary_arxiv.tar.gz (416,523 B)
 
 `anc/` here is byte-identical to the shared ancillary of those tarballs except two repository
 localizations disclosed in `anc/README.md` (its own title/paths, and the manuscript lines of
@@ -116,14 +116,15 @@ localizations disclosed in `anc/README.md` (its own title/paths, and the manuscr
 ## Provenance and disclosure
 
 This work was carried out with substantial AI assistance in derivation, computation, and
-drafting. The pair went through ten independent external referee reports, with findings tracked
-in ledgers across fifteen review rounds for the note (the fifteenth a dedicated bibliography
+drafting. The pair went through eleven independent external referee reports, with findings tracked
+in ledgers across sixteen review rounds for the note (the fifteenth a dedicated bibliography
 verification: every external reference matched against MathSciNet/OpenAlex records, two defects
 found and fixed) and six for the companion — every finding
 dispositioned (one item, inserting the note's arXiv id into the companion's bibliography,
-completes at upload). The final three external re-reviews were all accept-level verdicts
-(latest: accept subject to minor revision, every item applied — its one substantive request
-produced the brute-force third census method of runner step 14). Every claim is backed by the proofs in the papers and the exact
+completes at upload). The final four external re-reviews were all accept-level verdicts —
+the latest: accept with editorial corrections, the referee reporting no remaining mathematical
+obstacles and independently regenerating a census level against the pinned summary table; the
+round before it produced the brute-force third census method of runner step 14. Every claim is backed by the proofs in the papers and the exact
 certificates here; the author takes full responsibility for all proofs, code, and bibliographic
 claims.
 
