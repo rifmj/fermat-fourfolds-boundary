@@ -56,9 +56,9 @@ now*, never cached):
     cd anc
     python3 -m venv venv && source venv/bin/activate
     pip install -r requirements.txt          # pinned; nearby versions work (pure integer/numpy)
-    sh run_all.sh                            # smoke tier: ~35 s on the reference machine
+    sh run_all.sh                            # smoke tier: ~40 s on the reference machine
 
-Highlights of the 13-step runner (full script ↔ claim map in [`anc/README.md`](anc/README.md)):
+Highlights of the 14-step runner (full script ↔ claim map in [`anc/README.md`](anc/README.md)):
 
 | step | verifies |
 |---|---|
@@ -68,10 +68,13 @@ Highlights of the 13-step runner (full script ↔ claim map in [`anc/README.md`]
 | 10 | every stored per-orbit closure witness of the Theorem B census (all 89 odd levels), incl. live re-establishment of the survivor **negative** screenings |
 | 11–12 | an algorithmically independent census reimplementation re-derives the anchor levels (odd) and the even key levels fresh, asserted against the receipts |
 | 13 | the per-level summary table is recomputed from the witness receipt AND regenerated from scratch at every odd level `21 ≤ m ≤ 45` |
+| 14 | a **brute-force third method** (direct exhaustive enumeration, no shared code with either census implementation) re-derives every census level `m ≤ 45` |
 
 Full tier: `sh run_full_census.sh` — the complete from-scratch independent regeneration of all
-89 odd levels against the pinned canonical hashes (~12 min on the reference machine); the even
-census replay command (`6 ≤ m ≤ 250`) and the deep-sweep entry points are in `anc/README.md`.
+89 odd levels against the pinned canonical hashes (~12 min on the reference machine; peak
+memory ≈4 GB at `m = 199`, and ≈2.3 GB for the brute-force method at `m = 143` — see
+`anc/README.md`); the even census replay command (`6 ≤ m ≤ 250`) and the deep-sweep entry
+points are in `anc/README.md`.
 
 ## Lean formalisation (`lean/`)
 
@@ -103,8 +106,8 @@ bare toolchain — see `lean/README.md`).
 The top-level [`SHA256SUMS`](SHA256SUMS) pins both paper sources and `anc/SHA256SUMS`, which
 pins every ancillary file. The refereed arXiv submission tarballs (the submitted source packages; not tracked in this repository) are pinned by
 
-    d6a5bc709ba2181f95095282e95aa6699c053da7dccdcfaa330dfa1695527080  boundary_note_arxiv.tar.gz (459,380 B)
-    26d7c1f1f9fba4ade00297cb7c5cf854daf4f6a09dfb5b8fb50ca59ec5762b41  even_boundary_arxiv.tar.gz (448,469 B)
+    f3845063d1c6c6c0c91156ba3d2ae930bf585523c067cc2982536f80288fe294  boundary_note_arxiv.tar.gz (460,119 B)
+    15c8e2a2568ef6a8771eaf313d8d9f90ab19d3c1908855177377c63cad3544ab  even_boundary_arxiv.tar.gz (448,587 B)
 
 `anc/` here is byte-identical to the shared ancillary of those tarballs except two repository
 localizations disclosed in `anc/README.md` (its own title/paths, and the manuscript lines of
@@ -113,11 +116,12 @@ localizations disclosed in `anc/README.md` (its own title/paths, and the manuscr
 ## Provenance and disclosure
 
 This work was carried out with substantial AI assistance in derivation, computation, and
-drafting. The pair went through nine independent external referee reports, with findings tracked
-in ledgers across thirteen review rounds for the note and six for the companion — every finding
+drafting. The pair went through ten independent external referee reports, with findings tracked
+in ledgers across fourteen review rounds for the note and six for the companion — every finding
 dispositioned (one item, inserting the note's arXiv id into the companion's bibliography,
-completes at upload). The final external re-review verdict was accept-after-minor-revision,
-with the minor items applied. Every claim is backed by the proofs in the papers and the exact
+completes at upload). The final three external re-reviews were all accept-level verdicts
+(latest: accept subject to minor revision, every item applied — its one substantive request
+produced the brute-force third census method of runner step 14). Every claim is backed by the proofs in the papers and the exact
 certificates here; the author takes full responsibility for all proofs, code, and bibliographic
 claims.
 

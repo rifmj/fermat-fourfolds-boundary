@@ -17,7 +17,7 @@ deleted first), so "PASSED" always means *executed now*, never cached or skipped
 Python 3.10+; `pip install -r requirements.txt` (exact versions pinned to the ones used for the
 reported runs).
 
-## Verification (smoke tier, ~35 s on the reference machine below)
+## Verification (smoke tier, ~40 s on the reference machine below)
 
 ```
 sh run_all.sh
@@ -39,16 +39,21 @@ sh run_all.sh
 | 11 | `census_independent.py 33 39 45 105` | an algorithmically independent census reimplementation (full-unit profiles, numpy, own classifiers; no code shared with the engine) re-derives the anchor levels and asserts exact agreement with the witness receipt |
 | 12 | `census_independent.py 50 70` | the same independent implementation run FRESH at the even key levels `m=50,70` (multiplicity-aware decomposability), asserted against the even receipt tier |
 | 13 | `census_summary.py --check --independent 21 ... 45` | the per-level summary table (`census_level_summaries.json`: counts, tallies, survivors, canonical SHA-256 of the sorted representative list) is recomputed from the witness receipt AND regenerated from scratch by the independent implementation at every odd level `21 ≤ m ≤ 45` — the "no missed orbit" cross-check |
+| 14 | `census_bruteforce.py 21 ... 45` | a THIRD method: direct exhaustive enumeration of all sorted zero-sum sextuples (no meet-in-the-middle, no shared code) reproduces the representative counts and canonical hashes at every census level `m ≤ 45`; the pinned receipt `bruteforce_odd_receipt.txt` extends this to every census level `m ≤ 143` — the range quoted in the paper |
 
 ## Reference machine and measured runtimes
 
 All reported timings: Apple M4 Max (14 cores), 36 GB RAM, macOS 15.7, Python 3.13.13, numpy per
 `requirements.txt` (the code is pure integer/numpy arithmetic — no GPU, single-process).
-Measured: smoke runner 35 s; single-level engine at the largest level `m=199`: 158 s; the
+Measured: smoke runner ~40 s; single-level engine at the largest level `m=199`: 158 s; the
 pinned two-engine 89-level receipt sweep: ≈36 min total (per-level `[m=… took …s]` lines are in
 the receipt itself); complete from-scratch independent regeneration (`sh run_full_census.sh`,
 all 89 levels checked against the pinned canonical hashes): ~12 min (measured 701 s). On other hardware
-scale accordingly; nothing is wall-clock-sensitive (every check is an exact assert).
+scale accordingly; nothing is wall-clock-sensitive (every check is an exact assert). Peak
+memory: the independent implementation reaches ≈4 GB at the largest level `m=199`, and the
+brute-force third method ≈2.3 GB at `m=143`; on smaller machines run the top levels
+individually. The full brute-force sweep of all 61 census levels `m ≤ 143` took ≈50 min
+(7-way parallel) and ships as `data/l4/bruteforce_odd_receipt.txt`.
 
 ## Census receipt (Theorem B)
 
@@ -68,6 +73,10 @@ Four artifacts, each SHA-pinned in `SHA256SUMS`:
   Rebuild: `python3 code/l4/census_summary.py --emit`; check: `--check`; regenerate any level
   from scratch against it: `--independent <m ...>` (runner step 13 does all odd `21 ≤ m ≤ 45`;
   `run_full_census.sh` does all 89 levels).
+- `data/l4/bruteforce_odd_receipt.txt` — the brute-force (third-method) run over EVERY census
+  level `21 ≤ m ≤ 143`: counts and canonical hashes reproduced by direct exhaustive
+  enumeration. Regenerate any level: `python3 code/l4/census_bruteforce.py <m ...>` (runner
+  step 14 re-runs `m ≤ 45` live on every invocation).
 
 Regenerate the engine receipt:
 
@@ -88,7 +97,8 @@ receipt (50/70/110/114/168) is pinned with its regeneration command in the recei
 Fresh-vs-historical: steps 0–13 are executed now on every run; SHA-verified historical receipts
 certify file integrity of the long campaign sweeps, not their fresh recomputation. `census_independent.py` (bundled, runner step 11) is an
 algorithmically independent reimplementation covering all 89 levels; the original, methodologically
-independent implementation used during the verification campaign is not part of this package.
+independent implementation used during the verification campaign is not part of this package and
+not part of the reproducible chain — no claim in either paper rests on it.
 
 ## Even-sector proof objects
 
