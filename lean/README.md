@@ -55,8 +55,12 @@ compiled evaluator:
 - Theorem C: the ℤ[x]/Φ₃₃ Frobenius certificate at p = 67 — Φ₃₃ certified by its defining
   product, the Jacobi DP run in-kernel, j/p² of **exact order 6** for **all 20 conjugates**
   ((j/p²)⁶ = 1 with (j/p²)² ≠ 1 and (j/p²)³ ≠ 1, so the order is not 1, 2 or 3), matching the
-  manuscript's "primitive sixth root of unity, of exact order 6"; closed form at t = 1:
-  j/p² = 1 + ζ₃₃¹¹ = ζ₆; the m=39 divisorial calibration j = p² at p = 79 (B4);
+  manuscript's "primitive sixth root of unity, of exact order 6"; the **two-value
+  distribution** — the 20 conjugates take exactly the two values ζ₆ = 1 + ζ₃₃¹¹ and
+  ζ₆⁻¹ = 1 + ζ₃₃²², both occurring and distinct, no third value — so both of §C's
+  convention-independent assertions are covered (the observed split is 10/10, deliberately
+  not asserted: the manuscript claims the distribution, not the counts); closed form at
+  t = 1: j/p² = 1 + ζ₃₃¹¹ = ζ₆; the m=39 divisorial calibration j = p² at p = 79 (B4);
   the level-66 consistency u(2w@66, 67) = 1 + ζ₃; the A′ multiplicativity instance
   p·j(a) = j(S)·j(Q) at m = 45, p = 181;
 - the ξ₂₈ erratum pair (printed witness not zero-sum; repaired witness is a Hodge character)
@@ -156,8 +160,12 @@ The pre-existing derivations were unaffected — they use g ∈ {1, 2, 3} and δ
 - **Census enumeration completeness.** The census theorems quantify over
   `hodgeSextuples m` — the list produced by the (code-evident) sorted 6-tuple enumeration
   and then filtered by the FULL Hodge-character definition. That the nested-loop
-  enumerator hits every sorted tuple is not itself a Lean theorem (it is the same trust
-  shape as the ancillary engines, here reduced to six nested `for` loops); the parity
+  enumerator hits every sorted tuple is not itself a Lean theorem (here it is reduced to six
+  nested `for` loops). This used to be "the same trust shape as the ancillary engines", and
+  no longer is: `anc/run_all.sh` has since grown to 14 executed steps, including a fresh
+  independent regeneration of all odd m ≤ 45 and a **brute-force third method** (direct
+  exhaustive enumeration) at every census level ≤ 45. On enumeration completeness the
+  ancillary package is now ahead of this tier. The parity
   lemma of Tier 3 covers the mathematical half of the manuscript's completeness lemma.
 - **Scale.** The full 89-level odd census (m ≤ 199), the levels 231/273/297, and the
   even-sector census to 250 with its deep partition certificates are not replayed in Lean —

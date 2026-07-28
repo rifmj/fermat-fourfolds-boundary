@@ -608,15 +608,48 @@ def closedFormCheck (p m k : Nat) (alpha : List Nat) : Bool :=
         xk := xk.set! k (xk[k]! + 1)
         return U == reduceModPhi m xk
 
+/-- the TWO-VALUE DISTRIBUTION (manuscript §C: "the convention-independent assertions are
+    the exact order six and the two-value distribution").  The 20 conjugates
+    u′(t) = j(t·α)/p² take EXACTLY two values — ζ₆ = 1 + x^k and ζ₆⁻¹ = 1 + x^{2k mod m} —
+    and both actually occur.  (Galois acts on ζ₃ = ζ_m^k through t mod 3, so no third value
+    is possible; this checks it rather than assuming it.)  Counts are deliberately NOT
+    asserted: the manuscript claims the two-value distribution, not a split. -/
+def twoValueCheck (p m k : Nat) (alpha : List Nat) : Bool := Id.run do
+  match scaleDivExact (jacobiS p m alpha) (Int.ofNat (p - 1)) with
+  | none => return false
+  | some J =>
+    let mk (e : Nat) : Array Int := Id.run do
+      let mut v : Array Int := .replicate m 0
+      v := v.set! 0 1
+      v := v.set! e (v[e]! + 1)
+      return reduceModPhi m v
+    let v1 := mk (k % m)
+    let v2 := mk (2 * k % m)
+    let mut ok := true
+    let mut seen1 := false
+    let mut seen2 := false
+    for t in unitsList m do
+      let Jt := reduceModPhi m (galConj m t J)
+      match scaleDivExact Jt (Int.ofNat (p * p)) with
+      | none => ok := false
+      | some U =>
+        if U == v1 then seen1 := true
+        else if U == v2 then seen2 := true
+        else ok := false
+    return ok && seen1 && seen2 && v1 != v2
+
 /-- THEOREM C (manuscript §8, `thm:C`): at p = 67, for da Silva's representative
     a₀ = (7,10,13,19,22,28), every one of the 20 Galois conjugates has j/p² of EXACT order 6
     ((j/p²)⁶ = 1, (j/p²)² ≠ 1, (j/p²)³ ≠ 1) — so Frobenius acts on every V(t·a₀)(2) by a
     primitive sixth root of unity, as the manuscript states, and no ℚ(ζ₃₃)-rational cycle
     class has nonzero projection.  Closed form at t = 1: j/p² = 1 + ζ₃₃¹¹ = ζ₆ (the closed
-    form is checked for the base conjugate only; the order-6 statement is checked for all 20). -/
+    form is checked for the base conjugate only; the order-6 statement is checked for all 20).
+    Both convention-independent assertions of §C are covered: exact order 6 AND the
+    two-value distribution {ζ₆, ζ₆⁻¹} = {1 + ζ₃₃¹¹, 1 + ζ₃₃²²}, both values occurring. -/
 theorem thmC_certificate :
     (thmC_allConjugates 67 33 [7, 10, 13, 19, 22, 28] &&
-     closedFormCheck 67 33 11 [7, 10, 13, 19, 22, 28]) = true := by native_decide
+     closedFormCheck 67 33 11 [7, 10, 13, 19, 22, 28] &&
+     twoValueCheck 67 33 11 [7, 10, 13, 19, 22, 28]) = true := by native_decide
 
 /-- B4 calibration: the DIVISORIAL second m=39 class has j = p² exactly at the split prime
     p = 79 (a Hasse–Davenport telescope instance; pins u = 1 on divisorial classes). -/
