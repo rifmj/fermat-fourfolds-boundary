@@ -47,7 +47,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (2,52),(6,48),(26,28) -> G3closed(1, 6, 24, 28, 51, 52) + G3closed(2, 7, 26, 38, 41, 48)]"
   },
   {
    "m": 54,
@@ -63,7 +63,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (2,52),(6,48),(26,28) -> G3closed(1, 6, 28, 36, 39, 52) + G3closed(2, 7, 26, 38, 41, 48)]"
   },
   {
    "m": 66,
@@ -79,7 +79,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (3,63),(9,57),(18,48) -> G3closed(1, 9, 23, 48, 54, 63) + G3closed(3, 8, 18, 52, 57, 60)]"
   },
   {
    "m": 66,
@@ -95,7 +95,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6 (33,33)"
+   "route": "depth-3 [pairs (2,64),(22,44),(33,33) -> G3closed(1, 25, 31, 33, 44, 64) + G3closed(2, 22, 33, 37, 49, 55)]"
   },
   {
    "m": 70,
@@ -111,7 +111,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6 std"
+   "route": "depth-3 [pairs (5,65),(15,55),(29,41) -> G3closed(1, 15, 29, 43, 57, 65) + G3closed(5, 6, 41, 45, 55, 58)]"
   },
   {
    "m": 70,
@@ -143,7 +143,7 @@
    "nu_in_S_m": false,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (2,70),(6,66),(24,48) -> G3closed(1, 6, 37, 48, 54, 70) + G3closed(2, 10, 24, 50, 64, 66)]"
   },
   {
    "m": 72,
@@ -159,7 +159,7 @@
    "nu_in_S_m": false,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (2,70),(6,66),(24,48) -> G3closed(1, 6, 37, 48, 54, 70) + G3closed(2, 24, 26, 40, 58, 66)]"
   },
   {
    "m": 78,
@@ -175,7 +175,7 @@
    "nu_in_S_m": false,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (9,69),(17,61),(30,48) -> G3closed(1, 9, 48, 55, 60, 61) + G3closed(12, 17, 30, 43, 63, 69)]"
   },
   {
    "m": 78,
@@ -191,7 +191,7 @@
    "nu_in_S_m": false,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (2,76),(8,70),(11,67) -> G3closed(1, 8, 20, 62, 67, 76) + G3closed(2, 11, 43, 45, 63, 70)]"
   },
   {
    "m": 78,
@@ -207,7 +207,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6 (39,39)"
+   "route": "depth-3 [pairs (2,76),(12,66),(39,39) -> G3closed(1, 12, 39, 42, 64, 76) + G3closed(2, 28, 39, 45, 54, 66)]"
   },
   {
    "m": 90,
@@ -223,7 +223,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6 std"
+   "route": "depth-3 [pairs (10,80),(40,50),(44,46) -> G3closed(1, 10, 40, 46, 85, 88) + G3closed(8, 26, 44, 50, 62, 80)]"
   },
   {
    "m": 90,
@@ -255,7 +255,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6 std"
+   "route": "depth-3 [pairs (2,88),(10,80),(20,70) -> G3closed(1, 10, 46, 55, 70, 88) + G3closed(2, 20, 38, 56, 74, 80)]"
   },
   {
    "m": 102,
@@ -271,7 +271,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (18,84),(42,60),(50,52) -> G3closed(1, 18, 42, 52, 93, 100) + G3closed(14, 16, 50, 60, 82, 84)]"
   },
   {
    "m": 102,
@@ -287,7 +287,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (6,96),(48,54),(50,52) -> G3closed(1, 6, 48, 52, 99, 100) + G3closed(16, 28, 50, 54, 62, 96)]"
   },
   {
    "m": 102,
@@ -303,7 +303,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (2,100),(18,84),(36,66) -> G3closed(1, 18, 52, 66, 69, 100) + G3closed(2, 36, 40, 70, 74, 84)]"
   },
   {
    "m": 102,
@@ -319,7 +319,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (2,100),(6,96),(12,90) -> G3closed(1, 6, 52, 57, 90, 100) + G3closed(2, 12, 46, 70, 80, 96)]"
   },
   {
    "m": 108,
@@ -335,7 +335,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6"
+   "route": "depth-3 [pairs (2,106),(4,104),(8,100) -> G3closed(1, 4, 55, 58, 100, 106) + G3closed(2, 8, 44, 82, 84, 104)]"
   },
   {
    "m": 110,
@@ -431,7 +431,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d2 gen-2"
+   "route": "depth-3 [pairs (3,111),(18,96),(57,57) -> G3closed(1, 18, 57, 77, 78, 111) + G3closed(3, 44, 57, 60, 82, 96)]"
   },
   {
    "m": 138,
@@ -447,7 +447,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d2 gen-2"
+   "route": "depth-3 [pairs (6,132),(66,72),(68,70) -> G3closed(1, 6, 66, 70, 135, 136) + G3closed(22, 57, 63, 68, 72, 132)]"
   },
   {
    "m": 138,
@@ -463,7 +463,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d2 gen-2 (69,69)"
+   "route": "depth-3 [pairs (2,136),(6,132),(12,126) -> G3closed(1, 6, 70, 75, 126, 136) + G3closed(2, 12, 81, 93, 94, 132)]"
   },
   {
    "m": 140,
@@ -479,7 +479,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d2 gen-2 (70,70)"
+   "route": "depth-3 [pairs (2,138),(10,130),(30,110) -> G3closed(1, 10, 71, 90, 110, 138) + G3closed(2, 30, 58, 86, 114, 130)]"
   },
   {
    "m": 150,
@@ -511,7 +511,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d2 gen-2 (78,78)"
+   "route": "depth-3 [pairs (2,154),(6,150),(12,144) -> G3closed(1, 6, 79, 84, 144, 154) + G3closed(2, 12, 90, 106, 108, 150)]"
   },
   {
    "m": 156,
@@ -527,7 +527,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d2 gen-2"
+   "route": "depth-3 [pairs (6,150),(12,144),(66,90) -> G3closed(2, 12, 90, 106, 108, 150) + G3closed(6, 45, 66, 84, 123, 144)]"
   },
   {
    "m": 168,
@@ -559,7 +559,7 @@
    "nu_in_S_m": false,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d2 gen-2"
+   "route": "depth-3 [pairs (2,166),(29,139),(84,84) -> G3closed(1, 27, 84, 87, 139, 166) + G3closed(2, 29, 84, 113, 126, 150)]"
   },
   {
    "m": 210,
@@ -575,7 +575,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6 [pairs (5,205),(83,127),(85,125) -> (1,43,85,127,169,205)+(5,44,83,125,185,188)]"
+   "route": "depth-3 [pairs (5,205),(83,127),(85,125) -> G3closed(1, 43, 85, 127, 169, 205) + G3closed(5, 44, 83, 125, 185, 188)]"
   },
   {
    "m": 210,
@@ -623,7 +623,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-3 6+6 [pairs (6,204),(36,174),(105,105) -> (2,36,105,141,142,204)+(6,82,105,111,152,174)]"
+   "route": "depth-3 [pairs (6,204),(36,174),(105,105) -> G3closed(2, 36, 105, 141, 142, 204) + G3closed(6, 82, 105, 111, 152, 174)]"
   },
   {
    "m": 220,

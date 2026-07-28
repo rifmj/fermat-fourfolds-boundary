@@ -179,12 +179,13 @@ $\{\frac m2,\frac m2\}$. Each pair lies in the span of the pair vectors.
 \end{proof}
 
 \begin{proposition}[coset transfer]\label{prop:coset}
-Let $\alpha,\beta$ be Hodge characters of $X^4_m$ with
-$\nu(\alpha)-\nu(\beta)\in S_m$. If $\mathrm{claim}(\beta)$ holds, so does
-$\mathrm{claim}(\alpha)$. (Allowing the degenerate value $\beta=\varnothing$, i.e.\ $\nu(\beta)=0$ --- which the
-stated hypothesis excludes, a character of $X^4_m$ having six entries --- recovers Aoki's
-\cite[Lemma~4.1(iii)]{Aoki00}: $\nu(\alpha)\in S_m\Rightarrow\mathrm{claim}(\alpha)$, the
-case used in Proposition~\ref{prop:w210}.)
+Let $\alpha$ be a Hodge character of $X^4_m$ and let $\beta$ be either a Hodge character of
+$X^4_m$ or the empty multiset $\varnothing$, for which $\nu(\varnothing):=0$ and
+$\mathrm{claim}(\varnothing)$ is vacuously true. If $\nu(\alpha)-\nu(\beta)\in S_m$ and
+$\mathrm{claim}(\beta)$ holds, then $\mathrm{claim}(\alpha)$ holds. (For
+$\beta=\varnothing$ this is Aoki's \cite[Lemma~4.1(iii)]{Aoki00},
+$\nu(\alpha)\in S_m\Rightarrow\mathrm{claim}(\alpha)$ --- the case used in
+Proposition~\ref{prop:w210}.)
 \end{proposition}
 \begin{proof}
 Write $\nu(\alpha)-\nu(\beta)=\sum_i c_i\,\nu(\sigma_i)+\sum_j d_j\,\nu(\delta_j)$
@@ -278,17 +279,20 @@ survivor} and \emph{final unresolved class} are the successive tiers defined in 
 
 \emph{The closure operator.} $T$ \emph{closes at depth} $k$ if $T\uplus(k$ vanishing pairs$)$
 partitions into blocks each of which is a vanishing pair, a grade-$2$ Hodge quadruple (Lefschetz
-$(1,1)$), a standard block $\sigma_{p,x}$ with $p\mid m$ prime and nonzero entries
-(\cite[Thm.~2-1]{Aoki87} for odd $p$, with the inflation lemma when $\gcd(x,m/p)>1$;
-Lemma~\ref{lem:p2neg}(i) for $p=2$) --- of length $p+1$ for odd $p$ and of length $4$ for
-$p=2$, these being the only standard blocks admitted --- or a grade-$3$ sextuple already
+$(1,1)$), a standard block $\sigma_{p,x}$ with $p\in\{2,3,5\}$, $p\mid m$, and nonzero entries
+(\cite[Thm.~2-1]{Aoki87} for $p=3,5$, with the inflation lemma when $\gcd(x,m/p)>1$;
+Lemma~\ref{lem:p2neg}(i) for $p=2$) --- these have four entries for $p=2,3$ and six for $p=5$,
+so the admitted block lengths are exactly $2,4,6$ --- or a grade-$3$ sextuple already
 certified. Then $\mathrm{claim}(T)$ follows by Theorems~1-4(i),(ii) of \cite{Aoki87}.
 
 The family is bounded, and \emph{two tiers must be distinguished}. The \emph{depth-$k$ oracle}
-admits as blocks only pairs, grade-$2$ Hodge quadruples, standard blocks, and grade-$3$
-sextuples certified by the four base predicates; its block lengths at the levels of the headline
-tier are $2,4,6$ (the certificates of \S\ref{sec:closures} additionally use $p=7$ standard
-blocks, of length $8$). The \emph{deep tiers} add depth $k\le5$ and \emph{iteration}: a
+admits as blocks only pairs, grade-$2$ Hodge quadruples, the standard blocks with $p\le5$ above,
+and grade-$3$ sextuples certified by the four base predicates --- block lengths exactly $2,4,6$.
+Standard blocks with $p\ge7$ (length $p+1\ge8$) enter only the \emph{lattice} certificates of
+\S\ref{sec:closures}, never the partition oracle; the restriction is a proved no-op for every
+verdict reported here --- an exhaustive sweep over all forty classes and every prime $p\ge7$
+dividing their level finds no closure by such a block at depth $\le2$, nor at depth $\le3$ for
+the residual ten (receipt in the ancillary). The \emph{deep tiers} add depth $k\le5$ and \emph{iteration}: a
 grade-$3$ block may itself carry a depth-$\le2$ certificate (two-generation certificate trees).
 The headline tier below is the \emph{non-iterated} depth-$\le2$ oracle; iteration enters only
 in the deep tiers, where the depth and the generation used are recorded per class in the ledger.
@@ -309,8 +313,11 @@ base survivors first occur at $m=32$ (e.g.\ $(1,9,17,20,24,25)$, which the closu
 disposes of at depth $2$), and there are $1349$ of them over even $m\le250$; all but $85$ of
 those --- the forty primitive classes counted here together with $45$ induced copies --- close at
 depth $\le2$. Both tiers, level by level, with the canonical hash of each level's
-survivor list, ship as \texttt{even\_tier\_table.json} and are recomputed by
-\texttt{even\_tier\_table.py} from the definitions. Every deep closure is stored as an
+survivor list, ship as \texttt{even\_tier\_table.json}. The standard runner recomputes the tier
+predicates \emph{from the definitions} for every even $m\le60$ and checks the stored lists,
+counts and canonical hashes at every even $m\le250$; a complete from-scratch regeneration of all
+$123$ levels is a separate multi-hour command (\texttt{--emit}) and is not part of the smoke
+runner. Every deep closure is stored as an
 explicit route in the deep-closure ledger and re-verified by the standalone checkers.
 
 \begin{proposition}[even census]\label{prop:evencensus}
@@ -340,9 +347,9 @@ self-paired element $(33,33)$, the same resource that closes da Silva's $m=33$ w
 $66$ in \cite[Thm.~A$''$]{BN} --- so at that census depth every known Fermat-fourfold Hodge
 class with imaginary-quadratic \emph{indicated} eigenvalue field was algebraic; the deeper
 census produces a third such class at $m=168$, closed in \S\ref{sec:closures}. That survivor,
-$(1,25,79,121,127,151)$, has indicated eigenvalue field $\Q(\sqrt{-3})$, and its Frobenius
-character has a kernel prime ($p=673$), so the field-of-definition obstruction of
-\cite[Thm.~C]{BN} vanishes there.
+$(1,25,79,121,127,151)$, has indicated eigenvalue field $\Q(\sqrt{-3})$, and, numerically, $p=673$ appears as a kernel
+prime of its Frobenius character, so the field-of-definition obstruction of \cite[Thm.~C]{BN}
+does not fire at that prime (a computational observation, not part of any statement here).
 
 \section{Exchange and the wall structure}\label{sec:exchange}
 
@@ -368,8 +375,8 @@ $(m/2,m/2)$ self-pair is a legitimate multiset entry.)
 
 \begin{proposition}[wall structure through degree 250]\label{prop:walls}
 {\rm(Computer-assisted: exhaustive exchange scan, both $|A|$ shapes, own levels and level-lifts.)}
-The two $m=110$ classes are claim-equivalent --- the $\Q(\zt_5)$ class stands or falls with
-the $\Q(\zt_{110})$ one --- and the three $m=114$ classes form a complete triangle at
+The two $m=110$ classes are claim-equivalent --- the class with numerically indicated field $\Q(\zt_5)$ stands or falls with
+the one with numerically indicated field $\Q(\zt_{110})$ --- and the three $m=114$ classes form a complete triangle at
 Galois-orbit level, while $m=70$ and $m=168$ are exchange-isolated. The three primitive classes
 of Proposition~\ref{prop:evencensus}(iv) are already placed by the exchange graph:
 $(2,9,129,142,168,180)$ at $210$ is equivalent to the $3$-lift of the $m=70$ class; the $220$
@@ -410,8 +417,9 @@ The class $(1,25,79,121,127,151)$ on $X^4_{168}$ is algebraic.
 \end{proposition}
 
 \begin{proof}
-The argument is internal: an explicit $*$-split witness at level $168$ plus the coset transfer of
-Proposition~\ref{prop:coset}. Put
+The argument is internal to the two-paper package --- it uses the $*$-split transport theorem of
+\cite{BN} and nothing from Aoki's degree-form theorem: an explicit $*$-split witness at level
+$168$ plus the coset transfer of Proposition~\ref{prop:coset}. Put
 \[
 a:=(1,25,79,121,127,151),\qquad \beta:=(6,54,60,108,126,150)\qquad\text{on }X^4_{168}
 \]
@@ -433,10 +441,14 @@ Proposition~\ref{prop:coset} applied to $\alpha=a$, $\beta$ now gives $\mathrm{c
 No Fermat-internal route of this paper or of \cite{BN} reaches $a$ directly: its multiset admits
 no zero-sum-triple split (machine-checked), so the $*$-split theorem does not fire on $a$ itself;
 $5\nmid168$ leaves no grade-$3$ standard block for the two-pair genre, and the one longer
-standard family present at this level is also excluded --- $\sigma_{7,x}$ has eight entries in a
-single residue class mod $24$, while the entries of $a$ occupy two such classes with
-multiplicities $3,3$ --- and the iterated and lift searches failed. What closes it is the
-transfer from the $*$-split class $\beta$ inside its own coset of $S_{168}$.
+standard family present at this level is excluded by a residue count: the first seven entries of
+$\sigma_{7,x}=(x,x+24,\dots,x+144,\,168-7x)$ all lie in the class $x\bmod24$, while the entries
+of $a$ occupy the two classes $1,7\bmod24$ with multiplicities $3,3$, and each added vanishing
+pair contributes at most one entry to a given class (the self-pair $(84,84)$ lies in the class
+$12$), so at depth $\le2$ no class reaches multiplicity $7$. Within the implemented closure
+family, and within the stated depth, generation and lift bounds, no route to $a$ itself was
+found; what closes it is the transfer from the $*$-split class $\beta$ inside its own coset of
+$S_{168}$.
 \end{proof}
 
 \begin{remark}[the imaginary-quadratic descriptor]\label{rem:imq}
@@ -599,13 +611,13 @@ strings, is \texttt{even\_final\_table.json} (regenerated and re-verified by
 $m$ & class & closed by & $m$ & class & closed by\\
 \midrule
 $50$ & $(1,7,27,30,41,44)$ & depth-4 & $108$ & $(1,44,55,58,82,84)$ & depth-3\\
-$54$ & $(1,7,19,36,49,50)$ & iterated & $110$ & $(1,24,62,71,81,91)$ & open, W_110\\
-$54$ & $(1,7,24,38,41,51)$ & depth-3 & $110$ & $(1,31,55,71,81,91)$ & open, W_110\\
-$54$ & $(1,7,36,38,39,41)$ & depth-3 & $114$ & $(1,7,78,79,86,91)$ & open, W_114\\
-$66$ & $(1,8,23,52,54,60)$ & depth-3 & $114$ & $(1,13,43,72,103,110)$ & open, W_114\\
-$66$ & $(1,25,31,37,49,55)$ & depth-3 & $114$ & $(1,13,43,80,102,103)$ & open, W_114\\
+$54$ & $(1,7,19,36,49,50)$ & iterated & $110$ & $(1,24,62,71,81,91)$ & open, $W_{110}$\\
+$54$ & $(1,7,24,38,41,51)$ & depth-3 & $110$ & $(1,31,55,71,81,91)$ & open, $W_{110}$\\
+$54$ & $(1,7,36,38,39,41)$ & depth-3 & $114$ & $(1,7,78,79,86,91)$ & open, $W_{114}$\\
+$66$ & $(1,8,23,52,54,60)$ & depth-3 & $114$ & $(1,13,43,72,103,110)$ & open, $W_{114}$\\
+$66$ & $(1,25,31,37,49,55)$ & depth-3 & $114$ & $(1,13,43,80,102,103)$ & open, $W_{114}$\\
 $70$ & $(1,6,43,45,57,58)$ & depth-3 & $114$ & $(1,44,60,77,78,82)$ & iterated\\
-$70$ & $(1,20,24,42,61,62)$ & open, W_70 & $138$ & $(1,22,57,63,135,136)$ & iterated\\
+$70$ & $(1,20,24,42,61,62)$ & open, $W_{70}$ & $138$ & $(1,22,57,63,135,136)$ & iterated\\
 $72$ & $(1,10,37,50,54,64)$ & depth-3 & $138$ & $(1,70,75,81,93,94)$ & iterated\\
 $72$ & $(1,26,37,40,54,58)$ & depth-3 & $140$ & $(1,58,71,86,90,114)$ & iterated\\
 $78$ & $(1,12,43,55,60,63)$ & depth-3 & $150$ & $(1,39,66,101,120,123)$ & iterated\\
@@ -613,11 +625,11 @@ $78$ & $(1,20,43,45,62,63)$ & depth-3 & $156$ & $(1,79,84,90,106,108)$ & iterate
 $78$ & $(1,28,42,45,54,64)$ & depth-3 & $156$ & $(2,45,84,106,108,123)$ & iterated\\
 $90$ & $(1,8,26,62,85,88)$ & depth-3 & $168$ & $(1,25,79,121,127,151)$ & Prop.~\ref{prop:w168}\\
 $90$ & $(1,23,38,55,74,79)$ & iterated & $168$ & $(1,27,87,113,126,150)$ & iterated\\
-$90$ & $(1,38,46,55,56,74)$ & depth-3 & $210$ & $(1,43,44,169,185,188)$ & deep\\
+$90$ & $(1,38,46,55,56,74)$ & depth-3 & $210$ & $(1,43,44,169,185,188)$ & depth-3\\
 $102$ & $(1,14,16,82,93,100)$ & depth-3 & $210$ & $(1,79,109,121,151,169)$ & Prop.~\ref{prop:w210}\\
-$102$ & $(1,16,28,62,99,100)$ & depth-3 & $210$ & $(2,9,129,142,168,180)$ & open, W_70\\
-$102$ & $(1,40,52,69,70,74)$ & depth-3 & $210$ & $(2,82,111,141,142,152)$ & deep\\
-$102$ & $(1,46,52,57,70,80)$ & depth-3 & $220$ & $(1,62,111,142,162,182)$ & open, W_110\\
+$102$ & $(1,16,28,62,99,100)$ & depth-3 & $210$ & $(2,9,129,142,168,180)$ & open, $W_{70}$\\
+$102$ & $(1,40,52,69,70,74)$ & depth-3 & $210$ & $(2,82,111,141,142,152)$ & depth-3\\
+$102$ & $(1,46,52,57,70,80)$ & depth-3 & $220$ & $(1,62,111,142,162,182)$ & open, $W_{110}$\\
 \bottomrule
 \end{tabular}
 \end{center}

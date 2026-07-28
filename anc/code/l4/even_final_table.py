@@ -88,7 +88,9 @@ def build():
             elif key in WALLS:
                 status, route = "open", f"unresolved; wall {WALLS[key]}"
             else:
-                status, route = "deep-closed", ledger.get(key, "deep partition/iterated tier")
+                assert key in ledger, (f"deep-closed row {key} has NO route in CLOSED_LEDGER.tsv "
+                                       f"— a deep closure must be recorded, not assumed")
+                status, route = "deep-closed", ledger[key]
             g = m
             for x in a:
                 g = gcd(g, x)

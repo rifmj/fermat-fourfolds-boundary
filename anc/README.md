@@ -42,12 +42,13 @@ sh run_all.sh
 | 6 | `code/l4/exact_jacobi_certificate.py` | Theorem C: exact DP in `Z[x]/Φ33` at `p=67`; the closed form `u′ = 1 + x^11`, the all-20-conjugates nontriviality, AND the exact order 6 (`(u′)^3 = −1` on every conjugate) are **asserted** |
 | 7 | `code/l4/fast_close.py --calibrate` | closure-oracle calibration (5 anchored fire/no-fire cases) |
 | 8 | `code/l4/census_even.py --calibrate` | even-parity census engine vs brute force, exact match `m ≤ 14` |
-| 9 | `verify_lattice_witness.py` | **independent** verification of every lattice verdict in the two companion papers: the 17 OUT verdicts (8 wall members + the gap families `m=33/99/165` and `m=39/117/195`, the `105` and `168` gap classes, and the `xi_28` candidate correction) each get a *modular kernel witness* (a prime `q` and `φ` with `φ·g ≡ 0 (mod q)` for every generator and `φ·u ≢ 0`) found by this script's own elimination; the 4 IN verdicts (`210`, `39`, `45`, `105`) have their explicit certificates re-summed exactly. The engine proposes; this script decides. |
+| 9 | `verify_lattice_witness.py` | **independent** verification of every lattice verdict in the two companion papers: the 17 OUT verdicts (8 wall members + the gap families `m=33/99/165` and `m=39/117/195`, the `105` and `168` gap classes, and the `xi_28` candidate correction) each get a *modular kernel witness* (a prime `q` and `φ` with `φ·g ≡ 0 (mod q)` for every generator and `φ·u ≢ 0`) found by this script's own elimination; the 7 IN verdicts have their explicit certificates re-summed exactly. The engine proposes; this script decides. |
 | 10 | `census_witnesses.py --verify` | re-verifies every stored per-orbit closure witness of the Theorem B census (all 89 levels: the vanishing pair / quasi split / standard parameter / ∗-split triples per orbit) and, for the seven survivor orbits, re-establishes the NEGATIVE screenings live (no pair, no quasi witness, not standard, no split) — terminal labels are re-checked certificates, not labels |
 | 11 | `census_independent.py 33 39 45 105` | an algorithmically independent census reimplementation (full-unit profiles, numpy, own classifiers; no code shared with the engine) re-derives the anchor levels and asserts exact agreement with the witness receipt |
 | 12 | `census_independent.py 50 70` | the same independent implementation run FRESH at the even key levels `m=50,70` (multiplicity-aware decomposability), asserted against the even receipt tier |
 | 13 | `census_summary.py --check --independent 21 ... 45` | the per-level summary table (`census_level_summaries.json`: counts, tallies, survivors, canonical SHA-256 of the sorted representative list) is recomputed from the witness receipt AND regenerated from scratch by the independent implementation at every odd level `21 ≤ m ≤ 45` — the "no missed orbit" cross-check |
 | 15 | `even_tier_table.py --check` | the even-sector TIER table (`even_tier_table.json`): every level `m ≤ 60` is RECOMPUTED from the definitions and asserted identical to the stored row; for all 123 levels the stored counts and the canonical SHA-256 of each survivor list are re-derived from the stored class lists. A full from-scratch rebuild of every level is `--emit` (hours; the largest levels dominate) |
+| 18 | `verify_deep_routes.py` | every deep-closure route in `CLOSED_LEDGER.tsv` that carries an explicit witness is re-verified from the definitions: the listed pairs really vanish, the multiset identity `class ⊎ pairs = blocks` holds exactly, and every block is re-derived (grade-2 Hodge quadruple / grade-3 sextuple that is itself base-closed). Rows carrying only a label are reported as such, not counted as verified |
 | 17 | `verify_w168_witness.py` | Proposition w168 end to end: `a` and `beta` are Hodge (2,2) characters over ALL units, `beta` is *-split (6+54+108=168, 60+126+150=336), `ν(a)−ν(beta) ∈ S₁₆₈` with both individually OUTSIDE (non-vacuity), `2ν(a) ∈ S₁₆₈`, and the control that `a` itself is not *-split |
 | 16 | `even_final_table.py --check` | the complete reader's table (`even_final_table.json`): all 40 primitive post-depth-two survivors with content, exact lattice verdicts (`ν∈S_m`, `2ν∈S_m`), status and route; every verdict recomputed here by an independent HNF test, the 8 open classes asserted to be gap classes |
 | 14 | `census_bruteforce.py 21 ... 45` | a THIRD method: direct exhaustive enumeration of all sorted zero-sum sextuples (no meet-in-the-middle, no shared code) reproduces the representative counts and canonical hashes at every census level `m ≤ 45`; the pinned receipt `bruteforce_odd_receipt.txt` extends this to every census level `m ≤ 143` — the range quoted in the paper |
@@ -120,7 +121,7 @@ own full run ships as the checksummed receipt `data/l4/witness_independent_run.t
 pins record the environment of the reported runs; the code is pure integer arithmetic and is not
 version-sensitive (nearby versions work). The even key-level
 receipt (50/70/110/114/168) is pinned with its regeneration command in the receipts directory.
-Fresh-vs-historical: steps 0–17 are executed now on every run; SHA-verified historical receipts
+Fresh-vs-historical: steps 0–18 are executed now on every run; SHA-verified historical receipts
 certify file integrity of the long campaign sweeps, not their fresh recomputation. `census_independent.py` (bundled, runner step 11) is an
 algorithmically independent reimplementation covering all 89 levels; the original, methodologically
 independent implementation used during the verification campaign is not part of this package and
@@ -131,9 +132,9 @@ not part of the reproducible chain — no claim in either paper rests on it.
 - `data/l4/census_receipt_even6_250.txt` — the complete fresh even census (v3 engine with ledger
   transport) over ALL even `6 ≤ m ≤ 250`. Replay:
   `python3 -c "print(' '.join(str(m) for m in range(6,251,2)))" | xargs python3 code/l4/census_scan_v3.py`
-  (delete `data/l4/census_scan_v3.log` first). Expected totals: twenty-one primitive
-  beyond-machinery orbits at `m ≤ 108`; seven open classes at `m ≤ 200`; ten primitive open rows
-  (plus induced copies) at `m ≤ 250`, matching the manuscript's wall display and table.
+  (delete `data/l4/census_scan_v3.log` first). Expected totals: twenty-one
+  primitive post-depth-two survivors at `m ≤ 108`, forty through `m ≤ 250`; ten primitive
+  residual rows after the deep tiers, matching the manuscript's wall display and table.
   Vocabulary, used consistently: the RESIDUAL after the deep tiers is **ten** primitive classes;
   the two closed by the paper's propositions leave **eight** FINAL open classes. "ν ∉ S_m" holds
   for those eight (the `m=210` class `(1,79,109,121,151,169)` is in the residual ten but has

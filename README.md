@@ -67,7 +67,7 @@ now*, never cached):
     pip install -r requirements.txt          # pinned; nearby versions work (pure integer/numpy)
     sh run_all.sh                            # smoke tier: ~55 s on the reference machine
 
-Highlights of the 18-step runner (full script ↔ claim map in [`anc/README.md`](anc/README.md)):
+Highlights of the 19-step runner (full script ↔ claim map in [`anc/README.md`](anc/README.md)):
 
 | step | verifies |
 |---|---|
@@ -81,6 +81,7 @@ Highlights of the 18-step runner (full script ↔ claim map in [`anc/README.md`]
 | 15–16 | the companion's even-sector tables recomputed: per-level base / post-depth-two counts with canonical hashes, and the final 40-row table — every lattice verdict recomputed, eight open gap classes |
 | 17 | the `m = 168` closure witness: grades, the two split sums, the coset membership, non-vacuity |
 | 18 | Theorem C re-verified by a **second independent implementation** (different reduction basis) |
+| 19 | every deep-closure route of the ledger re-verified **from the definitions** — vanishing pairs, the exact multiset identity, each block re-derived |
 
 Full tier: `sh run_full_census.sh` — the complete from-scratch independent regeneration of all
 89 odd levels against the pinned canonical hashes (~12 min on the reference machine; peak
@@ -118,8 +119,8 @@ bare toolchain — see `lean/README.md`).
 The top-level [`SHA256SUMS`](SHA256SUMS) pins both paper sources and `anc/SHA256SUMS`, which
 pins every ancillary file. The refereed arXiv submission tarballs (the submitted source packages; not tracked in this repository) are pinned by
 
-    46ee634006e0ae9129ad72645f37c71e8f8e100304cafda9f133cdc546fc992f  boundary_note_arxiv.tar.gz (449,983 B)
-    b2b7ac7b2a85067233c7dcb382d9712d7338ee5a7a67e52694541e412f9e83f9  even_boundary_arxiv.tar.gz (440,704 B)
+    ec0822fafba64faabef4beed4ba6433a8621d97e17a7362f554823226e034c3e  boundary_note_arxiv.tar.gz (453,836 B)
+    4d74a4861b44b877df8eb9b1447bcbcc70d152af0e98b52a98e2a545aa136f1c  even_boundary_arxiv.tar.gz (445,276 B)
 
 `anc/` here is byte-identical to the shared ancillary of those tarballs except two repository
 localizations disclosed in `anc/README.md` (its own title/paths, and the manuscript lines of
@@ -130,13 +131,19 @@ localizations disclosed in `anc/README.md` (its own title/paths, and the manuscr
 This work was carried out with substantial AI assistance in derivation, computation, and
 drafting. The pair went through thirteen independent external referee reports, with findings tracked in
 ledgers across nineteen review rounds for the note (among them a dedicated bibliography
-verification — every external reference matched against MathSciNet/OpenAlex records) and eight
-for the companion — every finding dispositioned (one item, inserting the note's arXiv id into
-the companion's bibliography, completes at upload). Report #12, from a fresh reviewer,
+verification — every external reference matched against MathSciNet/OpenAlex records) and nine
+for the companion — every finding dispositioned, the two open items both being the same
+user-gated step: inserting the note's arXiv identifier into the companion, which completes at
+upload. Report #12, from a fresh reviewer,
 requested a major revision while identifying no mathematical error; its requests (an explicit
 Main Theorem, a novelty calibration, an appendix rewrite, visible checkpoint chains) were
 applied in full. The final report #13: accept after minor revision — the referee recompiled the
-manuscript, verified the 66-entry manifest, and re-ran the whole 18-step battery. Every claim is backed by the proofs in the papers and the exact
+manuscript, verified the manifest, and re-ran the whole battery. The companion's latest round
+(minor revision / accept after mandatory corrections) turned two of its own findings into
+machine checks rather than weakened wording: the twenty-four missing deep-closure routes were
+computed and are now re-verified from the definitions by runner step 19 — which immediately
+caught two hand-entered rows in the wrong format — and the build check, having missed sixteen
+recoverable LaTeX errors behind a passing PDF, now greps for them directly. Every claim is backed by the proofs in the papers and the exact
 certificates here; the author takes full responsibility for all proofs, code, and bibliographic
 claims.
 
