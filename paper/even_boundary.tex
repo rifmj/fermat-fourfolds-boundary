@@ -26,6 +26,9 @@
 census through degree 250: exchange walls and two closures}
 \author{Rifat Jumagulov}
 \email{jum.rifm@gmail.com}
+\subjclass[2020]{Primary 14C30, 14C25; Secondary 14J70, 11T24}
+\keywords{Hodge conjecture, Fermat varieties, algebraic cycles, Aoki lattice, computer-assisted
+proof}
 \date{July 2026}
 
 \begin{document}
@@ -41,13 +44,12 @@ hence Lefschetz-algebraic --- and prove a negation-closure lemma converting any 
 membership certificate into a literal Aoki claim chain. The even-parity census --- run under the
 note's completeness lemma, which applies to both parities; receipts and independent verifiers in
 the ancillary --- finds
-thirty-eight primitive beyond-machinery classes through degree $250$; iterated partition
-certificates close all but ten. An exchange theorem generates claim-equivalences, and an
-exhaustive scan organizes the ten into five walls. Two of the five then close: the $m=168$ class
-by Aoki's published degree-form theorem (citing which we record two errata of the printed text,
-\S\ref{sec:closures}), and the isolated
-degree-$210$ class by an explicit $40$-generator $\pm1$ certificate in $S_{210}$, displayed in
-full. The residual even-degree boundary at $m\le250$ --- the classes unresolved by the
+forty primitive classes that survive the four base predicates and the complete depth-$\le2$
+closure oracle through degree $250$; deeper partition certificates close all but ten. An exchange
+theorem generates claim-equivalences, and an exhaustive scan organizes the ten into five walls.
+Two of the five then close, both by a coset-transfer lemma: the $m=168$ class is congruent modulo
+$S_{168}$ to an explicit $*$-split class, and the isolated degree-$210$ class lies in $S_{210}$
+itself, by an explicit $40$-generator $\pm1$ certificate displayed in full. The residual even-degree boundary at $m\le250$ --- the classes unresolved by the
 implemented closure family and the cited published theorems --- is eight certified gap classes
 ($\nu\notin S_m$,
 $2\nu\in S_m$) in three exchange walls $W_{70}$, $W_{110}$, $W_{114}$; every lattice verdict
@@ -78,10 +80,10 @@ A$''$, B there) that every Hodge $(2,2)$ class of every $X^4_m$ of \emph{odd} de
 is algebraic.
 
 This paper maps the even-degree sector through degree $250$ and proves its structural results.
-The even sector is a genuinely different landscape: the first beyond-machinery classes appear at
-$m=50$ (so ``survivor $\Rightarrow3\mid m$'', true throughout the odd census, fails), most
-beyond-machinery classes close by \emph{deeper} partition certificates rather than new
-mechanisms, and what finally remains is organized not by degree but by \emph{claim-equivalence}.
+The even sector is a genuinely different landscape: the first primitive class surviving the base
+predicates and the complete depth-$\le2$ closure oracle occurs at $m=50$ (so ``survivor
+$\Rightarrow3\mid m$'', true throughout the odd census, fails), most such classes close by
+\emph{deeper} partition certificates rather than new mechanisms, and what finally remains is organized not by degree but by \emph{claim-equivalence}.
 Our results:
 
 \begin{itemize}
@@ -91,18 +93,19 @@ generator-by-generator with the group $S_m$ of \cite[\S2]{Aoki00}, so all member
 verdicts are statements about Aoki's own object. The $p=2$ standard elements are identically
 grade-$2$ Hodge quadruples, hence Lefschetz-algebraic (Lemma~\ref{lem:p2neg}(i)), and the
 standard family is negation-closed modulo pairs (Lemma~\ref{lem:p2neg}(ii)).
-\item[--] \emph{The census} (Proposition~\ref{prop:evencensus}): thirty-eight primitive
-beyond-machinery classes through degree $250$; iterated depth-$3/4$ partition certificates close
-all but ten.
+\item[--] \emph{The census} (Proposition~\ref{prop:evencensus}): forty primitive
+post-depth-two survivors through degree $250$ --- the tiers are defined in \S\ref{sec:census},
+listed one by one in Appendix~\ref{app:table}, and tabulated level by level in the ancillary ---
+of which iterated depth-$3/4$ partition certificates close all but ten.
 \item[--] \emph{Exchange walls} (Theorem~\ref{thm:exchange}, Proposition~\ref{prop:walls}): a
 two-entry (or three-entry) exchange with a Lefschetz-algebraic exchanger is a claim-equivalence;
 the exhaustive scan organizes the ten residual classes into five walls.
-\item[--] \emph{Two closures} (Propositions~\ref{prop:w168} and~\ref{prop:w210}): the $m=168$
-class falls under Aoki's published Theorem~0.1(i) \cite{Aoki00} --- we record two errata of
-the printed text, with a machine-verified possible replacement for the $m=28$
-gap-generator misprint --- and the isolated degree-$210$ class closes by an explicit
-$40$-generator $\pm1$ lattice certificate, displayed in full and converted to a literal Aoki
-chain.
+\item[--] \emph{Two closures} (Propositions~\ref{prop:w168} and~\ref{prop:w210}), both by the
+coset transfer of Proposition~\ref{prop:coset}: the $m=168$ class is congruent modulo $S_{168}$
+to an explicit $*$-split class, and the isolated degree-$210$ class lies in $S_{210}$ itself, by
+an explicit $40$-generator $\pm1$ certificate displayed in full and converted to a literal Aoki
+chain. Both proofs are internal; Aoki's degree-form theorem and the two errata we record of its
+printed text (Remark~\ref{rem:aoki168}) are corroboration, not support.
 \item[--] \emph{The boundary} (Corollary~\ref{cor:evenbdry}): eight certified gap classes in
 three walls; closing any member of a wall closes the wall.
 \end{itemize}
@@ -115,6 +118,11 @@ answer to da Silva's Question~1 at $m=33$) is in \cite{BN} and not repeated here
 
 \section{\texorpdfstring{The lattice is Aoki's $S_m$}{The lattice is Aoki's S\_m}}\label{sec:lattice}
 
+Write $\nu(a)_k=\#\{i:a_i=k\}$ for $k\in\Z/m\smallsetminus\{0\}$ (the multiplicity vector,
+so $\nu$ is a bijection from finite multisets of nonzero residues onto the non-negative orthant
+of $\Z^{m-1}$), $D_m\subseteq S_m$ for the span of the pair vectors $\nu(\{k,m-k\})$, and
+$\mathfrak D^s_m$ for Aoki's classes of $s/2+1$ vanishing pairs (Appendix~\ref{app:aoki}),
+$\mathfrak D_m=\bigcup_s\mathfrak D^s_m$.
 $S_m$ denotes Aoki's lattice: the subgroup of $\Z^{m-1}$ generated by the $\nu(\delta)$ over the
 vanishing pairs $\delta=\{k,m-k\}$ (the self-pair included at even $m$) and the
 $\nu(\sigma_{p,x})$ over the standard characters, for all primes $p\mid m$; membership is decided
@@ -170,7 +178,49 @@ $\{x,m-x\}$, $\{x+\frac m2,\frac m2-x\}$, $\{m-2x,2x\}$, and the self-pair
 $\{\frac m2,\frac m2\}$. Each pair lies in the span of the pair vectors.
 \end{proof}
 
+\begin{proposition}[coset transfer]\label{prop:coset}
+Let $\alpha,\beta$ be Hodge characters of $X^4_m$ with
+$\nu(\alpha)-\nu(\beta)\in S_m$. If $\mathrm{claim}(\beta)$ holds, so does
+$\mathrm{claim}(\alpha)$. (Allowing the degenerate value $\beta=\varnothing$, i.e.\ $\nu(\beta)=0$ --- which the
+stated hypothesis excludes, a character of $X^4_m$ having six entries --- recovers Aoki's
+\cite[Lemma~4.1(iii)]{Aoki00}: $\nu(\alpha)\in S_m\Rightarrow\mathrm{claim}(\alpha)$, the
+case used in Proposition~\ref{prop:w210}.)
+\end{proposition}
+\begin{proof}
+Write $\nu(\alpha)-\nu(\beta)=\sum_i c_i\,\nu(\sigma_i)+\sum_j d_j\,\nu(\delta_j)$
+with $c_i,d_j\in\Z$, the $\sigma_i$ standard characters and the $\delta_j$ vanishing pairs
+(Proposition~\ref{prop:ident}). By the negation closure of Lemma~\ref{lem:p2neg}(ii),
+$-\nu(\sigma_{p,x})\equiv\nu(\sigma_{p,\,m/p-x})$ modulo the span $D_m$ of the pair
+vectors, so every negative standard coefficient may be traded for a positive one at the cost of
+pair vectors; negative pair coefficients are moved to the other side. This puts the relation in
+the form
+\[
+\nu(\alpha)+\nu(\delta)\;=\;\nu(\beta)+\sum_k\nu(\sigma'_k)+\nu(\delta'),
+\]
+with all terms multiplicity vectors of actual multisets ($\delta,\delta'$ unions of vanishing
+pairs). Since $\nu$ is injective on multisets of nonzero residues, this is the multiset identity
+$\alpha*\delta\sim\beta*\sigma'_1*\cdots*\sigma'_r*\delta'$. Now
+$\mathrm{claim}(\beta)$ holds by hypothesis, $\mathrm{claim}(\sigma'_k)$ by
+\cite[Thm.~2-1]{Aoki87} for odd $p$ --- with the inflation lemma of \cite{BN}
+(Appendix~\ref{app:bn}) when $g:=\gcd(x,d)>1$, $d=m/p$, since $\sigma_{p,x}$ is then the
+$g$-inflation of $\sigma_{p,x/g}$ at level $m/g$, where the gcd is $1$ and all entries are
+nonzero; the reduction is never degenerate, because $g\le x<d$ forces $d/g\ge2$ and hence
+$m/g=p\,(d/g)>p$ --- and by Lemma~\ref{lem:p2neg}(i) for $p=2$, and
+$\mathrm{claim}(\delta')$ by \cite[Thm.~1-1]{Aoki87}; hence
+$\mathrm{claim}(\alpha*\delta)$ by iterated application of \cite[Thm.~1-4(i)]{Aoki87} --- every
+admitted block has even length, so at each juxtaposition $r,s$ are even with $n=r+s+2$, and
+grades add, so every partial juxtaposition is again a Hodge character --- and
+$\mathrm{claim}(\alpha)$ by \cite[Thm.~1-4(ii)]{Aoki87}, $\delta\in\mathfrak D_m$. (Any
+factor that is empty is simply omitted: if $\delta'=\varnothing$ there is no $\mathfrak
+D_m$-factor on the right, and if $\delta=\varnothing$ then $\alpha*\delta=\alpha$ and the
+final cancellation step is not performed.)
+\end{proof}
+
 \begin{remark}[even-$m$ standard admissibility]\label{rem:evenstd}
+(Two distinct conditions occur in \cite{Aoki87} and should not be conflated: the \S1
+\emph{definition} of $\sigma_{p,x}$ carries the admissibility hypothesis $d/\gcd(x,d)>2$, while
+Theorem~2-1 --- which exhibits the representing subvariety --- assumes $\gcd(x,d)=1$; the gap
+between them is bridged by the inflation lemma, as in Proposition~\ref{prop:coset}.)
 For even $m$ and odd $p\mid m$ Aoki's 1987 admissibility hypothesis $d/\gcd(x,d)>2$ ($d=m/p$) is
 strictly stronger than ``entries nonzero'': it excludes $x\equiv d/2\pmod d$. Every excluded
 multiset contains a vanishing pair --- $(x+k_1d)+(x+k_2d)\equiv0\pmod m$ reduces to
@@ -199,9 +249,9 @@ self-pair $m/2$ included in $M_m(1)$); the even-parity engine is calibrated agai
 force --- exact match of representative counts for $m\le14$ --- while the independent blind
 reimplementations of \cite{BN} cover the odd census.
 Throughout, \emph{primitive} means content $\gcd(a_0,\dots,a_5,m)=1$, i.e.\ not an inflation
-from a lower level; eigenvalue-field labels are \emph{numerical observations} (an mpmath
-heuristic over finitely many split primes), used as descriptors only --- no formal statement
-rests on them. Two engine-tier facts are recorded for transparency. The receipt engine (the v3
+from a lower level; eigenvalue-field labels are \emph{numerically indicated fields} (an mpmath heuristic over
+finitely many split primes), used as descriptors only; they are never called eigenvalue fields
+without the qualifier and no formal statement rests on them. Two engine-tier facts are recorded for transparency. The receipt engine (the v3
 pipeline over the even-safe base library) is multiplicity-aware throughout: its decomposability
 requires both members of a vanishing pair, the self-paired $m/2$ requiring multiplicity two, and
 its quasi loop includes the self-pair $\{m/2,m/2\}$ (e.g.\ $(1,3,36,38,64,68)$ at $m=70$ is
@@ -218,33 +268,71 @@ self-containedness we recall the imported transport statement: \emph{a Hodge $(2
 of $X^4_m$, $m$ arbitrary, whose $6$-multiset splits into two zero-sum triples has algebraic
 rational Hodge classes in its Galois block} (\cite[Thm.~A]{BN}; its transport uses only the
 Galois-stable block, Lefschetz $(1,1)$, and the $\Q$-linear joining-line correspondence, so no
-rational point on the curve and no parity hypothesis enters). Counting convention: \emph{beyond-machinery} counts the primitive
-orbits surviving all four base predicates (decomposable / quasi-decomposable / standard /
-$*$-split), before the iterated and deep tiers; the paper's $38=21+14+3$ is this base-tier
-primitive count over $m\le108$, $108<m\le200$, $200<m\le250$. Surviving orbits are then attacked by the \emph{closure
-operator}: $T$ closes at depth $k$ if
-$T\uplus(k\text{ vanishing pairs})$, $k\le4$, partitions into blocks each of which is a
-vanishing pair, a grade-$2$ Hodge quadruple (Lefschetz $(1,1)$), an admissible standard block
-(Theorem~2-1 of \cite{Aoki87}; Lemma~\ref{lem:p2neg}(i) at $p=2$), or a previously certified
-sextuple (iteration: two-generation certificate trees); $\mathrm{claim}(T)$ then follows by
-Theorems~1-4(i),(ii) of \cite{Aoki87}. Every closure is stored as an explicit route in the
-deep-closure ledger and re-verified by the standalone checkers.
+rational point on the curve and no parity hypothesis enters). \emph{Terminology} (used consistently below): an \emph{ordered character} is a tuple
+$a\in(\Z/m)^6$; its \emph{sorted representative} is the sorted multiset; a \emph{class} is the
+Galois orbit of such a representative (equivalently its canonical least sorted conjugate); the
+\emph{rational block} $M(a)$ is the sum of the eigenspaces over the orbit; a \emph{Hodge class}
+is a cohomology class; and $\nu(a)$ is the \emph{multiplicity vector}, the object all lattice
+statements are about. A \emph{base survivor}, \emph{post-depth-two survivor}, \emph{deep
+survivor} and \emph{final unresolved class} are the successive tiers defined in this paragraph.
+
+\emph{The closure operator.} $T$ \emph{closes at depth} $k$ if $T\uplus(k$ vanishing pairs$)$
+partitions into blocks each of which is a vanishing pair, a grade-$2$ Hodge quadruple (Lefschetz
+$(1,1)$), a standard block $\sigma_{p,x}$ with $p\mid m$ prime and nonzero entries
+(\cite[Thm.~2-1]{Aoki87} for odd $p$, with the inflation lemma when $\gcd(x,m/p)>1$;
+Lemma~\ref{lem:p2neg}(i) for $p=2$) --- of length $p+1$ for odd $p$ and of length $4$ for
+$p=2$, these being the only standard blocks admitted --- or a grade-$3$ sextuple already
+certified. Then $\mathrm{claim}(T)$ follows by Theorems~1-4(i),(ii) of \cite{Aoki87}.
+
+The family is bounded, and \emph{two tiers must be distinguished}. The \emph{depth-$k$ oracle}
+admits as blocks only pairs, grade-$2$ Hodge quadruples, standard blocks, and grade-$3$
+sextuples certified by the four base predicates; its block lengths at the levels of the headline
+tier are $2,4,6$ (the certificates of \S\ref{sec:closures} additionally use $p=7$ standard
+blocks, of length $8$). The \emph{deep tiers} add depth $k\le5$ and \emph{iteration}: a
+grade-$3$ block may itself carry a depth-$\le2$ certificate (two-generation certificate trees).
+The headline tier below is the \emph{non-iterated} depth-$\le2$ oracle; iteration enters only
+in the deep tiers, where the depth and the generation used are recorded per class in the ledger.
+\emph{No other family member is claimed:} no standard block other than the $\sigma_{p,x}$
+above, no depth beyond the stated bounds, and no third generation. The two tiers are genuinely
+different counts: admitting iteration already at depth $\le2$ would close a further part of the
+headline tier. Every statement below is about the \emph{non-iterated} tier, which is exactly
+what \texttt{even\_tier\_table.py} computes.
+
+\emph{Counting convention} (the tiers are nested and each printed number names exactly one of
+them). \emph{Base survivors}: orbits failing all four base predicates. \emph{Post-depth-two
+survivors}: base survivors that the closure operator does not close with $k\le2$ added vanishing
+pairs. The paper's headline count $40=21+14+5$ is the number of \emph{primitive post-depth-two
+survivors} over $m\le108$, $108<m\le200$, $200<m\le250$ (Appendix~\ref{app:table} lists all
+forty with their routes); these are the classes handed to the
+deep tiers and to the exchange analysis. The base tier is much larger and begins much earlier:
+base survivors first occur at $m=32$ (e.g.\ $(1,9,17,20,24,25)$, which the closure operator
+disposes of at depth $2$), and there are $1349$ of them over even $m\le250$; all but $85$ of
+those --- the forty primitive classes counted here together with $45$ induced copies --- close at
+depth $\le2$. Both tiers, level by level, with the canonical hash of each level's
+survivor list, ship as \texttt{even\_tier\_table.json} and are recomputed by
+\texttt{even\_tier\_table.py} from the definitions. Every deep closure is stored as an
+explicit route in the deep-closure ledger and re-verified by the standalone checkers.
 
 \begin{proposition}[even census]\label{prop:evencensus}
 {\rm(Computer-assisted; engines, closure ledger, and receipts in the ancillary.)}
-(i) For even $m\le108$ there are twenty-one primitive beyond-machinery orbits, beginning at
-$m=50$, with indicated eigenvalue fields up to degree $32$; the odd law ``survivor
-$\Rightarrow3\mid m$'' fails in the even sector. (ii) Eighteen of the twenty-one close by
+(i) For even $m\le108$ there are twenty-one primitive post-depth-two survivors, the first at
+$m=50$, namely $(1,7,27,30,41,44)$, with indicated eigenvalue fields up to degree $32$; the odd
+law ``survivor $\Rightarrow3\mid m$'' fails in the even sector. (Base survivors begin already at
+$m=32$; every one of them below $m=50$ closes at depth $\le2$, and of the $1349$ base survivors
+over even $m\le250$ all but $85$ do --- those $85$ being the forty primitive classes counted here
+and $45$ induced copies.) (ii) Eighteen of the twenty-one close by
 depth-$3/4$ partition certificates (two closed sextuples, or quadruple--standard--quadruple);
 iterating the closure operator (blocks certified by their own certificates --- two-generation
 trees) closes $m=54$ and $m=90$ as well, so exactly one even class of degree $\le108$ resists:
 $m=70$, $(1,20,24,42,61,62)$, indicated eigenvalue field $\Q(\zt_{35})$. (iii) The census through degree
-$200$ yields fourteen further primitive classes, of which the same machinery closes eight (every
+$200$ yields fourteen further primitive post-depth-two survivors, of which the same machinery closes eight (every
 open row in $178$--$200$ is an induced copy of an already-closed class); the residual at
 $m\le200$ is seven classes ($70$; two at $110$; three at $114$; one at $168$) and their induced
-copies. (iv) Through degree $250$ exactly three more primitive classes appear:
-$(2,9,129,142,168,180)$ and $(1,79,109,121,151,169)$ at $210$, and $(1,62,111,142,162,182)$ at
-$220$.
+copies. (iv) Through degree $250$ exactly five more primitive post-depth-two survivors appear: four at
+$210$ --- $(1,43,44,169,185,188)$, $(1,79,109,121,151,169)$, $(2,9,129,142,168,180)$,
+$(2,82,111,141,142,152)$ --- and $(1,62,111,142,162,182)$ at $220$; the deep tiers close the
+first and the last of the four at $210$, so the residual ten of \S\ref{sec:exchange} is
+unchanged.
 \end{proposition}
 
 Among the eighteen closures of (ii) is the $m=66$, $\Q(\sqrt{-3})$ class --- closed through the
@@ -293,7 +381,16 @@ five claim-equivalence walls
 W_{70}=\{70\simeq210\#2\},\qquad W_{110}=\{110\#1\simeq110\#2\simeq220\},\\
 W_{114}=\{\#1\simeq\#2\simeq\#3\},\qquad W_{168},\qquad W_{210}=\{210\#1\},
 \end{gather*}
-and closing any member of a wall closes the wall (Theorem~\ref{thm:exchange}). Precisely: call
+and closing any member of a wall closes the wall (Theorem~\ref{thm:exchange}). One edge in full,
+so that a reader can check a wall by hand: the $3$-lift of the $m=70$ champion is
+$(3,60,72,126,183,186)$ at level $210$, and the Galois conjugate $47\cdot(2,9,129,142,168,180)$
+is $(3,60,94,126,164,183)$; they share $S=(3,60,126,183)$, so $A=(72,186)$, $B=(94,164)$ and the
+exchanger
+\[
+q=A\uplus(-B)=(46,72,116,186)
+\]
+has nonzero entries and is a grade-$2$ Hodge quadruple, hence Lefschetz-algebraic --- a
+claim-equivalence between the two classes by Theorem~\ref{thm:exchange}. Precisely: call
 $T\leftrightarrow T'$ an \emph{exchange move} when $T=S\uplus A$, $T'=S\uplus B$ with
 $|A|=|B|\in\{2,3\}$ and the exchanger $q=A\uplus(-B)$ has nonzero entries and is a grade-$2$
 Hodge quadruple ($|A|=2$; unconditional by Lefschetz) or a grade-$3$ sextuple of known claim
@@ -309,38 +406,67 @@ transitive exchange closure of each open class is therefore exactly its wall.
 \section{Two closures}\label{sec:closures}
 
 \begin{proposition}[the $m=168$ class closes]\label{prop:w168}
-The class $(1,25,79,121,127,151)$ on $X^4_{168}$ is algebraic; with it every class of the two
-census ranges (odd $m\le199$, even $m\le250$) whose indicated eigenvalue field is imaginary
-quadratic ($m=33,66,168$) is closed.
+The class $(1,25,79,121,127,151)$ on $X^4_{168}$ is algebraic.
 \end{proposition}
 
 \begin{proof}
-The closure rests on the published theorem: Aoki \cite{Aoki00} proves (Theorem~0.1(i)) the Hodge
-conjecture for all abelian varieties of Fermat type of degree $m=2^a3^b5^c7^d$ ($c=0$ or $d=0$),
-and the proof's \S4 route opens with the bridge through Corollary~3.2 there, establishing the
-statement for the Fermat varieties $X^n_m$ themselves, for all $n$, at these degrees; $168 =
-2^3\cdot3\cdot7$ qualifies. We do not re-derive that proof; we record two errata of the printed
-text, both verified against the primary and neither affecting the theorem as stated. First, the
-paper's own later citation of this statement
-(\cite[Thm.~1.2(ii)]{Aoki02}, attributed to a then-preprint on Catalan curves) is a
-citation slip --- the published Catalan paper (Tokyo J.\ Math.\ \textbf{27} (2004)) concerns the
-Jacobians of generalized Catalan curves, not the degree form; the theorem is \cite{Aoki00}'s own
-Thm.~0.1(i). Second, in the \S4 list of gap generators the $m=28$ entry
-$\xi_{28}=(1,9,25,12,20,24)$ is a misprint (it is not a zero-sum character), while Aoki's own
-text requires $\xi_m\in B^2\cup\bigl(B^4\cap(\mathfrak A^1*\mathfrak A^1)\bigr)$ and algebraizes
-these $\V(\xi_m)$ by the proof of Theorem~4.3 of Shioda \cite{Shioda81} (cited there); a
-machine-verified \emph{possible replacement} of exactly the required join form is
-$\xi_{28}=(1,9,18)\ast(10,21,25)\in B^4_{28}\cap(\mathfrak A^1_{28}*\mathfrak A^1_{28})$,
-$\nu(\xi_{28})\notin S_{28}$, $2\nu(\xi_{28})\in S_{28}$ (whether it is the intended
-generator modulo $S_{28}$ is not established here; the closure of $168$ does not depend on
-it). At the class level our lattice computation
-gives $\nu(a)\notin S_{168}$ with $\nu(a)\equiv \nu(6\cdot\xi_{28})\bmod S_{168}$ (entrywise product
---- the level-raising map of \cite[\S2]{Aoki00}): the class is a genuine gap class, and no
-Fermat-internal route of this paper or of \cite{BN} reaches it (its multiset admits no
-zero-sum-triple split, so the $*$-split theorem --- stated in \cite{BN} for all $m$ --- does not
-fire, machine-checked; $5\nmid168$ leaves no standard block for the two-pair genre; the
-iterated and lift searches also failed) --- Theorem~0.1(i) is what closes it.
+The argument is internal: an explicit $*$-split witness at level $168$ plus the coset transfer of
+Proposition~\ref{prop:coset}. Put
+\[
+a:=(1,25,79,121,127,151),\qquad \beta:=(6,54,60,108,126,150)\qquad\text{on }X^4_{168}
+\]
+(the $6$-fold level raising of $(1,9,18,10,21,25)$ from level $28$; only its displayed properties
+are used). Then, all verified exactly in the ancillary:
+\begin{enumerate}
+\item[(a)] both $a$ and $\beta$ have nonzero entries and coordinate sum $504=3\cdot168$, with
+constant grade $3$ over all $48$ units, so both are Hodge $(2,2)$ characters of $X^4_{168}$ ---
+the two hypotheses of Proposition~\ref{prop:coset};
+\item[(b)] $\beta$ splits into two zero-sum triples,
+$6+54+108=168$ and $60+126+150=336$, so $\mathrm{claim}(\beta)$ holds by the imported
+$*$-split transport theorem \cite[Thm.~A]{BN} --- unconditionally, and with no parity or
+rational-point hypothesis;
+\item[(c)] $\nu(a)-\nu(\beta)\in S_{168}$, by an exact Hermite-normal-form certificate,
+while $\nu(a)\notin S_{168}$ and $\nu(\beta)\notin S_{168}$ individually --- so the
+congruence is not vacuous and $a$ remains a genuine gap class.
+\end{enumerate}
+Proposition~\ref{prop:coset} applied to $\alpha=a$, $\beta$ now gives $\mathrm{claim}(a)$.
+No Fermat-internal route of this paper or of \cite{BN} reaches $a$ directly: its multiset admits
+no zero-sum-triple split (machine-checked), so the $*$-split theorem does not fire on $a$ itself;
+$5\nmid168$ leaves no grade-$3$ standard block for the two-pair genre, and the one longer
+standard family present at this level is also excluded --- $\sigma_{7,x}$ has eight entries in a
+single residue class mod $24$, while the entries of $a$ occupy two such classes with
+multiplicities $3,3$ --- and the iterated and lift searches failed. What closes it is the
+transfer from the $*$-split class $\beta$ inside its own coset of $S_{168}$.
 \end{proof}
+
+\begin{remark}[the imaginary-quadratic descriptor]\label{rem:imq}
+With this class closed, every class of the two census ranges (odd $m\le199$, even $m\le250$)
+whose \emph{numerically indicated} eigenvalue field is imaginary quadratic --- the three
+$m=33,66,168$ recorded by the field-label sweep --- is closed. Both the labels and the
+completeness of that list of three rest on the mpmath heuristic of \S\ref{sec:census}, not on a
+theorem; the statement is recorded as an observation about the descriptor, and nothing else in
+this paper depends on it.
+\end{remark}
+
+\begin{remark}[external corroboration, and two errata of the printed source]\label{rem:aoki168}
+Independently of the proof above, $168=2^3\cdot3\cdot7$ has the degree form of Aoki's published
+Theorem~0.1(i) \cite{Aoki00}, whose \S4 route opens with the bridge through Corollary~3.2 there,
+establishing the statement for the Fermat varieties $X^n_m$ themselves at these degrees. We do
+not rely on it, and record two errata of the printed text, both verified against the primary.
+First, the paper's own later citation of this statement (\cite[Thm.~1.2(ii)]{Aoki02}, attributed
+to a then-preprint on Catalan curves) is a citation slip --- the published Catalan paper (Tokyo
+J.\ Math.\ \textbf{27} (2004)) concerns the Jacobians of generalized Catalan curves, not the
+degree form; the theorem is \cite{Aoki00}'s own Thm.~0.1(i). Second, in the \S4 list of gap
+generators the $m=28$ entry $\xi_{28}=(1,9,25,12,20,24)$ is a misprint (it is not a zero-sum
+character), while the text requires $\xi_m\in B^2\cup\bigl(B^4\cap(\mathfrak A^1*\mathfrak
+A^1)\bigr)$ and algebraizes these $\V(\xi_m)$ by the proof of Theorem~4.3 of Shioda
+\cite{Shioda81} (cited there); a machine-verified \emph{possible replacement} of exactly the
+required join form is $(1,9,18)\ast(10,21,25)\in B^4_{28}\cap(\mathfrak A^1_{28}*\mathfrak
+A^1_{28})$, with $\nu\notin S_{28}$ and $2\nu\in S_{28}$; whether it is the intended generator
+modulo $S_{28}$ is not established here. Since the closure above is internal, neither erratum
+bears on any statement of this paper: the $6$-fold raising of that sextuple enters only as the
+explicit $*$-split witness $\beta$, whose two displayed properties (a),(b) are verified directly.
+\end{remark}
 
 \begin{proposition}[the isolated degree-210 class closes]\label{prop:w210}
 $\V(1,79,109,121,151,169)$ on $X^4_{210}$ is algebraic.
@@ -419,8 +545,8 @@ $220$ & $(1,62,111,142,162,182)$  & no  & unresolved ($W_{110}$)\\
 \end{tabular}
 
 \smallskip
-\parbox{0.92\linewidth}{\footnotesize The ten primitive classes of degree $\le250$ beyond the
-base machinery. Every lattice verdict carries an independent certificate in the ancillary: a
+\parbox{0.92\linewidth}{\footnotesize The ten primitive residual classes of degree $\le250$ after the
+depth-two and the deep closure stages. Every lattice verdict carries an independent certificate in the ancillary: a
 modular kernel witness ($q=2$) for each ``no'', the re-summed $\pm1$ combination for the ``yes''.}
 \end{center}
 
@@ -438,8 +564,14 @@ representative counts fresh at the key levels $50,70,110,114,168$ (pinned receip
 exact-arithmetic certificate framework is the one developed for the Fermat surfaces of
 \cite{P1}, and the odd-degree half of the census is certified in \cite{BN} by three
 independent implementations, including a direct brute-force enumeration at every level
-$m\le143$. The author
-takes full responsibility for all proofs, code, and bibliographic claims. The ancillary package is shared with the companion note: engines (census, closure
+$m\le143$. \texttt{run\_all.sh} \emph{fresh-runs} the smoke and certificate tiers, including the tier and
+final-table verifiers of this paper; the multi-hour exhaustive even and exchange campaigns are
+supplied as SHA-pinned \emph{historical receipts} with their own regeneration commands, and are
+not re-executed by that runner. The author
+takes full responsibility for all proofs, code, and bibliographic claims. \emph{Data and code
+availability.} The package is submitted as ancillary files and licensed for reuse (see
+\texttt{LICENSE} there); at acceptance it is additionally deposited under a permanent
+identifier (DOI) as an immutable release carrying the checksums of this submission. The ancillary package is shared with the companion note: engines (census, closure
 oracle, exchange scan, lift sweeps, lattice membership), the deep-closure ledger, the stored
 degree-$210$ certificate, the complete even census receipt over all even $6\le m\le250$, and the
 pinned exchange/negative-sweep logs, with a checksum manifest and a fresh-run runner
@@ -448,6 +580,82 @@ prepared with AI assistance; all computational claims are backed by the ancillar
 receipts.
 
 \appendix
+
+\section{The forty primitive post-depth-two survivors}\label{app:table}
+
+Every primitive class over even $6\le m\le250$ that survives the four base predicates \emph{and}
+the depth-$\le2$ closure oracle, with the tier that disposes of it: \emph{depth-3}/\emph{depth-4}
+= a deeper partition certificate, \emph{iterated} = a two-generation certificate tree,
+\emph{Prop.} = one of the two closures of \S\ref{sec:closures}, \emph{open} = unresolved, with
+its wall. All forty have content~$1$; every open class satisfies $\nu\notin S_m$ and
+$2\nu\in S_m$. The machine-readable table, with the exact lattice verdicts and the ledger route
+strings, is \texttt{even\_final\_table.json} (regenerated and re-verified by
+\texttt{even\_final\_table.py --check}); the per-level tier counts and canonical hashes are
+\texttt{even\_tier\_table.json}.
+
+\begin{center}\footnotesize
+\begin{tabular}{rlp{1.7cm}rlp{1.7cm}}
+\toprule
+$m$ & class & closed by & $m$ & class & closed by\\
+\midrule
+$50$ & $(1,7,27,30,41,44)$ & depth-4 & $108$ & $(1,44,55,58,82,84)$ & depth-3\\
+$54$ & $(1,7,19,36,49,50)$ & iterated & $110$ & $(1,24,62,71,81,91)$ & open, W_110\\
+$54$ & $(1,7,24,38,41,51)$ & depth-3 & $110$ & $(1,31,55,71,81,91)$ & open, W_110\\
+$54$ & $(1,7,36,38,39,41)$ & depth-3 & $114$ & $(1,7,78,79,86,91)$ & open, W_114\\
+$66$ & $(1,8,23,52,54,60)$ & depth-3 & $114$ & $(1,13,43,72,103,110)$ & open, W_114\\
+$66$ & $(1,25,31,37,49,55)$ & depth-3 & $114$ & $(1,13,43,80,102,103)$ & open, W_114\\
+$70$ & $(1,6,43,45,57,58)$ & depth-3 & $114$ & $(1,44,60,77,78,82)$ & iterated\\
+$70$ & $(1,20,24,42,61,62)$ & open, W_70 & $138$ & $(1,22,57,63,135,136)$ & iterated\\
+$72$ & $(1,10,37,50,54,64)$ & depth-3 & $138$ & $(1,70,75,81,93,94)$ & iterated\\
+$72$ & $(1,26,37,40,54,58)$ & depth-3 & $140$ & $(1,58,71,86,90,114)$ & iterated\\
+$78$ & $(1,12,43,55,60,63)$ & depth-3 & $150$ & $(1,39,66,101,120,123)$ & iterated\\
+$78$ & $(1,20,43,45,62,63)$ & depth-3 & $156$ & $(1,79,84,90,106,108)$ & iterated\\
+$78$ & $(1,28,42,45,54,64)$ & depth-3 & $156$ & $(2,45,84,106,108,123)$ & iterated\\
+$90$ & $(1,8,26,62,85,88)$ & depth-3 & $168$ & $(1,25,79,121,127,151)$ & Prop.~\ref{prop:w168}\\
+$90$ & $(1,23,38,55,74,79)$ & iterated & $168$ & $(1,27,87,113,126,150)$ & iterated\\
+$90$ & $(1,38,46,55,56,74)$ & depth-3 & $210$ & $(1,43,44,169,185,188)$ & deep\\
+$102$ & $(1,14,16,82,93,100)$ & depth-3 & $210$ & $(1,79,109,121,151,169)$ & Prop.~\ref{prop:w210}\\
+$102$ & $(1,16,28,62,99,100)$ & depth-3 & $210$ & $(2,9,129,142,168,180)$ & open, W_70\\
+$102$ & $(1,40,52,69,70,74)$ & depth-3 & $210$ & $(2,82,111,141,142,152)$ & deep\\
+$102$ & $(1,46,52,57,70,80)$ & depth-3 & $220$ & $(1,62,111,142,162,182)$ & open, W_110\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Statements imported from the companion note}\label{app:bn}
+
+For self-containedness we restate, in the numbering of \cite{BN}, the four results of that note
+used here. Their proofs are there; nothing in this paper re-proves them, and every use is cited
+at the point of use.
+
+\begin{itemize}
+\item[--] \textbf{Theorem~A ($*$-split transport).} \emph{Let $a$ be a Hodge $(2,2)$ character
+of $X^4_m$, $m$ arbitrary, whose $6$-multiset splits as two zero-sum triples
+$\beta'\uplus\gamma'$. Then the rational Hodge classes of $M(a)$ are algebraic: each is the
+image, under the algebraic joining-line correspondence of the Shioda--Katsura structure map, of a
+$\Q$-linear combination of divisor classes on $X^1_m\times X^1_m$ furnished by Lefschetz
+$(1,1)$.} (Used for $\beta$ in Proposition~\ref{prop:w168} and as the fourth base predicate.)
+\item[--] \textbf{Lemma (inflation).} \emph{Let $m=e\,m'$ and $\beta$ a level-$m'$ character
+with every entry of $e\beta$ nonzero mod $m$. Then
+$\mathrm{claim}_{m'}(\beta)\Rightarrow\mathrm{claim}_m(e\beta)$.} \textbf{Lemma (descent).}
+\emph{Under the same hypotheses,
+$\mathrm{claim}_m(e\beta)\Rightarrow\mathrm{claim}_{m'}(\beta)$.} Both are proved there from
+$\pi\colon X^n_m\to X^n_{m'}$, $(x_i)\mapsto(x_i^e)$, finite and surjective, via
+$\pi_*\pi^*=(\deg\pi)\,\mathrm{id}$; the nonzero-entry hypothesis is what makes $e\beta$ a
+legitimate character. Note the hypothesis is on the \emph{entries}, not on $\gcd(x,m/p)$: a
+standard block $\sigma_{p,x}$ with $g=\gcd(x,d)>1$, $d=m/p$, is the $g$-inflation of
+$\sigma_{p,x/g}$ at level $m/g$, where the gcd is $1$, and all its entries are nonzero, so the
+inflation lemma applies verbatim.
+\item[--] \textbf{Lemma (census completeness).} \emph{For each $m$ and the shipped generator,
+classifiers and canonizer: every element of $M_m$ has even length $2g$ with $g$ its grade;
+$M_m(1)$ consists exactly of the vanishing pairs $\{k,m-k\}$, the self-pair $k=m/2$ included at
+even $m$; a grade-$3$ sextuple is decomposable exactly when it contains a vanishing pair; for a
+pair-free sextuple, quasi-decomposability is equivalent to some $a\uplus\{k,m-k\}$ splitting
+into two grade-$2$ Hodge quadruples; the meet-in-the-middle generator produces exactly the
+grade-$3$ Hodge sextuples; and canonization by the least sorted conjugate yields one
+representative per Galois orbit.} Stated and proved there for \emph{both} parities.
+\end{itemize}
+
 \section{The cited Aoki statements}\label{app:aoki}
 
 For self-containedness we reproduce the exact statements used, in the numbering of the primary

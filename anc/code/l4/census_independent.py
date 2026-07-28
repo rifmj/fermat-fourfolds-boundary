@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Independent reimplementation of the odd census (second implementation, bundled).
+"""Independent reimplementation of the census (second implementation, bundled).
+
+Written for the ODD census and, since the multiplicity fix, used for the EVEN key levels as well
+(its decomposability test is multiplicity-aware: the self-paired m/2 needs multiplicity two).
 
 Written after the fact as an algorithmically independent cross-check of census_scan_v2.py: no code
 is shared with the engine. Differences: full-unit profiles (v2 uses a half-unit system), numpy

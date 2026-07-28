@@ -11,8 +11,9 @@ the companion pair
 > the note — the ancillary package is shared.
 
 **Result (the note).** For the Fermat fourfold `X_m^4 : x_0^m + … + x_5^m = 0 ⊂ P^5` the Hodge
-conjecture holds for **every odd degree `m ≤ 199`**. The proof introduces three closure
-mechanisms for Hodge `(2,2)`-characters:
+conjecture holds for **every odd degree `m ≤ 199`** — a computer-assisted proof combining
+three geometric closure criteria with an exhaustive machine census of the Hodge
+`(2,2)`-orbits. The three closure mechanisms:
 
 - **∗-split transport** — if the character multiset splits into two zero-sum triples, the
   rational Hodge block is transported from a `(1,1)`-substructure of a product of Fermat curves,
@@ -23,10 +24,18 @@ mechanisms for Hodge `(2,2)`-characters:
   level 66, and its algebraicity descends along the finite morphism `X_66^4 → X_33^4`.
 
 Together with the known decomposable / quasi-decomposable / standard cases these cover all odd
-`m ≤ 199`, established by a complete computer-assisted census with a completeness proof for the
-enumeration, re-verifiable per-orbit certificates (positive witnesses and, for the
-beyond-machinery orbits, the negative screenings), and an algorithmically independent
-reimplementation reproducing the census in full. An exact Jacobi-sum computation at `p = 67`
+degrees `m ≤ 199`. The census runs over the 89 machine-examined levels `21 ≤ m ≤ 199`, `m ≠ 23`
+(smaller odd degrees and `m = 23` are classical), classifies all 78,299 Galois-orbit
+representatives, and isolates thirteen orbits beyond decomposability, quasi-decomposability,
+and Aoki's standard cycles — six close by the ∗-split criterion, the remaining seven by the
+two-pair and level-lifted closures, leaving none. Every classification carries a machine-checked
+witness (positive for the classified orbits, re-established negative screenings for the terminal
+ones), with a completeness proof for the enumeration, and it is reproduced by two further
+implementations: an algorithmically independent census over all 89 levels and a direct
+brute-force enumeration through `m = 143`. Seven of the thirteen are gap classes outside Aoki's
+standard lattice calculus and are new to the author's knowledge; for the other six,
+algebraicity is also derivable from that calculus — the explicit presentations given here being
+the new content. An exact Jacobi-sum computation at `p = 67`
 (Theorem C) shows no cycle defined over `Q(ζ_33)` projects nontrivially onto the exceptional
 `m = 33` block; over any finite extension of `Q(ζ_33)` carrying a certifying cycle, every residue degree
 above 67 is divisible by 6.
@@ -43,8 +52,8 @@ certificate). The residual even-degree boundary at `m ≤ 250` is **eight certif
 three exchange walls `W_70`, `W_110`, `W_114`**; every lattice verdict carries an independent
 certificate (modular kernel witnesses for non-membership, exact re-summation for membership).
 
-> **Papers:** [`paper/boundary_note.pdf`](paper/boundary_note.pdf) (14 pp) ·
-> [`paper/even_boundary.pdf`](paper/even_boundary.pdf) (9 pp) — sources alongside.
+> **Papers:** [`paper/boundary_note.pdf`](paper/boundary_note.pdf) (19 pp) ·
+> [`paper/even_boundary.pdf`](paper/even_boundary.pdf) (12 pp) — sources alongside.
 
 ## Verification
 
@@ -56,9 +65,9 @@ now*, never cached):
     cd anc
     python3 -m venv venv && source venv/bin/activate
     pip install -r requirements.txt          # pinned; nearby versions work (pure integer/numpy)
-    sh run_all.sh                            # smoke tier: ~40 s on the reference machine
+    sh run_all.sh                            # smoke tier: ~55 s on the reference machine
 
-Highlights of the 14-step runner (full script ↔ claim map in [`anc/README.md`](anc/README.md)):
+Highlights of the 18-step runner (full script ↔ claim map in [`anc/README.md`](anc/README.md)):
 
 | step | verifies |
 |---|---|
@@ -69,6 +78,9 @@ Highlights of the 14-step runner (full script ↔ claim map in [`anc/README.md`]
 | 11–12 | an algorithmically independent census reimplementation re-derives the anchor levels (odd) and the even key levels fresh, asserted against the receipts |
 | 13 | the per-level summary table is recomputed from the witness receipt AND regenerated from scratch at every odd level `21 ≤ m ≤ 45` |
 | 14 | a **brute-force third method** (direct exhaustive enumeration, no shared code with either census implementation) re-derives every census level `m ≤ 45` |
+| 15–16 | the companion's even-sector tables recomputed: per-level base / post-depth-two counts with canonical hashes, and the final 40-row table — every lattice verdict recomputed, eight open gap classes |
+| 17 | the `m = 168` closure witness: grades, the two split sums, the coset membership, non-vacuity |
+| 18 | Theorem C re-verified by a **second independent implementation** (different reduction basis) |
 
 Full tier: `sh run_full_census.sh` — the complete from-scratch independent regeneration of all
 89 odd levels against the pinned canonical hashes (~12 min on the reference machine; peak
@@ -106,8 +118,8 @@ bare toolchain — see `lean/README.md`).
 The top-level [`SHA256SUMS`](SHA256SUMS) pins both paper sources and `anc/SHA256SUMS`, which
 pins every ancillary file. The refereed arXiv submission tarballs (the submitted source packages; not tracked in this repository) are pinned by
 
-    5a682849573f416cf360fd75630997414c95257fb91ecb6b61d6cb092de63567  boundary_note_arxiv.tar.gz (427,586 B)
-    a964e86f350c23fd580e9cf93542bcbd73cf4e25f4fdcbf8e80aecb88495e9fb  even_boundary_arxiv.tar.gz (416,523 B)
+    46ee634006e0ae9129ad72645f37c71e8f8e100304cafda9f133cdc546fc992f  boundary_note_arxiv.tar.gz (449,983 B)
+    b2b7ac7b2a85067233c7dcb382d9712d7338ee5a7a67e52694541e412f9e83f9  even_boundary_arxiv.tar.gz (440,704 B)
 
 `anc/` here is byte-identical to the shared ancillary of those tarballs except two repository
 localizations disclosed in `anc/README.md` (its own title/paths, and the manuscript lines of
@@ -116,15 +128,15 @@ localizations disclosed in `anc/README.md` (its own title/paths, and the manuscr
 ## Provenance and disclosure
 
 This work was carried out with substantial AI assistance in derivation, computation, and
-drafting. The pair went through eleven independent external referee reports, with findings tracked
-in ledgers across sixteen review rounds for the note (the fifteenth a dedicated bibliography
-verification: every external reference matched against MathSciNet/OpenAlex records, two defects
-found and fixed) and six for the companion — every finding
-dispositioned (one item, inserting the note's arXiv id into the companion's bibliography,
-completes at upload). The final four external re-reviews were all accept-level verdicts —
-the latest: accept with editorial corrections, the referee reporting no remaining mathematical
-obstacles and independently regenerating a census level against the pinned summary table; the
-round before it produced the brute-force third census method of runner step 14. Every claim is backed by the proofs in the papers and the exact
+drafting. The pair went through thirteen independent external referee reports, with findings tracked in
+ledgers across nineteen review rounds for the note (among them a dedicated bibliography
+verification — every external reference matched against MathSciNet/OpenAlex records) and eight
+for the companion — every finding dispositioned (one item, inserting the note's arXiv id into
+the companion's bibliography, completes at upload). Report #12, from a fresh reviewer,
+requested a major revision while identifying no mathematical error; its requests (an explicit
+Main Theorem, a novelty calibration, an appendix rewrite, visible checkpoint chains) were
+applied in full. The final report #13: accept after minor revision — the referee recompiled the
+manuscript, verified the 66-entry manifest, and re-ran the whole 18-step battery. Every claim is backed by the proofs in the papers and the exact
 certificates here; the author takes full responsibility for all proofs, code, and bibliographic
 claims.
 

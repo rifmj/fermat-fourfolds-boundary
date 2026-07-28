@@ -14,8 +14,16 @@ deleted first), so "PASSED" always means *executed now*, never cached or skipped
 
 ## Requirements
 
-Python 3.10+; `pip install -r requirements.txt` (exact versions pinned to the ones used for the
-reported runs).
+Python 3.10+ and NumPy (plus `mpmath` for the one 30-digit corroboration in step 6). Three
+version tiers, deliberately distinguished:
+
+- **Required (minimum):** Python ≥ 3.10, NumPy ≥ 1.22, mpmath ≥ 1.2. Nothing here depends on
+  recent library behaviour — every proof-critical computation is exact integer arithmetic.
+- **Used for the reported runs (pinned):** the exact versions in `requirements.txt`
+  (`pip install -r requirements.txt` reproduces them); these are the versions behind every
+  shipped receipt.
+- **Additionally tested:** nearby releases of NumPy on the same code path give identical output;
+  the checks are exact equalities, so agreement is bit-for-bit rather than approximate.
 
 ## Verification (smoke tier, ~17 s on the reference machine below)
 
@@ -39,6 +47,9 @@ sh run_all.sh
 | 11 | `census_independent.py 33 39 45 105` | an algorithmically independent census reimplementation (full-unit profiles, numpy, own classifiers; no code shared with the engine) re-derives the anchor levels and asserts exact agreement with the witness receipt |
 | 12 | `census_independent.py 50 70` | the same independent implementation run FRESH at the even key levels `m=50,70` (multiplicity-aware decomposability), asserted against the even receipt tier |
 | 13 | `census_summary.py --check --independent 21 ... 45` | the per-level summary table (`census_level_summaries.json`: counts, tallies, survivors, canonical SHA-256 of the sorted representative list) is recomputed from the witness receipt AND regenerated from scratch by the independent implementation at every odd level `21 ≤ m ≤ 45` — the "no missed orbit" cross-check |
+| 15 | `even_tier_table.py --check` | the even-sector TIER table (`even_tier_table.json`): every level `m ≤ 60` is RECOMPUTED from the definitions and asserted identical to the stored row; for all 123 levels the stored counts and the canonical SHA-256 of each survivor list are re-derived from the stored class lists. A full from-scratch rebuild of every level is `--emit` (hours; the largest levels dominate) |
+| 17 | `verify_w168_witness.py` | Proposition w168 end to end: `a` and `beta` are Hodge (2,2) characters over ALL units, `beta` is *-split (6+54+108=168, 60+126+150=336), `ν(a)−ν(beta) ∈ S₁₆₈` with both individually OUTSIDE (non-vacuity), `2ν(a) ∈ S₁₆₈`, and the control that `a` itself is not *-split |
+| 16 | `even_final_table.py --check` | the complete reader's table (`even_final_table.json`): all 40 primitive post-depth-two survivors with content, exact lattice verdicts (`ν∈S_m`, `2ν∈S_m`), status and route; every verdict recomputed here by an independent HNF test, the 8 open classes asserted to be gap classes |
 | 14 | `census_bruteforce.py 21 ... 45` | a THIRD method: direct exhaustive enumeration of all sorted zero-sum sextuples (no meet-in-the-middle, no shared code) reproduces the representative counts and canonical hashes at every census level `m ≤ 45`; the pinned receipt `bruteforce_odd_receipt.txt` extends this to every census level `m ≤ 143` — the range quoted in the paper |
 
 ## Reference machine and measured runtimes
@@ -62,7 +73,7 @@ individually. The full brute-force sweep of all 61 census levels `m ≤ 143` too
 
 ## Census receipt (Theorem B)
 
-Five artifacts, each SHA-pinned in `SHA256SUMS`:
+Seven artifacts, each SHA-pinned in `SHA256SUMS`:
 
 - `data/l4/census_receipt_odd21_199.txt` — the complete fresh run of both census engines over all
   89 odd levels `21 ≤ m ≤ 199`, `m ≠ 23` (the omitted small levels are classical): per-level
@@ -78,6 +89,15 @@ Five artifacts, each SHA-pinned in `SHA256SUMS`:
   Rebuild: `python3 code/l4/census_summary.py --emit`; check: `--check`; regenerate any level
   from scratch against it: `--independent <m ...>` (runner step 13 does all odd `21 ≤ m ≤ 45`;
   `run_full_census.sh` does all 89 levels).
+- `data/l4/even_tier_table.json` — the even-sector tier table: for every even `6 ≤ m ≤ 250`,
+  the representative count, the base-tier survivor count, the post-depth-two survivor count
+  (the paper's headline tier), the survivor classes and the canonical SHA-256 of that level's
+  survivor list. Rebuild any level: `python3 code/l4/even_tier_table.py --emit <m ...>`;
+  check: `--check` (runner step 15). Base-tier survivors begin at `m=32` and number 1349
+  through 250; the post-depth-two tier is the 40 classes of the paper.
+- `data/l4/even_final_table.json` — those 40 classes one by one: content, exact `ν∈S_m` and
+  `2ν∈S_m` verdicts, status (deep-closed / closed-by-proposition / open) and route; verified
+  by `even_final_table.py --check` (runner step 16), which recomputes every lattice verdict.
 - `data/l4/bruteforce_odd_receipt.txt` — the brute-force (third-method) run over EVERY census
   level `21 ≤ m ≤ 143`: counts and canonical hashes reproduced by direct exhaustive
   enumeration. Regenerate any level: `python3 code/l4/census_bruteforce.py <m ...>` (runner
@@ -100,7 +120,7 @@ own full run ships as the checksummed receipt `data/l4/witness_independent_run.t
 pins record the environment of the reported runs; the code is pure integer arithmetic and is not
 version-sensitive (nearby versions work). The even key-level
 receipt (50/70/110/114/168) is pinned with its regeneration command in the receipts directory.
-Fresh-vs-historical: steps 0–14 are executed now on every run; SHA-verified historical receipts
+Fresh-vs-historical: steps 0–17 are executed now on every run; SHA-verified historical receipts
 certify file integrity of the long campaign sweeps, not their fresh recomputation. `census_independent.py` (bundled, runner step 11) is an
 algorithmically independent reimplementation covering all 89 levels; the original, methodologically
 independent implementation used during the verification campaign is not part of this package and
@@ -114,10 +134,15 @@ not part of the reproducible chain — no claim in either paper rests on it.
   (delete `data/l4/census_scan_v3.log` first). Expected totals: twenty-one primitive
   beyond-machinery orbits at `m ≤ 108`; seven open classes at `m ≤ 200`; ten primitive open rows
   (plus induced copies) at `m ≤ 250`, matching the manuscript's wall display and table.
+  Vocabulary, used consistently: the RESIDUAL after the deep tiers is **ten** primitive classes;
+  the two closed by the paper's propositions leave **eight** FINAL open classes. "ν ∉ S_m" holds
+  for those eight (the `m=210` class `(1,79,109,121,151,169)` is in the residual ten but has
+  ν ∈ S₂₁₀ — which is exactly why the proposition closes it).
 - `data/l4/receipts_even/` — pinned historical logs of the exchange scan and the deep negative
   sweeps behind the wall structure (see `PROVENANCE.md` there).
-- Deep-closure witnesses: the routes of `data/l4/CLOSED_LEDGER.tsv`; the ten open primitives carry
-  independent modular kernel witnesses (runner step 9).
+- Deep-closure witnesses: the routes of `data/l4/CLOSED_LEDGER.tsv`; the eight FINAL open
+  primitives carry independent modular kernel witnesses (runner step 9), as do the two residual
+  classes the propositions close.
 
 ## Full tier (hours; the deep negative sweeps)
 
@@ -135,6 +160,12 @@ not part of the reproducible chain — no claim in either paper rests on it.
 - `data/l4/P1_certificate.json` — the stored 40-generator certificate for the degree-210 class
   (re-derived live by steps 4 and 9).
 - `data/l4/census_receipt_odd21_199.txt` — the Theorem B census receipt (above).
+
+## License
+
+`LICENSE` in this directory: MIT for the code (`.py`, `.sh`), CC BY 4.0 for the data, receipts
+and documentation. At acceptance the package is additionally deposited under a permanent
+identifier (DOI) as an immutable release carrying the checksums of this submission.
 
 ## Provenance
 

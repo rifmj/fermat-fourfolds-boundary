@@ -34,10 +34,13 @@ proof}
 \begin{document}
 \raggedbottom\vfuzz=3pt
 \begin{abstract}
-Let $X^4_m=\{x_0^m+\dots+x_5^m=0\}\subset\PP^5$ be the Fermat fourfold of degree $m$. We prove
-the Hodge conjecture for $X^4_m$ for every odd $m\le199$.
+Let $X^4_m=\{x_0^m+\dots+x_5^m=0\}\subset\PP^5$ be the Fermat fourfold of degree $m$. We give a
+computer-assisted proof of the Hodge conjecture for $X^4_m$ for every odd $m\le199$: three
+geometric closure criteria are combined with an exhaustive machine census of the Hodge
+$(2,2)$-orbits, which is accompanied by a completeness proof and by re-verifiable per-orbit
+certificates.
 
-The proof introduces three closure mechanisms for Hodge $(2,2)$-characters. First, if the
+The three closure mechanisms for Hodge $(2,2)$-characters are as follows. First, if the
 character multiset splits into two zero-sum triples, then the corresponding rational Hodge
 block is transported from a $(1,1)$-substructure of a product of Fermat curves and is therefore
 algebraic. Second, algebraicity follows for characters that, after adjoining two vanishing
@@ -46,10 +49,21 @@ exceptional class at $m=33$ has a lift to level $66$ that is quasi-decomposable;
 algebraicity then descends along the finite morphism $X^4_{66}\to X^4_{33}$.
 
 Together with the known decomposable, quasi-decomposable, and standard cases, these criteria
-cover all odd degrees $m\le199$. This is established by a complete computer-assisted census,
-accompanied by a completeness proof for the enumeration, re-verifiable per-orbit certificates
-(positive witnesses and, for the beyond-machinery orbits, the negative screenings), and an
-algorithmically independent reimplementation reproducing the census in full.
+cover all odd degrees $m\le199$. The census runs over the $89$ machine-examined levels
+$21\le m\le199$, $m\neq23$ (smaller odd degrees and $m=23$ are classical), classifies all
+$78{,}299$ Galois-orbit representatives, and isolates \emph{thirteen} orbits beyond
+decomposability, quasi-decomposability and Aoki's standard cycles: six close by the $*$-split
+criterion and the remaining \emph{seven} by the two-pair and level-lifted closures with level
+transport, leaving \emph{none}. Each
+classification carries a machine-checked witness --- positive for the classified orbits,
+re-established negative screenings for the terminal ones --- The enumeration is reproduced by two further
+implementations: an algorithmically independent census over all $89$ levels, and a direct
+brute-force enumeration --- every sorted zero-sum sextuple generated exhaustively --- through
+$m=143$, re-run live through $m=45$. Seven of the thirteen are gap
+classes outside Aoki's standard lattice calculus --- the $m=33$ witness with its inflations at
+$99,165$, the first $m=39$ orbit with $117,195$, and the $\Q(\zt_{21})$ orbit at $m=105$ ---
+and are new to the author's knowledge; for the other six algebraicity is also derivable from
+that calculus, the explicit presentations given here being the new content.
 Finally, an exact Jacobi-sum computation at $p=67$ shows that no cycle defined over
 $\Q(\zt_{33})$ projects nontrivially onto the exceptional $m=33$ block. More generally, for every finite
 extension of $\Q(\zt_{33})$ over which a certifying cycle is defined, every residue degree
@@ -83,7 +97,26 @@ Theorems~\ref{thm:A}--\ref{thm:App} $+$ census & this paper & the residual odd o
 \bottomrule
 \end{tabular}
 \end{center}
-We work in his semigroup formalism and prove:
+We work in his semigroup formalism. The main result is the following.
+
+\begin{theorem}[main theorem]\label{thm:main}
+For every odd $m$ with $3\le m\le199$ the Hodge conjecture holds for the Fermat fourfold
+$X^4_m$.
+\end{theorem}
+\noindent It follows from the three closure criteria below (Theorems~\ref{thm:A},
+\ref{thm:Aprime}, \ref{thm:App}), the level-transport lemmas, and the census
+(Theorem~\ref{thm:B}), which certifies that these criteria and the known machinery leave no
+orbit uncovered; odd degrees below the census range are classical
+(\cite[Thms.~2.6--2.7]{daSilva}: $m\le20$, and $m$ prime --- which covers $m=23$). What is genuinely new is delimited as follows: the
+level-lifted closure of the $m=33$ class (Theorem~\ref{thm:App}) is a new mechanism; the
+$*$-split criterion (Theorem~\ref{thm:A}) is a new criterion extracted from the classical
+Shioda--Katsura correspondence; the two-pair presentations (Theorem~\ref{thm:Aprime}) are new
+explicit applications of Aoki's calculus; and the census with its certificates is a new
+computational classification. Of the orbits they close, those at $m=33$ (with $99,165$), the
+first orbit at $m=39$ (with $117,195$), and the $\Q(\zt_{21})$ orbit at $m=105$ are gap
+classes --- outside the standard lattice calculus --- while the second $m=39$ orbit (with $117,195$), $m=45$
+(with $135$) and the $\Q(\zt_7)$ orbit at $m=105$ are also derivable from
+\cite[Lem.~4.1(iii)]{Aoki00}, the contribution there being the explicit presentations. We prove:
 
 \medskip
 \noindent\emph{Notation.} Throughout $m\ge3$ ($m\le2$ gives a hyperplane or a smooth quadric,
@@ -100,7 +133,9 @@ $\omega_a(Z)\neq0$. Three levels are kept distinct throughout: eigenlines are in
 \emph{ordered} tuples ($\V(b)\neq\V(b')$ for distinct ordered characters even when they agree as
 multisets; coordinate permutations are realized by automorphisms of $X^4_m$, which is why claim is
 invariant under them, and it is likewise a Galois-orbit-level property); $M(a):=\bigoplus_b\V(b)$
-is the rational Galois block --- the sum over the distinct \emph{ordered} conjugates $b=ta$,
+is the rational Galois block, with rational form
+$M(a)_\Q:=M(a)\cap H^4(X^4_m,\Q)$ (the sum is over a full Galois orbit, so
+$M(a)_\Q\otimes\C=M(a)$; the same applies verbatim to the grade-$2$ blocks used below) --- the sum over the distinct \emph{ordered} conjugates $b=ta$,
 $t\in(\Z/m)^\times$, their number being the index of the ordered stabilizer
 $\{t:ta=a\text{ coordinatewise}\}$, \emph{not} the number of multiset classes; and the census
 classifies sorted representatives modulo both actions --- legitimate since claim is invariant
@@ -113,7 +148,8 @@ entry tuples; characters of $X^r_m$ and $X^s_m$ concatenate to one of $X^{r+s+2}
 Aoki's indexing by cohomological degree), grades adding \cite[\S1]{Aoki87} --- and, for even $s$, $\Ds^s_m$ his set of
 $(s+2)$-entry characters that are coordinate permutations of $(a_0,-a_0,\dots,a_{s/2},-a_{s/2})$
 ($s/2+1$ vanishing pairs), represented by linear cycles \cite[\S1, Thm.~1-1]{Aoki87}; only $\Ds^2_m$
-is used below. $M_m$ is da Silva's additive semigroup of solutions $(x_1,\dots,x_{m-1};y)$, $y>0$, of
+is used below. $M_m$ is da Silva's additive semigroup of solutions $(x_1,\dots,x_{m-1};y)$ in non-negative
+integers $x_i$ (multiplicity vectors), $y>0$, of
 $\sum_i\fr{ti}\,x_i=my$ for all $t$ (multiplicities intrinsic), $M_m(g)$ its grade-$g$ part; a class is
 \emph{decomposable} if it splits in $M_m$ and \emph{quasi-decomposable} if it splits after adjoining
 one element of $M_m(1)$ --- da Silva's $(P1)/(P2)$ \cite[Def.~2.4]{daSilva}. $\#$ is his pairing: for
@@ -153,6 +189,31 @@ calculus, not about the character group). The witness $w=(1,4,16,22,25,31)$ belo
 conjugate $7w$ of da Silva's displayed
 representative $(7,10,13,19,22,28)\sim7w$ of \cite[Prop.~3.4 (= Prop.~3.6 of the arXiv version)]{daSilva}.
 
+\medskip
+\noindent\emph{Symbols at a glance.}
+\begin{center}\small
+\begin{tabular}{l>{\raggedright\arraybackslash}p{10.4cm}}
+\toprule
+$a=(a_0,\dots,a_5)$ & an \emph{ordered} character; $\V(a)$ its one-dimensional eigenline\\
+$M(a)$ & the rational Galois block $\bigoplus_{t}\V(ta)$ (sum over distinct ordered conjugates)\\
+$\mathrm{claim}(a)$ & $\V(a)$ is spanned by algebraic cycle classes\\
+grade $g$ & $\sum_i\fr{ta_i}=gm$ for every unit $t$ (the Hodge condition)\\
+$B^4_m$ & the grade-$3$ Hodge characters of $X^4_m$\\
+$M_m$, $M_m(g)$ & da Silva's semigroup of solutions and its grade-$g$ part\\
+$\Ds^s_m$ & Aoki's all-vanishing-pairs classes (linear cycles); only $\Ds^2_m$ is used\\
+$*$, $\#$ & juxtaposition of characters; da Silva's pairing on $U^{r,s}_m$\\
+$\sigma_{p,x}$ & Aoki's standard characters (Proposition~\ref{prop:D})\\
+$\nu(a)\in\Z^{m-1}$ & the multiplicity vector (additive: $\nu(\alpha*\beta)=\nu(\alpha)+\nu(\beta)$)\\
+$S_m$ & Aoki's lattice, spanned by the pair and standard vectors (Prop.~\ref{prop:ident})\\
+\emph{gap class} & a Hodge class with $\nu\notin S_m$ (nonzero in Aoki's gap group $A_m/S_m$)\\
+$J_a$, $\chi_a$ & the unnormalized and the Tate-normalized Jacobi-sum Hecke characters\\
+$u(a,p)$ & the local scalar $j(a)/p^{n/2}$ on $\V(a)(n/2)$, $n=\#\text{entries}-2$
+($n=4$ for sextuples, $n=2$ for grade-$2$ quadruples)\\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
 \begin{theorem}[$*$-split closure]\label{thm:A}
 Let $a$ be a Hodge $(2,2)$ character of $X^4_m$, $m$ arbitrary, whose $6$-multiset splits as two zero-sum
 triples $\beta'\uplus\gamma'$. Then the rational Hodge classes of $M(a)$ are algebraic:
@@ -162,7 +223,9 @@ furnished by Lefschetz $(1,1)$ (no single ruled-surface representative is claime
 \end{theorem}
 In particular the classes at $m=39,117,195$ (two orbits each), none quasi-decomposable or
 standard, are closed; the orbit of $(1,7,16,22,34,37)$ is a certified gap family ($\nu\notin S_m$ at $39$ and at its
-inflations $117,195$ --- all verifier-backed), not covered by
+inflations $117,195$); so is the $m=33$ witness of Theorem~\ref{thm:App}, at $33$ and at its
+inflations $99,165$ --- every one of these verdicts carries a modular kernel witness in the
+ancillary verifier, together with the doubling certificate $2\nu\in S_m$, not covered by
 the published mechanisms compared in \S\ref{sec:dossier} (to the author's knowledge), while the
 second orbit's $\nu$ lies in $S_{39}$ (an explicit six-generator $\pm1$ certificate), so its algebraicity is
 also derivable from the standard calculus (Lemma~4.1(iii) of \cite{Aoki00}) --- the closure certificates and the join-transport construction scheme are new for both.
@@ -192,9 +255,11 @@ $105$ & $(1,22,43,64,90,95)$ & $(5,100),(20,85)$ & $(1,22,43,64,85,100)\uplus(5,
 ---none quasi-decomposable, standard, or Theorem~\ref{thm:A}-splittable: closing, with the
 induced $m=135$ copy, the $p=5$-standard-block classes of the census. Of these, the
 $\Q(\zt_{21})$ orbit at $105$ is a certified gap class, not covered by the published mechanisms
-compared in \S\ref{sec:dossier} (to the author's knowledge); $m=45$ and
-$135$ fall under the degree forms of \cite[Thm.~0.1(i)]{Aoki00}, and the $\Q(\zt_7)$ orbit's $\nu$
-lies in $S_{105}$, so for those three the algebraicity is also derivable from \cite{Aoki00} and the
+compared in \S\ref{sec:dossier} (to the author's knowledge); $m=45$, $135$ and the $\Q(\zt_7)$ orbit at $105$
+have $\nu\in S_m$ (explicit $\pm1$ certificates, re-summed by the ancillary verifier), so for
+those three the algebraicity is also derivable from \cite[Lem.~4.1(iii)]{Aoki00} --- and, for
+$45$ and $135$, from the degree forms of \cite[Thm.~0.1(i)]{Aoki00} via the reduction opening
+its \S4 proof (quoted in Appendix~\ref{app:aoki}) --- the
 explicit two-pair presentations are the new content.
 
 \begin{theorem}[level-lifted closure; the $m=33$ witness]\label{thm:App}
@@ -216,8 +281,8 @@ $(x_i)\mapsto(x_i^2)$ (Lemma~\ref{lem:descent}).
 For every odd $m\le199$, every grade-$3$ Hodge $(2,2)$ class of $X^4_m$ is algebraic: the classes
 beyond $\text{decomposable}\cup\text{quasi}\cup\text{standard}$ are exhausted by
 Theorems~\ref{thm:A}, \ref{thm:Aprime}, \ref{thm:App} and level transport (the inflation/descent
-pair). In particular the Hodge conjecture holds \emph{in full} for every Fermat fourfold of
-odd degree $\le199$: in codimension $2$ the non-primitive summand of $H^4$ is spanned by the
+pair). In particular Theorem~\ref{thm:main} holds --- the Hodge conjecture is true \emph{in full}
+for every Fermat fourfold of odd degree $\le199$: in codimension $2$ the non-primitive summand of $H^4$ is spanned by the
 algebraic class $h^2$, so the statement follows from the primitive one; codimension $1$ is
 Lefschetz $(1,1)$; and codimension $3$ follows from codimension $1$ by hard Lefschetz ---
 $L^2\colon H^2(\Q)\xrightarrow{\ \sim\ }H^6(\Q)$ is an isomorphism of Hodge structures, so
@@ -228,14 +293,17 @@ $X$ and of a point.)
 
 \begin{theorem}[field obstruction; Question~1]\label{thm:C}
 Let $a_0=(7,10,13,19,22,28)=7w$ be da Silva's representative of the $m=33$ orbit. No algebraic cycle
-defined over $\Q(\zt_{33})$ has nonzero projection onto the Galois orbit of $\V(a_0)$: Frobenius at any
-prime above $67$ acts on every conjugate eigenline by a primitive sixth root of unity, of exact
-order $6$ --- an exact certificate $u(a_0,67)=1+\zt_3=\zt_6$ (for the pinned character
+defined over $\Q(\zt_{33})$ --- a cycle of codimension $2$ with $\Q$-coefficients,
+$Z\in CH^2(X^4_{33,\Qbar})_\Q$ fixed by $G_{\Q(\zt_{33})}$ --- has nonzero projection onto the
+Galois orbit of $\V(a_0)$: \emph{geometric} Frobenius $\mathrm{Frob}^{\mathrm{geom}}_{\mathfrak p}$
+at any prime $\mathfrak p$ above $67$ acts on every conjugate eigenline by a primitive sixth
+root of unity, of exact order $6$ --- an exact certificate $u(a_0,67)=1+\zt_3=\zt_6$ (for the pinned character
 choice of \S\ref{sec:C}) computed
 in $\Z[x]/\Phi_{33}$ with no floating point. (Under an alternative Jacobi-sum definition
 $j_{\mathrm{alt}}=-j$ the formula relating $j_{\mathrm{alt}}$ to geometric Frobenius acquires
-the compensating sign; the geometric eigenvalue remains $\zt_6^{\pm1}$.) Since $W$ has $\Q$-coefficients, $[W]$ and all its translates
-have zero projection: \emph{the answer to Question~1 is NO at $m=33$}.
+the compensating sign; the geometric eigenvalue remains $\zt_6^{\pm1}$.) Since $W$ --- da Silva's candidate cycle, defined over $\Q$ by explicit equations
+\cite[Question~1]{daSilva} --- and all its $\Q(\zt_{33})$-rational translates are fixed by
+$G_{\Q(\zt_{33})}$, their classes have zero projection: \emph{the answer to Question~1 is NO at $m=33$}.
 \end{theorem}
 \begin{corollary}[local residue-degree obstruction]\label{cor:resdeg}
 The obstruction is local and exact: if a cycle defined over a finite extension
@@ -264,7 +332,7 @@ grade-$3$ standard classes exist iff $5\mid m$ and $m>5$.
 \end{proposition}
 
 \medskip
-\noindent\emph{Verification status.} Theorem~\ref{thm:A}: proved (transport pinned to the Shioda--Katsura
+\noindent\emph{Computational verification and reproducibility (summary).} Theorem~\ref{thm:A}: proved (transport pinned to the Shioda--Katsura
 primary text). Theorem~\ref{thm:Aprime}: proved (a citation chain through Aoki's
 Theorems~1-1, 1-4(i),(ii), 2-1 \cite{Aoki87} $+$ Lefschetz $(1,1)$ $+$ an inflation lemma; all
 identities verified exactly, including $u(a,p)=u(S,p)u(Q,p)$).
@@ -295,15 +363,35 @@ strictly stronger than $px\not\equiv0$: it excludes $x\equiv d/2\pmod d$. Every 
 contains a vanishing pair --- $(x+k_1d)+(x+k_2d)\equiv0\pmod m$ reduces to $1+2j+k_1+k_2\equiv0\pmod5$
 for $x=d/2+jd$, solvable with $0\le k_1<k_2\le4$ since $k_1+k_2$ ranges over all residues mod~$5$ ---
 so it is decomposable, hence algebraic for the trivial reason, and the census classifier (which tests
-decomposability first) is unaffected. (Only $p=5$ yields grade-$3$ sextuples, so this is the only
+decomposability first) is unaffected. The lattice is likewise unaffected: the implemented
+generating family follows the parametrization of \cite[\S2]{Aoki00} (nonzero entries only),
+and at every level where a verdict is quoted here the two conventions span the \emph{same}
+lattice --- the excluded $\sigma_{p,d/2}$ lies in the span of the admissible generators
+(checked at $m=28,70,110,114,168,210,220$; equal ranks, identical verdicts). (Only $p=5$ yields grade-$3$ sextuples, so this is the only
 case the classifier meets.)
 \end{remark}
 
 \section{The \texorpdfstring{$*$}{*}-split closure theorem (Theorem~\ref{thm:A})}\label{sec:A}
 
-The proof factors through the following transport lemma, which records separately the passage from complex eigenlines to rational algebraic classes: which objects
-are correspondences, over which fields they are defined, where the Tate twist sits, and why the
-scalar onto $\V(a)$ is nonzero.
+The proof is the composite
+\[
+B(a)_\Q\;\subset\;\mathrm{cl}\,CH^1(C\times C)_\Q
+\;\xrightarrow{\ f\ }\;M(a)_\Q ,
+\]
+and it requires exactly five checkpoints, which the transport lemma below supplies in order:
+(1)~$B(a)$ is defined over $\Q$, not merely a sum of complex eigenlines (part~(ii));
+(2)~$B(a)_\Q$ consists of divisor classes, by Lefschetz $(1,1)$ (part~(ii));
+(3)~$f$ is induced by an algebraic correspondence, is $\Q$-linear on rational Betti cohomology
+and is $G$-equivariant, so it matches the eigenline indexing on both sides (the paragraph before
+(i) and part~(iii)); (4)~$f$ is nonzero --- indeed an isomorphism --- on each one-dimensional
+eigenline, and the summands of $B(a)$ and $M(a)$ correspond bijectively, so $f$ restricts to an
+isomorphism $B(a)\xrightarrow{\sim}M(a)$ of complex vector spaces; since $f$ is $\Q$-linear on
+rational Betti cohomology and both blocks are defined over $\Q$ (part~(ii) for $B(a)$; $M(a)$ is
+the Galois orbit sum of $\V(a)$), it carries $B(a)_\Q$ isomorphically \emph{onto} $M(a)_\Q$
+(parts~(i)--(iii)); (5)~the image of a $\Q$-combination of divisor
+classes under an algebraic correspondence is the class of an algebraic cycle (part~(iv)).
+The lemma also records which objects are correspondences, over which fields they are defined,
+where the Tate twist sits, and why the scalar onto $\V(a)$ is nonzero.
 
 \begin{lemma}[rational transport]\label{lem:transport}
 Let $C=X^1_m$ ($m$ arbitrary), $a=\beta'\!*\gamma'$ a Hodge $(2,2)$ character split into two zero-sum
@@ -332,8 +420,12 @@ $(1,1)$;
 \item[(ii)] $B(a)$ is Galois-stable, so $B(a)_\Q:=B(a)\cap H^2(C\times C,\Q)$ satisfies
 $B(a)_\Q\otimes\C=B(a)$, and by Lefschetz $(1,1)$ every element of $B(a)_\Q$ is a $\Q$-combination
 of divisor classes on the surface $C\times C$;
-\item[(iii)] $f$ is induced by an algebraic correspondence (the blow-up--quotient--blow-down chain
-of \cite{SK}, defined over the cyclotomic field of the join construction), and it is a
+\item[(iii)] $f$ is induced by an algebraic correspondence: writing $\Gamma_f\in
+CH^3\bigl((C\times C)\times X^4_m\bigr)_\Q$ for the cycle class of the joining-line
+construction --- the blow-up--quotient--blow-down chain of \cite{SK}, defined over
+$\Q(\zt_{2m})$, of codimension $3$ in the $6$-fold $(C\times C)\times X^4_m$, and taken with
+$\Q$-coefficients so that the factor $m$ of \cite[Thm.~2.2(c)]{daSilva} may be normalized away
+--- we have $f=(\Gamma_f)_*$ on rational Betti cohomology. It and it is a
 $G$-equivariant \emph{isomorphism} onto its structural summand \cite[Thm.~2.2]{daSilva}: it
 maps each one-dimensional eigenline $\V(t\beta')\otimes\V(t\gamma')$ isomorphically --- in
 particular by a nonzero scalar --- onto $\V(ta)$, hence carries $B(a)$ onto the corresponding
@@ -404,14 +496,13 @@ Lemma~\ref{lem:infl} and Thm.~2-1 cover every admissible block.)
 claim$(\alpha*\delta)$, then claim$(\alpha)$}---applied with $\alpha=a$, $s=2$.
 \end{proof}
 \begin{lemma}[inflation]\label{lem:infl}
-Let $m=e\,m'$ and $\beta$ a level-$m'$ character with every entry of $e\beta$ nonzero mod $m$. Then
+Let $m=e\,m'$ and $\beta$ a character of level $m'$ (all entries nonzero mod $m'$, so all
+entries of $e\beta$ are nonzero mod $m$). Then
 $\mathrm{claim}_{m'}(\beta)\Rightarrow\mathrm{claim}_m(e\beta)$.
 \end{lemma}
 \begin{proof}
 $\pi\colon X^n_m\to X^n_{m'}$, $(x_i)\mapsto(x_i^e)$ is a morphism with $\pi(\zt x)=\zt^e\pi(x)$ for
-$\zt\in\mu_m$, so $\pi^*$ maps $\V(\beta)$ into $\V(e\beta)$ equivariantly (the nonzero-entries
-hypothesis is what makes $e\beta$ a legitimate primitive character, so the target eigenline
-exists); $\pi$ finite surjective gives
+$\zt\in\mu_m$, so $\pi^*$ maps $\V(\beta)$ into $\V(e\beta)$ equivariantly (the entries of $e\beta$ are nonzero, so the target eigenline exists); $\pi$ finite surjective gives
 $\pi_*\pi^*=(\deg\pi)\,\mathrm{id}\neq0$ on $\Q$-cohomology, so $\pi^*\xi$ spans $\V(e\beta)$, and for a
 representing cycle $Z$, $\omega_{e\beta}(\pi^*Z)=\pi^*(\omega_\beta(Z))\neq0$. (Here $\pi^*Z$
 is the pullback in $CH_\Q$: $\pi$ is a finite surjective morphism of smooth projective
@@ -422,7 +513,10 @@ da Silva's quasi-decomposability adjoins one pair and splits $4+4$; the two-pair
 the definition. The three presentations were found by exhaustive iterated-closure search and are unique
 per class; equivalently the three classes are sum-preserving two-entry surgeries of standard sextuples
 ($(10,40)\mapsto(20,30)$ at $45$; $(45,90)\mapsto(50,85)$, $(85,100)\mapsto(90,95)$ at $105$). The characters multiply
-exactly: $\chi_a=\chi_S\chi_Q$, i.e.\ $u(a,p)=u(S,p)\,u(Q,p)$ at every split prime. The surviving $m=33$ class
+exactly: $\chi_a=\chi_S\chi_Q$, i.e.\ $u(a,p)=u(S,p)\,u(Q,p)$ at every split prime. (Juxtaposition
+gives $\chi_a\chi_\delta=\chi_S\chi_Q$ for the adjoined $\delta=p_1*p_2$; the displayed form uses
+$\chi_\delta=\chi^{k+\ell}(-1)=1$ --- automatic for odd $m$, and at $m=66$ because
+$k+\ell=26$ is even.) The surviving $m=33$ class
 resists this genre exhaustively (no augmentation by up to five vanishing pairs admits a certifying
 partition; $5\nmid33$, so no standard blocks exist).
 \end{remark}
@@ -453,14 +547,14 @@ $b_3=c_3=33=m/2$ is therefore legitimate. This is the one point where the even l
 essential: no self-pair exists at an odd level (Remark~\ref{rem:App}(iv)).
 \end{remark}
 \begin{lemma}[descent]\label{lem:descent}
-Let $m=e\,m'$ and $\beta$ a level-$m'$ character with every entry of $e\beta$ nonzero mod $m$. Then
+Let $m=e\,m'$ and $\beta$ a character of level $m'$ (equivalently: $e\beta$ has content $e$
+and all entries nonzero mod $m$). Then
 $\mathrm{claim}_m(e\beta)\Rightarrow\mathrm{claim}_{m'}(\beta)$.
 \end{lemma}
 \begin{proof}
 $\pi\colon X^n_m\to X^n_{m'}$, $(x_i)\mapsto(x_i^e)$ is a finite surjective morphism
 ($\sum x_i^m=\sum(x_i^e)^{m'}$ identically) intertwining the group actions along the $e$-th-power
-surjection $G_m\twoheadrightarrow G_{m'}$; hence $\pi_*\V(e\beta)\subseteq\V(\beta)$ (again the
-nonzero-entries hypothesis makes $e\beta$ a legitimate primitive character). Since
+surjection $G_m\twoheadrightarrow G_{m'}$; hence $\pi_*\V(e\beta)\subseteq\V(\beta)$ (again: the entries of $e\beta$ are nonzero, so $\V(e\beta)$ exists). Since
 $\pi_*\pi^*=(\deg\pi)\,\mathrm{id}\neq0$ and $\pi^*\V(\beta)=\V(e\beta)$ with both eigenlines
 $1$-dimensional, $\pi_*\colon\V(e\beta)\xrightarrow{\ \sim\ }\V(\beta)$. Proper pushforward carries
 algebraic cycle classes to algebraic cycle classes ($\mathrm{cl}\circ\pi_*=\pi_*\circ\mathrm{cl}$),
@@ -490,7 +584,7 @@ For each odd $m$: enumerate grade-$3$ Hodge multisets (meet-in-the-middle on hal
 reduce to Galois orbits; classify decomposable $\to$ quasi $\to$ standard (Prop.~\ref{prop:D}) $\to$
 $*$-split (Thm.~\ref{thm:A}) $\to$ survivors; the surviving orbits are then closed by
 Theorems~\ref{thm:Aprime}/\ref{thm:App} and level transport. The engine reproduces
-the Shioda/da Silva anchors ($(P_m)$ at $m=9,21,27$; the $m=33$ witness) and was reproduced, on all $89$
+the Shioda/da Silva anchors inside the census range ($(P_m)$ at $m=21,27$; the $m=33$ witness) and was reproduced, on all $89$
 odd levels of the census list ($21\le m\le199$, $m\neq23$; the omitted small levels and $m=23$ are
 classical \cite[Thms.~2.6--2.7]{daSilva}), by a second, algorithmically independent
 implementation (structured-array meet-in-the-middle), and, as a third method, by a direct
@@ -561,7 +655,8 @@ above, which reduces ``no orbit is missed'' to the definitional correctness of t
 generator and canonizer. (3)~The \emph{independent reimplementation}: an algorithmically
 independent second program regenerates the census from scratch and matches it level by level
 (its complete $89$-level log ships; the runner re-executes it live at anchor levels and
-regenerates a fresh sub-range against the summary table below). (4)~\emph{Checksummed receipts}
+regenerates a fresh sub-range against the per-level summary table of
+Appendix~\ref{app:census}). (4)~\emph{Checksummed receipts}
 of the historical campaign runs: a checksum certifies file integrity, never recomputation ---
 recomputation is what tiers (1)--(3) execute. A per-level summary table
 (\texttt{census\_level\_summaries.json}: representative count, tally by kind, survivor list,
@@ -589,48 +684,6 @@ two $*$-split classes (closed by Theorem~\ref{thm:A}) and nothing else. They ind
 conclusion of Theorem~\ref{thm:B} also holds at $m=231,273,297$; the theorem itself does not
 depend on these levels.
 
-\section{Computational outlook: the even-degree boundary through degree 250}\label{sec:even}
-
-The odd-degree theorems are complete. The even-degree boundary is a different landscape, and this
-closing section only \emph{reports its computed map} --- engines, closure ledger, certificates,
-and pinned receipts ship in the ancillary --- deferring systematic treatment (full statements and
-proofs of the closure and wall structure) to the companion paper \cite{BNeven}, with which this
-note shares its ancillary package. Nothing in Theorems~\ref{thm:A}--\ref{thm:C} or in the odd
-census depends on this section, and every computational claim below is backed
-receipt-by-receipt within the ancillary of \emph{this} submission --- the companion adds
-statements and proofs, not data. All censuses use the
-parity-corrected decomposability test (the self-paired element $m/2$; part~(i) of
-Lemma~\ref{lem:complete} covers both parities); every lattice verdict below carries an
-independent certificate in the ancillary --- a modular kernel witness for each non-membership, a
-re-summed integer combination for each membership. One statement --- the identification of the implemented lattice with Aoki's $S_m$ --- is
-load-bearing also for the odd-degree novelty classification above, and is therefore proved in
-this paper, in Appendix~\ref{app:ident} (Proposition~\ref{prop:ident}).
-
-\emph{The computed map} {\rm(computed; engines, closure ledger, and receipts in the ancillary;
-full statements and proofs in \cite{BNeven})}. The even census finds thirty-eight primitive
-beyond-machinery orbits through degree $250$ ($21$ at $m\le108$, beginning at $m=50$ --- the odd
-law ``survivor $\Rightarrow3\mid m$'' fails in the even sector --- then $14$ through $200$ and
-$3$ more through $250$). Iterated partition certificates of the
-Theorem~\ref{thm:Aprime}/\ref{thm:App} kind close all but ten, and an exhaustive scan of
-claim-equivalence moves organizes the residual into three walls. Two more classes then close:
-$m=168$ falls under Aoki's published Theorem~0.1(i) \cite{Aoki00} ($168=2^3\cdot3\cdot7$ has
-his degree form; the bridge to the Fermat varieties is quoted in Appendix~\ref{app:aoki},
-where two verified errata of the printed text are also recorded), and the isolated degree-$210$
-class closes by an explicit $40$-generator $\pm1$ lattice certificate $\nu\in S_{210}$ (pairs
-and standard elements only, converted into a literal Aoki chain by the negation closure), whence
-$\V$ is algebraic by Theorems~1-4(i),(ii) of \cite{Aoki87}. What remains \emph{unresolved by
-the implemented closure family and the cited published theorems} is eight certified gap classes
---- all with $\nu\notin S_m$, $2\nu\in S_m$ (the doubling holds for every Hodge class by
-\cite[Thm.~2.1]{Aoki00}), all outside the degree forms of Aoki's theorem --- in the three walls
-$W_{70},W_{110},W_{114}$.
-
-Qualitatively, the even sector differs by exactly the feature that made Theorem~\ref{thm:App}
-work: the self-paired element $m/2$ exists only at even levels
-(Remark~\ref{rem:selfpair}), so quasi-decomposition has a channel there that no odd level
-provides --- which is why the odd boundary closes and the even one, at present, does not. The
-wall table, the per-class dossiers, the deep negative sweeps, and the independent even-parity
-verification are in \cite{BNeven}.
-
 \section{The field obstruction and Question~1 (Theorem~\ref{thm:C})}\label{sec:C}
 
 \emph{Normalization.} Fix a split prime $p\equiv1\bmod m$ and a multiplicative character
@@ -641,10 +694,16 @@ S_0(a)=\sum_{\substack{v\in(\F_p^\times)^6\\ v_0+\dots+v_5=0}}\ \prod_{i}\chi^{a
 \]
 (the scaling $v\mapsto\lambda v$ is free since $\sum a_i\equiv0$, so $S_0$ is exactly
 divisible by $p-1$; the certificate asserts this). By Weil's count of points of diagonal
-hypersurfaces \cite[pp.~500--502]{Weil49}, \cite{Weil52}, \emph{geometric} Frobenius at $p$
+hypersurfaces \cite[pp.~500--502]{Weil49}, \cite{Weil52},
+\[
+\#X^4_m(\F_p)=1+p+p^2+p^3+p^4+\sum_a j(a),
+\]
+the sum over all $a=(a_0,\dots,a_5)$ with $a_i\neq0$ and $\sum a_i\equiv0$; the sign in front
+of the character sum is $+1$ in our even dimension, which is what fixes the normalization below.
+(The identity is verified exactly in the ancillary at $m=3$, $p=7$, where the left side is
+computed by brute force: $2801+889=3690$.) Consequently \emph{geometric} Frobenius at $p$
 acts on the \'etale eigenspace $\V(a)\subset H^4_{\mathrm{prim}}$ by $j(a)$, with
-$|j(a)|=p^2$ in every embedding --- in our even dimension ($n=4$) the point-count sign is $+1$
---- hence on $\V(a)(2)$ by $u(a,p)=j(a)/p^2$ (arithmetic Frobenius acts by the inverse scalar;
+$|j(a)|=p^2$ in every embedding --- hence on $\V(a)(2)$ by $u(a,p)=j(a)/p^2$ (arithmetic Frobenius acts by the inverse scalar;
 every statement in this paper is about geometric Frobenius); the conjugate eigenlines carry
 $u(ta,p)$, computed by replacing $\chi$ with $\chi^t$. Under an inhomogeneous convention
 ($\sum v_i=1$) the Jacobi symbol changes by a sign that the point-count formula compensates;
@@ -677,16 +736,23 @@ values $\zt_6^{\pm1}$, each on ten eigenlines. The certificate asserts \emph{exa
 on every conjugate --- $(u')^3=-1$, $(u')^6=1$, $u'\neq1$ --- and the geometric scalar is
 independent of the Jacobi-sum sign convention, so each eigenvalue is a primitive sixth root of
 unity, hence $\neq1$. A Frobenius-fixed vector scaled by $\neq1$ vanishes componentwise.
+Finally, the choice of $\mathfrak p\mid67$ is immaterial: the primes above $67$ in
+$\Q(\zt_{33})$ form one $\Gal(\Q(\zt_{33})/\Q)$-orbit, and replacing $\mathfrak p$ conjugates
+the chosen character $\chi$, hence permutes the twenty computed values $u(ta_0,67)$ among
+themselves; since \emph{each} of them has exact order $6$, the conclusion is the same at every
+prime above $67$.
 \end{proof}
-$W$ has $\Q$-coefficients and its translates are $\Q(\zt_{33})$-rational; by the census the $m=33$ class
+$W$ is defined over $\Q$ and its translates are $\Q(\zt_{33})$-rational; by the census the $m=33$ class
 is the unique non-quasi non-standard class at that degree, so its projection vanishes and Question~1 is
 answered negatively. The YES-branch would have proved the Hodge conjecture at these classes; the NO says
 only that this candidate cannot certify it, and imposes a sharp local residue-degree constraint
 on any number field of definition of a certifying cycle.
 
 \section{The closed classes' dossiers}\label{sec:dossier}
-\emph{The $m=33$ witness (closed by Theorem~\ref{thm:App})}: indicated eigenvalue field
-$\Q(\sqrt{-3})$ (a computed label), all
+\emph{The $m=33$ witness (closed by Theorem~\ref{thm:App})}: indicated eigenvalue field $\Q(\sqrt{-3})$ ---
+throughout, \emph{eigenvalue field} means the field generated by the computed values of
+$\chi_a$ at the sampled split primes, a numerical label and not the fixed field of the
+multiset stabilizer --- all
 entries $\equiv1\bmod3$; its Tate-normalized Jacobi-sum Hecke character $\chi_a$ is of
 finite order (see the Notation; cf.\ \cite{Weil52}), and its computed values at split primes
 lie in $\mu_6$: kernel primes occur
@@ -702,7 +768,7 @@ the Shioda--Katsura realization carries $\V(w)$ on CM abelian varieties of dimen
 $\Q(\sqrt{-3})$-Weil fourfold is known --- the route stays conditional on that open
 compression, and is now unnecessary.
 
-\emph{The closed classes $m=45,105$}: their exact eigenvalue fields $\Q(\zt_9),\Q(\zt_7),\Q(\zt_{21})$
+\emph{The closed classes $m=45,105$}: their indicated eigenvalue fields $\Q(\zt_9),\Q(\zt_7),\Q(\zt_{21})$
 (degrees $6,6,12$) exceed the imaginary-quadratic multiplication field required by the published
 algebraicity theorems for Weil-type classes known to us (Schoen \cite{Schoen}; Markman
 \cite{Markman1}); the CM-field secant-sheaf program \cite{Markman2}, which would reach larger fields,
@@ -723,7 +789,9 @@ constraints at the closed levels; explicit equations remain open.
 \section{Methods, code availability, and provenance}\label{sec:methods}
 Exact objects throughout (Gauss/Jacobi sums as algebraic integers; the decisive certificate in
 $\Z[x]/\Phi_{33}$ with no floating point; the exact-twist certificate framework follows the surface
-companion \cite{P1}); numerics corroborate or measure invariant lower bounds only.
+companion \cite{P1}); the only floating-point computation anywhere in the paper is the $30$-digit
+Gauss-sum cross-check of \S\ref{sec:C}, which corroborates a normalization and certifies
+nothing.
 Every proof-critical computational claim of Theorem~\ref{thm:B} carries either a stored
 per-orbit witness certificate or an algorithmically independent reimplementation; the runner
 re-executes the anchor levels live and re-verifies every stored witness and every supplied
@@ -731,11 +799,15 @@ certificate against the definitions.
 The census engines, the closure oracles, the lattice membership test, the exact Frobenius certificate,
 and a standalone verifier of every closure identity in this paper are provided as ancillary files
 (\texttt{anc/}; \texttt{run\_all.sh} reproduces the smoke tier --- identities, census anchors, both
-lattice verdicts, the Theorem~\ref{thm:C} certificate, the engine calibrations, the
-re-verification of all stored per-orbit witnesses including the survivor negatives, the
-independent census at anchor levels, the level-summary cross-check on a fresh sub-range, and the
-direct brute-force generator on every census level through $m=45$ ---
-in seconds on the reference machine whose measured runtimes the ancillary README reports;
+lattice verdicts, the Theorem~\ref{thm:C} certificate, the engine calibrations, the checksum
+manifest, the re-verification of all stored per-orbit witnesses (every stored class re-derived to
+be a grade-$3$ Hodge character, the per-level counts and tallies asserted, the survivor negatives
+re-screened), the independent modular-kernel lattice witnesses, the independent census at the
+anchor levels and at the even key levels, the level-summary cross-check on a fresh sub-range, the
+direct brute-force generator on every census level through $m=45$, the even-sector tier and
+reader tables, and a second independent implementation of the Theorem~\ref{thm:C} certificate ---
+in under a minute on the reference machine whose measured runtimes the ancillary README
+reports;
 \texttt{run\_full\_census.sh} is the archival tier, the
 complete from-scratch independent regeneration of all $89$ levels against the pinned summary
 hashes; the README records the reference configuration and the measured runtimes quoted in
@@ -744,15 +816,65 @@ artifacts; an algorithmically independent census reimplementation is bundled ---
 run ships as a checksummed receipt, and the runner re-executes it live at the anchor levels ---
 and the original implementation used during the verification campaign is methodologically
 independent of both --- a historical instrument, \emph{not} part of the shipped reproducible
-chain; no claim in this paper rests on it. This manuscript was prepared with AI assistance; all
-computational claims are backed by the ancillary code and receipts, and the author takes full
-responsibility for all proofs, code, and bibliographic claims.
+chain; no claim in this paper rests on it. \emph{Data and code availability.} The complete package --- engines, verifiers, certificates,
+receipts, checksum manifest, pinned dependencies, and a single-command runner --- is submitted
+as ancillary files with this manuscript and is licensed for reuse (see \texttt{LICENSE} there);
+at acceptance it will additionally be deposited in a public archive under a permanent
+identifier (DOI) as an immutable release, with the checksums of this submission. This
+manuscript was prepared with AI assistance; all computational claims are backed by the
+ancillary code and receipts, and the author takes full responsibility for all proofs, code, and
+bibliographic claims.
 
 \appendix
-\section{The cited Aoki statements}\label{app:aoki}
+\section{The cited statements of da Silva and Aoki}\label{app:aoki}
 
-For self-containedness we reproduce the exact statements used, in the numbering of the primary
-texts.
+For self-containedness we reproduce the exact statements used, in the numbering and notation of
+the primary texts.
+
+\emph{From \cite{daSilva}} (his $U^r_m$ is the set of characters of $X^r_m$, $C^n_m$ the
+subset whose eigenspaces are spanned by algebraic cycle classes, $B^n_m$ the Hodge characters;
+$\langle\;\rangle$ and the semigroup $M_m$ are as in our Notation):
+
+\begin{itemize}
+\item[--] \textbf{Theorem 2.2.} \emph{Let $n=r+s$ with $r,s\ge1$. Then there is an
+isomorphism}
+\[
+f\colon\bigl[H^{r}_{\mathrm{prim}}(X^r_m,\C)\otimes H^{s}_{\mathrm{prim}}(X^s_m,\C)
+\bigr]^{\mu_m}\ \oplus\ H^{r-1}_{\mathrm{prim}}(X^{r-1}_m,\C)\otimes
+H^{s-1}_{\mathrm{prim}}(X^{s-1}_m,\C)\ \xrightarrow{\ \sim\ }\ H^n_{\mathrm{prim}}(X^n_m,\C)
+\]
+\emph{with the following properties: {\rm(a)} $f$ is $G^n_m$-equivariant; {\rm(b)} $f$ is a
+morphism of Hodge structures of type $(0,0)$ on the first summand and of type $(1,1)$ on the
+second; {\rm(c)} if $n=2p$ then $f$ preserves algebraic cycles, moreover if
+$Z_1\otimes Z_2\in H^{r-1}_{\mathrm{prim}}(X^{r-1}_m,\C)\otimes
+H^{s-1}_{\mathrm{prim}}(X^{s-1}_m,\C)$ then $f(Z_1\otimes Z_2)=m\,Z_1\wedge Z_2$, where
+$Z_1\wedge Z_2$ is the algebraic cycle obtained by joining $Z_1$ and $Z_2$ by lines on
+$X^n_m$.} --- Lemma~\ref{lem:transport} uses the \emph{second} summand at $r=s=2$, $n=4$:
+$H^1_{\mathrm{prim}}(X^1_m)^{\otimes2}\to H^4_{\mathrm{prim}}(X^4_m)$, of type $(1,1)$ by (b),
+carrying algebraic classes to algebraic classes by (c). No $\mu_m$-invariance is imposed on that
+summand, and no hypothesis on the characters enters.
+\item[--] \textbf{Notation before Cor.~2.3.} \emph{$U^{r,s}_m=\{(\beta,\gamma)\in
+U^r_m\times U^s_m\mid\beta=(b_0,\dots,b_{r+1}),\ \gamma=(c_0,\dots,c_{s+1}),\
+b_{r+1}+c_{s+1}=0\}$, and for $(\beta,\gamma)\in U^{r,s}_m$,
+$\beta\#\gamma=(b_0,\dots,b_r,c_0,\dots,c_s)$.}
+\item[--] \textbf{Corollary 2.3.} \emph{Suppose $n=2p=r+s$, where $r,s\ge1$.
+{\rm(a)} If $r,s$ are odd and $(\beta',\gamma')\in C^{r-1}_m\times C^{s-1}_m$, then
+$\beta'*\gamma'\in C^n_m$. {\rm(b)} If $r,s$ are even and
+$(\beta,\gamma)\in(C^r_m\times C^s_m)\cap U^{r,s}_m$, then $\beta\#\gamma\in C^n_m$.}
+--- the full hypothesis list of (b): $r,s$ even, both factors of known claim, and the matching
+condition $b_{r+1}+c_{s+1}=0$. Pairwise distinctness of entries is \emph{not} among them,
+which is what Remark~\ref{rem:selfpair} uses.
+\item[--] \textbf{Definition 2.4.} \emph{An element $a\in M_m$ is called decomposable if
+$a=c+d$ for some $c,d\in M_m$, otherwise indecomposable. An element is called
+quasi-decomposable if $a+b=c+d$ for some $b\in M_m(1)$ and $c,d\in M_m$ with $c,d\neq a$.}
+($M_m$ is his semigroup of \emph{non-negative} solutions, as recalled in the Notation; the
+clause $c,d\neq a$ is the non-triviality used in Lemma~\ref{lem:complete}(ii).)
+\end{itemize} \emph{Notation translation:} Aoki's $\mathfrak B^n_m$ is our $B^n_m$ (Hodge characters
+of $X^n_m$); his $\mathfrak D^n_m$ is our $\Ds^n_m$; his \textsc{claim} is our
+$\mathrm{claim}$; his $*$ is our juxtaposition; his multiplicity vector $u(\alpha)$ is our
+$\nu(\alpha)$ (we reserve $u$ for the local Frobenius scalar); his $S_m$ and gap group are the
+objects of Proposition~\ref{prop:ident}. Indices: he writes $n$ for the cohomological degree,
+so his $X^n_m$ with $n=4$ is our fourfold and $n=2$ its surface.
 
 \emph{From \cite{Aoki87}} (notation as there: $\mathfrak B^n_m$ the Hodge characters of $X^n_m$,
 $\mathfrak D^n_m$ the classes that are coordinate permutations of $(a_0,-a_0,\dots,a_r,-a_r)$,
@@ -801,7 +923,9 @@ $m=12,15,20,21,28$ (the $m=28$ entry being the misprint recorded above).
 \item[--] \textbf{Lemma 4.1} (verbatim). \emph{Let $\alpha,\beta\in B_m$. Then:
 (i) if both $\V(\alpha)$ and $\V(\beta)$ are algebraic, then so is $\V(\alpha*\beta)$;
 (ii) if $\V(\alpha*\delta)$ is algebraic for some $\delta\in D_m$, then so is $\V(\alpha)$;
-(iii) if $\alpha\in S_m$, then $\V(\alpha)$ is algebraic.} No hypothesis on $m$ is imposed; the
+(iii) if $\alpha\in S_m$, then $\V(\alpha)$ is algebraic.} (Here $B_m=\bigcup_nB^n_m$ and
+$\V(\alpha)\subset H^n_{\mathrm{prim}}(X^n_m)$ for the $n$ with $\#\alpha=n+2$; we use it at
+$n=4$.) No hypothesis on $m$ is imposed; the
 groups $S_m$ and the ``gap group'' are Aoki's own objects (\S2 there), and
 Proposition~\ref{prop:ident} identifies the implemented lattice with $S_m$
 generator-by-generator (his \S2 also proves, via Theorem~2.1, that $2\alpha\in S_m$ for every
@@ -835,6 +959,127 @@ $\alpha*\delta\sim\sigma_1*\cdots*\sigma_k*\delta'$, then
 $\nu(\alpha)=\sum_i\nu(\sigma_i)+\nu(\delta')-\nu(\delta)$, an integer combination of the listed
 generators. The two spans coincide.
 \end{proof}
+
+\section{The census, level by level}\label{app:census}
+
+\phantomsection\label{tab:census}
+
+Every odd level of the census list, taken from the shipped summary table
+(\texttt{census\_level\_\allowbreak summaries.json}; each row there also carries the SHA-256 of
+its canonically sorted representative list). Columns: number of Galois-orbit representatives; decomposable;
+quasi-decomposable; Aoki standard; $*$-split (Theorem~\ref{thm:A}); closed by
+Theorem~\ref{thm:Aprime}/\ref{thm:App} or level transport; and remaining --- zero at every
+level, which is Theorem~\ref{thm:B}.
+
+\begin{center}\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{rrrrrrrr|rrrrrrrr}
+\toprule
+$m$ & orb & D & QD & S & $*$ & A$'$/A$''$ & rem & $m$ & orb & D & QD & S & $*$ & A$'$/A$''$ & rem \\
+\midrule
+$21$ & $64$ & $61$ & $3$ & $0$ & $0$ & $0$ & $0$ & $113$ & $551$ & $551$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$25$ & $39$ & $38$ & $0$ & $1$ & $0$ & $0$ & $0$ & $115$ & $772$ & $771$ & $0$ & $1$ & $0$ & $0$ & $0$ \\
+$27$ & $68$ & $67$ & $1$ & $0$ & $0$ & $0$ & $0$ & $117$ & $1117$ & $1113$ & $2$ & $0$ & $2$ & $0$ & $0$ \\
+$29$ & $40$ & $40$ & $0$ & $0$ & $0$ & $0$ & $0$ & $119$ & $776$ & $776$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$31$ & $46$ & $46$ & $0$ & $0$ & $0$ & $0$ & $0$ & $121$ & $694$ & $694$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$33$ & $104$ & $102$ & $1$ & $0$ & $0$ & $1$ & $0$ & $123$ & $1091$ & $1090$ & $1$ & $0$ & $0$ & $0$ & $0$ \\
+$35$ & $92$ & $91$ & $0$ & $1$ & $0$ & $0$ & $0$ & $125$ & $866$ & $864$ & $0$ & $2$ & $0$ & $0$ & $0$ \\
+$37$ & $64$ & $64$ & $0$ & $0$ & $0$ & $0$ & $0$ & $127$ & $694$ & $694$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$39$ & $140$ & $137$ & $1$ & $0$ & $2$ & $0$ & $0$ & $129$ & $1195$ & $1194$ & $1$ & $0$ & $0$ & $0$ & $0$ \\
+$41$ & $77$ & $77$ & $0$ & $0$ & $0$ & $0$ & $0$ & $131$ & $737$ & $737$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$43$ & $85$ & $85$ & $0$ & $0$ & $0$ & $0$ & $0$ & $133$ & $960$ & $960$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$45$ & $245$ & $237$ & $6$ & $1$ & $0$ & $1$ & $0$ & $135$ & $1767$ & $1756$ & $8$ & $2$ & $0$ & $1$ & $0$ \\
+$47$ & $100$ & $100$ & $0$ & $0$ & $0$ & $0$ & $0$ & $137$ & $805$ & $805$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$49$ & $128$ & $128$ & $0$ & $0$ & $0$ & $0$ & $0$ & $139$ & $829$ & $829$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$51$ & $217$ & $216$ & $1$ & $0$ & $0$ & $0$ & $0$ & $141$ & $1414$ & $1413$ & $1$ & $0$ & $0$ & $0$ & $0$ \\
+$53$ & $126$ & $126$ & $0$ & $0$ & $0$ & $0$ & $0$ & $143$ & $1062$ & $1062$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$55$ & $197$ & $196$ & $0$ & $1$ & $0$ & $0$ & $0$ & $145$ & $1204$ & $1203$ & $0$ & $1$ & $0$ & $0$ & $0$ \\
+$57$ & $265$ & $264$ & $1$ & $0$ & $0$ & $0$ & $0$ & $147$ & $1816$ & $1812$ & $4$ & $0$ & $0$ & $0$ & $0$ \\
+$59$ & $155$ & $155$ & $0$ & $0$ & $0$ & $0$ & $0$ & $149$ & $950$ & $950$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$61$ & $166$ & $166$ & $0$ & $0$ & $0$ & $0$ & $0$ & $151$ & $976$ & $976$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$63$ & $407$ & $400$ & $7$ & $0$ & $0$ & $0$ & $0$ & $153$ & $1816$ & $1814$ & $2$ & $0$ & $0$ & $0$ & $0$ \\
+$65$ & $268$ & $267$ & $0$ & $1$ & $0$ & $0$ & $0$ & $155$ & $1370$ & $1369$ & $0$ & $1$ & $0$ & $0$ & $0$ \\
+$67$ & $199$ & $199$ & $0$ & $0$ & $0$ & $0$ & $0$ & $157$ & $1054$ & $1054$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$69$ & $372$ & $371$ & $1$ & $0$ & $0$ & $0$ & $0$ & $159$ & $1780$ & $1779$ & $1$ & $0$ & $0$ & $0$ & $0$ \\
+$71$ & $222$ & $222$ & $0$ & $0$ & $0$ & $0$ & $0$ & $161$ & $1379$ & $1379$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$73$ & $235$ & $235$ & $0$ & $0$ & $0$ & $0$ & $0$ & $163$ & $1135$ & $1135$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$75$ & $561$ & $556$ & $3$ & $2$ & $0$ & $0$ & $0$ & $165$ & $2743$ & $2736$ & $4$ & $2$ & $0$ & $1$ & $0$ \\
+$77$ & $346$ & $346$ & $0$ & $0$ & $0$ & $0$ & $0$ & $167$ & $1190$ & $1190$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$79$ & $274$ & $274$ & $0$ & $0$ & $0$ & $0$ & $0$ & $169$ & $1322$ & $1322$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$81$ & $504$ & $502$ & $2$ & $0$ & $0$ & $0$ & $0$ & $171$ & $2236$ & $2234$ & $2$ & $0$ & $0$ & $0$ & $0$ \\
+$83$ & $301$ & $301$ & $0$ & $0$ & $0$ & $0$ & $0$ & $173$ & $1276$ & $1276$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$85$ & $437$ & $436$ & $0$ & $1$ & $0$ & $0$ & $0$ & $175$ & $2015$ & $2012$ & $0$ & $3$ & $0$ & $0$ & $0$ \\
+$87$ & $570$ & $569$ & $1$ & $0$ & $0$ & $0$ & $0$ & $177$ & $2187$ & $2186$ & $1$ & $0$ & $0$ & $0$ & $0$ \\
+$89$ & $345$ & $345$ & $0$ & $0$ & $0$ & $0$ & $0$ & $179$ & $1365$ & $1365$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$91$ & $473$ & $473$ & $0$ & $0$ & $0$ & $0$ & $0$ & $181$ & $1396$ & $1396$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$93$ & $646$ & $645$ & $1$ & $0$ & $0$ & $0$ & $0$ & $183$ & $2334$ & $2333$ & $1$ & $0$ & $0$ & $0$ & $0$ \\
+$95$ & $539$ & $538$ & $0$ & $1$ & $0$ & $0$ & $0$ & $185$ & $1930$ & $1929$ & $0$ & $1$ & $0$ & $0$ & $0$ \\
+$97$ & $409$ & $409$ & $0$ & $0$ & $0$ & $0$ & $0$ & $187$ & $1761$ & $1761$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$99$ & $825$ & $822$ & $2$ & $0$ & $0$ & $1$ & $0$ & $189$ & $3100$ & $3091$ & $9$ & $0$ & $0$ & $0$ & $0$ \\
+$101$ & $442$ & $442$ & $0$ & $0$ & $0$ & $0$ & $0$ & $191$ & $1552$ & $1552$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$103$ & $460$ & $460$ & $0$ & $0$ & $0$ & $0$ & $0$ & $193$ & $1585$ & $1585$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$105$ & $1286$ & $1276$ & $6$ & $2$ & $0$ & $2$ & $0$ & $195$ & $3715$ & $3707$ & $4$ & $2$ & $2$ & $0$ & $0$ \\
+$107$ & $495$ & $495$ & $0$ & $0$ & $0$ & $0$ & $0$ & $197$ & $1650$ & $1650$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$109$ & $514$ & $514$ & $0$ & $0$ & $0$ & $0$ & $0$ & $199$ & $1684$ & $1684$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+$111$ & $900$ & $899$ & $1$ & $0$ & $0$ & $0$ & $0$ &  & & & & & & &  \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Totals over the $89$ levels: $78{,}299$ orbit representatives, split as
+$78{,}181$ decomposable, $79$ quasi-decomposable, $26$ standard, $6$ $*$-split and $7$
+beyond-machinery --- and $0$ remaining at every level.
+
+\section{Computational outlook: the even-degree boundary through degree 250}\label{sec:even}
+
+\emph{This appendix is independent of Theorems~\ref{thm:A}--\ref{thm:C} and of the odd census;
+it records a computed map whose systematic treatment is the companion paper \cite{BNeven}.}
+
+The odd-degree theorems are complete. The even-degree boundary is a different landscape, and this
+closing section only \emph{reports its computed map} --- engines, closure ledger, certificates,
+and pinned receipts ship in the ancillary --- deferring systematic treatment (full statements and
+proofs of the closure and wall structure) to the companion paper \cite{BNeven}, with which this
+note shares its ancillary package. Nothing in Theorems~\ref{thm:A}--\ref{thm:C} or in the odd
+census depends on this section, and every computational claim below is backed
+receipt-by-receipt within the ancillary of \emph{this} submission --- the companion adds
+statements and proofs, not data. All censuses use the
+parity-corrected decomposability test (the self-paired element $m/2$; part~(i) of
+Lemma~\ref{lem:complete} covers both parities); every lattice verdict below carries an
+independent certificate in the ancillary --- a modular kernel witness for each non-membership, a
+re-summed integer combination for each membership. One statement --- the identification of the implemented lattice with Aoki's $S_m$ --- is
+load-bearing also for the odd-degree novelty classification above, and is therefore proved in
+this paper, in Appendix~\ref{app:ident} (Proposition~\ref{prop:ident}).
+
+\emph{The computed map} {\rm(computed; engines, closure ledger, and receipts in the ancillary;
+full statements and proofs in \cite{BNeven})}. The even census finds forty primitive
+orbits surviving the four base predicates \emph{and} the complete depth-$\le2$ closure oracle
+through degree $250$ ($21$ at $m\le108$, the first at $m=50$ --- the odd law ``survivor
+$\Rightarrow3\mid m$'' fails in the even sector --- then $14$ through $200$ and $5$ more
+through $250$). The tier matters: unlike the odd census, where the base predicates alone leave
+only the seven orbits of Theorem~\ref{thm:B}, the even base tier is far larger (first survivor at
+$m=32$), and all of it except those forty closes at depth $\le2$; the tiers are defined
+and tabulated in \cite{BNeven}. Iterated partition certificates of the
+Theorem~\ref{thm:Aprime}/\ref{thm:App} kind close all but ten, and an exhaustive scan of
+claim-equivalence moves organizes the residual into three walls. Two more classes then close:
+$m=168$ by a coset transfer --- its $\nu$ is congruent modulo $S_{168}$ to that of an explicit
+$*$-split class, which Theorem~\ref{thm:A} closes (Aoki's degree-form Theorem~0.1(i)
+\cite{Aoki00} also covers $168=2^3\cdot3\cdot7$; the bridge is quoted in
+Appendix~\ref{app:aoki}, together with two verified errata of the printed text, and neither is
+relied upon) --- and the isolated degree-$210$
+class closes by an explicit $40$-generator $\pm1$ lattice certificate $\nu\in S_{210}$ (pairs
+and standard elements only, converted into a literal Aoki chain by the negation closure), whence
+$\V$ is algebraic by Theorems~1-4(i),(ii) of \cite{Aoki87}. What remains \emph{unresolved by
+the implemented closure family and the cited published theorems} is eight certified gap classes
+--- all with $\nu\notin S_m$, $2\nu\in S_m$ (the doubling holds for every Hodge class by
+\cite[Thm.~2.1]{Aoki00}), all outside the degree forms of Aoki's theorem --- in three claim-equivalence walls
+$W_{70},W_{110},W_{114}$ (labelled by their lowest level; a wall spans several levels).
+
+Qualitatively, the even sector differs by exactly the feature that made Theorem~\ref{thm:App}
+work: the self-paired element $m/2$ exists only at even levels
+(Remark~\ref{rem:selfpair}), so quasi-decomposition has a channel there that no odd level
+provides --- which is why the odd boundary closes and the even one, at present, does not. The
+wall table, the per-class dossiers, the deep negative sweeps, and the independent even-parity
+verification are in \cite{BNeven}.
 
 \begin{thebibliography}{99}
 \raggedright

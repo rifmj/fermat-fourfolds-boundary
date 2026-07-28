@@ -107,6 +107,11 @@ def _neg_ctx(m):
 
 
 def verify_witness(m, a, rec):
+    # The stored CLASS itself is re-checked first: a witness record is only meaningful for a
+    # legitimate character (nonzero entries, zero sum). The full grade-3 Hodge condition is
+    # re-derived for every stored class, level by level, in the --verify driver below (vectorized).
+    assert all(x % m != 0 for x in a), f"stored class has a zero entry at m={m}: {a}"
+    assert sum(a) % m == 0, f"stored class is not zero-sum at m={m}: {a}"
     kind = rec["kind"]
     if kind == "decomposable":
         x, y = rec["pair"]
@@ -182,17 +187,40 @@ def scan_level(m):
 
 def main():
     if "--verify" in sys.argv:
+        import numpy as np
         data = json.load(open(OUT))
         n = 0
         for lev in data["levels"]:
+            m = lev["m"]
+            # (a) COMPLETENESS of the stored level: the record count and the per-kind tallies are
+            # asserted against the stored fields, so a deleted or relabelled record cannot pass
+            # silently (the per-record loop below alone would not notice a missing record).
+            assert len(lev["orbits"]) == lev["n_reps"], \
+                f"m={m}: {len(lev['orbits'])} records but n_reps={lev['n_reps']}"
+            tal = defaultdict(int)
             for rec in lev["orbits"]:
-                verify_witness(lev["m"], tuple(rec["class"]), rec)
+                tal[rec["kind"]] += 1
+            assert dict(tal) == lev["tallies"], f"m={m}: recomputed tallies {dict(tal)} != {lev['tallies']}"
+            # (b) every stored class is re-derived to BE a grade-3 Hodge character (all units,
+            # no half-unit shortcut), vectorized over the level.
+            A = np.array([r["class"] for r in lev["orbits"]], dtype=np.int64)
+            U = np.array([t for t in range(1, m) if gcd(t, m) == 1], dtype=np.int64)
+            R = (A[:, None, :] * U[None, :, None]) % m
+            assert (R != 0).all(), f"m={m}: a stored class has a vanishing residue"
+            assert (R.sum(axis=2) == 3 * m).all(), f"m={m}: a stored class is not grade-3 Hodge"
+            for rec in lev["orbits"]:
+                verify_witness(m, tuple(rec["class"]), rec)
                 n += 1
+        if len(data["levels"]) == 89:
+            surv_total = sum(l["tallies"].get("survivor", 0) for l in data["levels"])
+            assert n == 78299, f"total orbit records {n} != 78299"
+            assert surv_total == 7, f"survivor total {surv_total} != 7"
         nsurv = sum(1 for lev in data["levels"] for rec in lev["orbits"]
                     if rec["kind"] == "survivor")
         print(f"census_witnesses: re-verified {n} stored witnesses across "
               f"{len(data['levels'])} levels — ALL PASS "
-              f"(incl. live negative re-screening of the {nsurv} survivor orbits)")
+              f"(every stored class re-derived to be grade-3 Hodge; per-level record counts and "
+              f"tallies asserted; incl. live negative re-screening of the {nsurv} survivor orbits)")
         return
     ms = [int(x) for x in sys.argv[1:]] or [m for m in range(21, 200, 2) if m != 23]
     levels = []

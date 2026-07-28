@@ -1,0 +1,18 @@
+
+########## CALIBRATION (B4): reproduce banked m=33 / p=67 §76 certificate ##########
+
+==============================================================================
+[Route C / agentC105]  m=33  p=67  class A = (7, 10, 13, 19, 22, 28)
+  p == 1 mod m: True   good reduction (p ∤ m): True   deg Phi_33=20=phi(33)  #units=20
+  j(A) mod x^33-1: 33 nonzero coeffs; sample [(0, 567681), (1, 566676), (2, 566475), (3, 566073)] ...
+  order distribution over 20 conjugates: {6: 20}
+  t with u==1 (obstruction VANISHES): NONE
+  t with u==-1: NONE
+  u values (sample): t=1:-x^22(ord 6), t=2:-x^11(ord 6), t=4:-x^22(ord 6), t=5:-x^11(ord 6), t=7:-x^22(ord 6), t=8:-x^11(ord 6), t=10:-x^22(ord 6), t=13:-x^22(ord 6)
+  monomial classes: {'-x^11': 10, '-x^22': 10}
+  >>> VERDICT [A]: ALL 20 conjugates u != 1;  u != -1 for all t: True  <<<
+      SIGN-CONVENTION CERTIFICATE: u ∉ {+1,-1} for all 20 conjugates ⟹ under EITHER
+      Jacobi-sum sign convention (u or -u), the Frobenius scalar on V(t·a)(2) is ≠ 1. [EXACT]
+  CALIB closed form: u(a,67) == 1 + x^11 (= 1+zeta_3 = zeta_6): True   [expected True]
+  CALIB order of u(a,67): 6   [expected 6]
+  ########## CALIBRATION PASS ##########

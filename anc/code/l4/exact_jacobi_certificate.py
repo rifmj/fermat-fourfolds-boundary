@@ -213,6 +213,35 @@ if __name__ == "__main__":
     print("   (order exactly 6, convention-independent) ⟹ the V(t·a)-components of any ℚ(ζ₃₃)-rational")
     print("   cycle class vanish, and every residue degree above 67 of a certifying field is divisible by 6.  [EXACT]")
 
+    # ---- CALIBRATION (external referee request): the point-count identity that fixes the sign ----
+    # For a Fermat fourfold over F_p with p = 1 mod m,
+    #     #X^4_m(F_p) = 1 + p + p^2 + p^3 + p^4 + sum_a j(a),
+    # the sum running over all a = (a_0,...,a_5) with a_i != 0 and sum a_i = 0 (mod m). In even
+    # dimension the point-count sign is +1, which is what pins the geometric Frobenius scalar.
+    # Verified here EXACTLY at a case small enough to brute-force: m = 3, p = 7.
+    import itertools as _it
+    _m, _p = 3, 7
+    _cubes = [pow(_x, _m, _p) for _x in range(_p)]
+    _aff = sum(1 for _v in _it.product(range(_p), repeat=6)
+               if any(_v) and sum(_cubes[_x] for _x in _v) % _p == 0)
+    _N = _aff // (_p - 1)
+    _tot = [0] * _m                      # exponent vector of sum_a j(a) in Z[x]/(x^m - 1)
+    _chars = [_a for _a in _it.product(range(1, _m), repeat=6) if sum(_a) % _m == 0]
+    for _a in _chars:
+        _S = jacobi_exact(_a, _p, _m)
+        assert all(_c % (_p - 1) == 0 for _c in _S)
+        for _i, _c in enumerate(_S):
+            _tot[_i] += _c // (_p - 1)
+    # 1 + x + x^2 = 0 in Z[zeta_3]: reduce to the integer part
+    _val = _tot[0] - _tot[2] + 0 * _tot[1]
+    _int = _tot[0] - _tot[1] if _tot[1] == _tot[2] else None
+    assert _int is not None, f"sum of Jacobi sums is not rational: {_tot}"
+    _lhs = 1 + _p + _p**2 + _p**3 + _p**4 + _int
+    assert _lhs == _N, f"point-count calibration FAILED: {_lhs} != {_N}"
+    print(f"CALIBRATION (point count, m=3, p=7): 1+p+p^2+p^3+p^4 + sum_a j(a) = "
+          f"{1+_p+_p**2+_p**3+_p**4} + {_int} = {_lhs} = #X^4_3(F_7) (brute force) "
+          f"[EXACT; fixes the +1 point-count sign in even dimension]")
+
     # 30-dps numeric cross-check vs the Gauss-sum product (corroboration ONLY; the certificate above is exact)
     from mpmath import mp, mpc, exp as mexp, pi as mpi, fabs, cos as mcos, sin as msin, mpf, nstr
     mp.dps = 30
