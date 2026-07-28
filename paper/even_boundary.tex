@@ -434,7 +434,11 @@ elimination for each non-membership; exact re-summation for each membership and 
 vectors); the full census and exchange sweeps are reproducible from the supplied engines and are
 accompanied by checksummed campaign receipts; independent brute-force calibration is performed
 at small levels ($m\le14$), and the algorithmically independent reimplementation re-derives the
-representative counts fresh at the key levels $50,70,110,114,168$ (pinned receipt). The author
+representative counts fresh at the key levels $50,70,110,114,168$ (pinned receipt). The
+exact-arithmetic certificate framework is the one developed for the Fermat surfaces of
+\cite{P1}, and the odd-degree half of the census is certified in \cite{BN} by three
+independent implementations, including a direct brute-force enumeration at every level
+$m\le143$. The author
 takes full responsibility for all proofs, code, and bibliographic claims. The ancillary package is shared with the companion note: engines (census, closure
 oracle, exchange scan, lift sweeps, lattice membership), the deep-closure ledger, the stored
 degree-$210$ certificate, the complete even census receipt over all even $6\le m\le250$, and the
@@ -458,7 +462,7 @@ algebraic cycles on $X^n_m$):
 \item[--] \textbf{Theorem 1-1} (Shioda). \emph{The linear space $L$ represents
 $\delta\in\mathfrak D^n_m$; more precisely
 $\omega_\delta(L)\cdot\overline{\omega_\delta(L)}=(-1)^r m^{n+1}$.}
-\item[--] \textbf{Theorem 1-4} (Shioda, Ran). \emph{Let $r$ and $s$ be non-negative even integers
+\item[--] \textbf{Theorem 1-4} (Shioda \cite{Shioda79}, Ran \cite{Ran}). \emph{Let $r$ and $s$ be non-negative even integers
 such that $n=r+s+2$, and let $\alpha\in\mathfrak B^r_m$, $\beta\in\mathfrak B^s_m$. Then:
 (i) if \textsc{claim}$(\alpha)$ and \textsc{claim}$(\beta)$ are true, then
 \textsc{claim}$(\alpha*\beta)$ is also true; (ii) if there exists $\delta\in\mathfrak D^s_m$ such
@@ -508,16 +512,18 @@ generator-by-generator.
 \end{itemize}
 
 \begin{thebibliography}{99}
+\raggedright
 \bibitem{Aoki87} N.~Aoki, \emph{Some new algebraic cycles on Fermat varieties}, J.~Math.\ Soc.\ Japan
-\textbf{39} (1987), 385--396.
+\textbf{39} (1987), no.~3, 385--396; doi:10.2969/jmsj/03930385.
 \bibitem{AokiD} N.~Aoki, \emph{On some arithmetic problems related to the Hodge cycles on the
-Fermat varieties}, Math.\ Ann.\ \textbf{266} (1983), 23--54; Erratum: Math.\ Ann.\ \textbf{267}
-(1984), 572.
+Fermat varieties}, Math.\ Ann.\ \textbf{266} (1983), no.~1, 23--54;
+doi:10.1007/BF01458703. Erratum: Math.\ Ann.\ \textbf{267} (1984), no.~4, 572;
+doi:10.1007/BF01455974.
 \bibitem{Aoki00} N.~Aoki, \emph{Some remarks on the Hodge conjecture for abelian varieties of Fermat
-type}, Comment.\ Math.\ Univ.\ Sancti Pauli \textbf{49} (2000), 177--194; doi:10.14992/00009819
-(open access, Rikkyo University repository).
+type}, Comment.\ Math.\ Univ.\ St.\ Paul.\ \textbf{49} (2000), no.~2, 177--194;
+doi:10.14992/00009819 (open access, Rikkyo University repository).
 \bibitem{Aoki02} N.~Aoki, \emph{Hodge cycles on CM abelian varieties of Fermat type}, Comment.\
-Math.\ Univ.\ Sancti Pauli \textbf{51} (2002), 99--130; doi:10.14992/00008725.
+Math.\ Univ.\ St.\ Paul.\ \textbf{51} (2002), no.~1, 99--130; doi:10.14992/00008725.
 \bibitem{daSilva} G.~da Silva Jr., \emph{Notes on the Hodge conjecture for Fermat varieties},
 Experimental Results \textbf{2} (2021), e22, doi:10.1017/exp.2021.14; arXiv:2101.04739.
 \bibitem{BN} R.~Jumagulov, \emph{The Hodge conjecture for Fermat fourfolds of odd degree at
@@ -525,16 +531,19 @@ most 199}, companion note, 2026 (arXiv, to appear; the ancillary package is shar
 \bibitem{P1} R.~Jumagulov, \emph{Galois-invariant N\'eron--Severi ranks of Fermat surfaces over
 number fields: a Galois module, closed forms, a threshold, and exact tables}, arXiv:2607.17387.
 \bibitem{Shioda79} T.~Shioda, \emph{The Hodge conjecture for Fermat varieties}, Math.\ Ann.\ \textbf{245}
-(1979), 175--184.
+(1979), no.~2, 175--184; doi:10.1007/BF01428804.
 \bibitem{Shioda81} T.~Shioda, \emph{Algebraic cycles on abelian varieties of Fermat type}, Math.\
-Ann.\ \textbf{258} (1981/82), 65--80.
-\bibitem{SK} T.~Shioda, T.~Katsura, \emph{On Fermat varieties}, T\^ohoku Math.\ J.\ \textbf{31} (1979),
-97--115.
+Ann.\ \textbf{258} (1981/82), no.~1, 65--80; doi:10.1007/BF01450347.
+\bibitem{Ran} Z.~Ran, \emph{Cycles on Fermat hypersurfaces}, Compositio Math.\ \textbf{42}
+(1980/81), no.~1, 121--142.
+\bibitem{SK} T.~Shioda, T.~Katsura, \emph{On Fermat varieties}, T\^ohoku Math.\ J.\ (2)
+\textbf{31} (1979), no.~1, 97--115; doi:10.2748/tmj/1178229881.
 \bibitem{Weil49} A.~Weil, \emph{Numbers of solutions of equations in finite fields}, Bull.\ Amer.\
-Math.\ Soc.\ \textbf{55} (1949), 497--508.
-\bibitem{Yamamoto} K.~Yamamoto, \emph{The gap group of multiplicative relationship of Gauss
-sums}, Symp.\ Math.\ \textbf{XV} (1975), 427--440.
+Math.\ Soc.\ \textbf{55} (1949), 497--508; doi:10.1090/S0002-9904-1949-09219-4.
+\bibitem{Yamamoto} K.~Yamamoto, \emph{The gap group of multiplicative relationships of Gaussian
+sums}, in: Symposia Mathematica, Vol.~XV (Convegno di Strutture in Corpi Algebrici, INDAM, Rome,
+1973), Academic Press, London--New York, 1975, pp.~427--440.
 \bibitem{Weil52} A.~Weil, \emph{Jacobi sums as ``Gr\"ossencharaktere''}, Trans.\ Amer.\ Math.\ Soc.\
-\textbf{73} (1952), 487--495.
+\textbf{73} (1952), 487--495; doi:10.2307/1990804.
 \end{thebibliography}
 \end{document}

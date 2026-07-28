@@ -44,7 +44,7 @@ three exchange walls `W_70`, `W_110`, `W_114`**; every lattice verdict carries a
 certificate (modular kernel witnesses for non-membership, exact re-summation for membership).
 
 > **Papers:** [`paper/boundary_note.pdf`](paper/boundary_note.pdf) (14 pp) ·
-> [`paper/even_boundary.pdf`](paper/even_boundary.pdf) (8 pp) — sources alongside.
+> [`paper/even_boundary.pdf`](paper/even_boundary.pdf) (9 pp) — sources alongside.
 
 ## Verification
 
@@ -106,8 +106,8 @@ bare toolchain — see `lean/README.md`).
 The top-level [`SHA256SUMS`](SHA256SUMS) pins both paper sources and `anc/SHA256SUMS`, which
 pins every ancillary file. The refereed arXiv submission tarballs (the submitted source packages; not tracked in this repository) are pinned by
 
-    f3845063d1c6c6c0c91156ba3d2ae930bf585523c067cc2982536f80288fe294  boundary_note_arxiv.tar.gz (460,119 B)
-    15c8e2a2568ef6a8771eaf313d8d9f90ab19d3c1908855177377c63cad3544ab  even_boundary_arxiv.tar.gz (448,587 B)
+    03ec0235902b50b071eb18126664f1f0ae715a72434ae79dacf9fb1767208206  boundary_note_arxiv.tar.gz (460,501 B)
+    7a39fc21dd64516f77be62ddcf06bb9e9b2bcee6b27d90b556bf8fb6380aa2a8  even_boundary_arxiv.tar.gz (449,172 B)
 
 `anc/` here is byte-identical to the shared ancillary of those tarballs except two repository
 localizations disclosed in `anc/README.md` (its own title/paths, and the manuscript lines of
@@ -117,7 +117,9 @@ localizations disclosed in `anc/README.md` (its own title/paths, and the manuscr
 
 This work was carried out with substantial AI assistance in derivation, computation, and
 drafting. The pair went through ten independent external referee reports, with findings tracked
-in ledgers across fourteen review rounds for the note and six for the companion — every finding
+in ledgers across fifteen review rounds for the note (the fifteenth a dedicated bibliography
+verification: every external reference matched against MathSciNet/OpenAlex records, two defects
+found and fixed) and six for the companion — every finding
 dispositioned (one item, inserting the note's arXiv id into the companion's bibliography,
 completes at upload). The final three external re-reviews were all accept-level verdicts
 (latest: accept subject to minor revision, every item applied — its one substantive request
