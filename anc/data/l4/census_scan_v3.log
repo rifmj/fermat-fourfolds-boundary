@@ -1,0 +1,7 @@
+m=33: reps=104 base-closed=103 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=1
+  m=33 OPEN (1, 4, 16, 22, 25, 31)  content-gcd=1 (primitive)
+=== m=33 DONE (v3 d3) ===
+m=45: reps=245 base-closed=244 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=45 DONE (v3 d3) ===
+m=66: reps=1041 base-closed=1018 deep-closed(d<=3,iter)=23 transport-closed=0 OPEN=0
+=== m=66 DONE (v3 d3) ===

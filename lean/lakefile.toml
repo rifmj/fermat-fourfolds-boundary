@@ -1,0 +1,26 @@
+name = "fermat-boundary-lean"
+defaultTargets = ["BoundaryCore", "BoundaryData", "BoundaryClaim", "BoundaryValidity",
+                  "BoundaryForms"]
+
+# Tier-1 (BoundaryCore + BoundaryData) and Tier-2 (BoundaryClaim + BoundaryValidity) are
+# standalone Lean-core (no mathlib; also compile with a bare `lean`); BoundaryValidity adds
+# no native_decide of its own. Tier-3 (BoundaryForms) needs mathlib.
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.32.0"
+
+[[lean_lib]]
+name = "BoundaryCore"
+
+[[lean_lib]]
+name = "BoundaryData"
+
+[[lean_lib]]
+name = "BoundaryClaim"
+
+[[lean_lib]]
+name = "BoundaryValidity"
+
+[[lean_lib]]
+name = "BoundaryForms"

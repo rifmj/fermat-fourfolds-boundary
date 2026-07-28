@@ -1,0 +1,36 @@
+=== 114 1,7,78,79,86,91 gen2 d4 ===
+  d=1 exhausted [0s]
+CALIB m=54 (must fire d<=3): FIRE d=2
+  d=1 exhausted [0s]
+  d=2 exhausted [0s]
+CALIB m=33 d2 (must NOT fire): NO-FIRE
+CALIBRATION PASS
+  d=1 exhausted [1s]
+  d=2 exhausted [3s]
+  d=3 exhausted [16s]
+  d=4 exhausted [1976s]
+NO-FIRE depth<=4 gen=2  [1997s]
+=== 114 1,13,43,72,103,110 gen2 d4 ===
+  d=1 exhausted [1s]
+CALIB m=54 (must fire d<=3): FIRE d=2
+  d=1 exhausted [0s]
+  d=2 exhausted [0s]
+CALIB m=33 d2 (must NOT fire): NO-FIRE
+CALIBRATION PASS
+  d=1 exhausted [4s]
+  d=2 exhausted [7s]
+  d=3 exhausted [65s]
+  d=4 exhausted [1636s]
+NO-FIRE depth<=4 gen=2  [1712s]
+=== 114 1,13,43,80,102,103 gen2 d4 ===
+  d=1 exhausted [1s]
+CALIB m=54 (must fire d<=3): FIRE d=2
+  d=1 exhausted [0s]
+  d=2 exhausted [0s]
+CALIB m=33 d2 (must NOT fire): NO-FIRE
+CALIBRATION PASS
+  d=1 exhausted [2s]
+  d=2 exhausted [4s]
+  d=3 exhausted [31s]
+  d=4 exhausted [1850s]
+NO-FIRE depth<=4 gen=2  [1888s]

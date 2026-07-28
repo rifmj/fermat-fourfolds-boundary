@@ -1,0 +1,540 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Residual gap classes in the even-degree Fermat-fourfold census through degree 250}, pdfauthor={Rifat Jumagulov}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\fr}[1]{\langle #1\rangle}
+\newcommand{\V}{V}
+\DeclareMathOperator{\Gal}{Gal}
+\newcommand{\zt}{\zeta}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Qbar}{\overline{\Q}}
+\vfuzz=2pt
+
+\title[Even-degree Fermat gap classes]{Residual gap classes in the even-degree Fermat-fourfold
+census through degree 250: exchange walls and two closures}
+\author{Rifat Jumagulov}
+\email{jum.rifm@gmail.com}
+\date{July 2026}
+
+\begin{document}
+\raggedbottom
+\begin{abstract}
+For the Fermat fourfold $X^4_m\colon x_0^m+\dots+x_5^m=0$, the companion note \cite{BN} proves
+that the sector beyond the classical algebraicity machinery is empty in odd degree $\le199$.
+This paper is the systematic treatment of the \emph{even}-degree sector through degree $250$,
+which behaves differently: gap classes are frequent, and the odd law ``survivor
+$\Rightarrow3\mid m$'' fails. We first identify the working lattice with Aoki's group $S_m$ generator-by-generator ---
+including his $p=2$ standard elements, which we show are identically grade-$2$ Hodge quadruples,
+hence Lefschetz-algebraic --- and prove a negation-closure lemma converting any integer
+membership certificate into a literal Aoki claim chain. The even-parity census --- run under the
+note's completeness lemma, which applies to both parities; receipts and independent verifiers in
+the ancillary --- finds
+thirty-eight primitive beyond-machinery classes through degree $250$; iterated partition
+certificates close all but ten. An exchange theorem generates claim-equivalences, and an
+exhaustive scan organizes the ten into five walls. Two of the five then close: the $m=168$ class
+by Aoki's published degree-form theorem (citing which we record two errata of the printed text,
+\S\ref{sec:closures}), and the isolated
+degree-$210$ class by an explicit $40$-generator $\pm1$ certificate in $S_{210}$, displayed in
+full. The residual even-degree boundary at $m\le250$ --- the classes unresolved by the
+implemented closure family and the cited published theorems --- is eight certified gap classes
+($\nu\notin S_m$,
+$2\nu\in S_m$) in three exchange walls $W_{70}$, $W_{110}$, $W_{114}$; every lattice verdict
+carries an independent certificate (modular kernel witnesses for non-membership, exact
+re-summation for membership).
+\end{abstract}
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+Let $X^4_m\subset\PP^5$ be the Fermat fourfold, $G=\mu_m^6/\mu_m$, and for a character
+$a=(a_0,\dots,a_5)\in(\Z/m)^6$ with $\sum a_i\equiv0$, $a_i\neq0$, let
+$\V(a)\subset H^4_{\mathrm{prim}}$ be the one-dimensional eigenspace; $a$ is a Hodge $(2,2)$
+character iff $\sum_i\fr{ta_i}=3m$ for all $t\in(\Z/m)^\times$ (Shioda \cite{Shioda79}). The
+classical algebraicity machinery --- Shioda's inductive structure with da Silva's
+quasi-decomposability formalism \cite{Shioda79,SK,daSilva} and Aoki's standard cycles
+\cite{Aoki87} --- and the notation of this paper are those of the companion note \cite{BN}, whose
+conventions we use throughout: characters are \emph{ordered} tuples; $\mathrm{claim}(a)$
+($\V(a)$ spanned by algebraic cycle classes) is invariant under coordinate permutations
+(automorphisms of $X^4_m$) and is a Galois-orbit-level property; the census classifies sorted
+representatives modulo both actions; \emph{grade} $g$ means $\sum_i\fr{ta_i}=gm$ for every unit
+$t$; $*$ is juxtaposition of entry tuples, $\uplus$ multiset union; $\chi_a$ is the Jacobi-sum
+Hecke character of $a$ and $u(a,p)$ its Tate-normalized value at a split prime $p$
+\cite{Weil49,Weil52}, while $\nu(a)\in\Z^{m-1}$ is Aoki's multiplicity vector, additive under
+juxtaposition (he writes $u$ for $\nu$); and the inflation/descent lemmas of
+\cite{BN} make claim level-transparent along $x\mapsto x^e$. The note proves (Theorems A, A$'$,
+A$''$, B there) that every Hodge $(2,2)$ class of every $X^4_m$ of \emph{odd} degree $m\le199$
+is algebraic.
+
+This paper maps the even-degree sector through degree $250$ and proves its structural results.
+The even sector is a genuinely different landscape: the first beyond-machinery classes appear at
+$m=50$ (so ``survivor $\Rightarrow3\mid m$'', true throughout the odd census, fails), most
+beyond-machinery classes close by \emph{deeper} partition certificates rather than new
+mechanisms, and what finally remains is organized not by degree but by \emph{claim-equivalence}.
+Our results:
+
+\begin{itemize}
+\item[--] \emph{The lattice is Aoki's} (Proposition~\ref{prop:ident}): the working lattice ---
+pair vectors and standard vectors, the $p=2$ family included --- coincides
+generator-by-generator with the group $S_m$ of \cite[\S2]{Aoki00}, so all membership and gap
+verdicts are statements about Aoki's own object. The $p=2$ standard elements are identically
+grade-$2$ Hodge quadruples, hence Lefschetz-algebraic (Lemma~\ref{lem:p2neg}(i)), and the
+standard family is negation-closed modulo pairs (Lemma~\ref{lem:p2neg}(ii)).
+\item[--] \emph{The census} (Proposition~\ref{prop:evencensus}): thirty-eight primitive
+beyond-machinery classes through degree $250$; iterated depth-$3/4$ partition certificates close
+all but ten.
+\item[--] \emph{Exchange walls} (Theorem~\ref{thm:exchange}, Proposition~\ref{prop:walls}): a
+two-entry (or three-entry) exchange with a Lefschetz-algebraic exchanger is a claim-equivalence;
+the exhaustive scan organizes the ten residual classes into five walls.
+\item[--] \emph{Two closures} (Propositions~\ref{prop:w168} and~\ref{prop:w210}): the $m=168$
+class falls under Aoki's published Theorem~0.1(i) \cite{Aoki00} --- we record two errata of
+the printed text, with a machine-verified possible replacement for the $m=28$
+gap-generator misprint --- and the isolated degree-$210$ class closes by an explicit
+$40$-generator $\pm1$ lattice certificate, displayed in full and converted to a literal Aoki
+chain.
+\item[--] \emph{The boundary} (Corollary~\ref{cor:evenbdry}): eight certified gap classes in
+three walls; closing any member of a wall closes the wall.
+\end{itemize}
+
+Status ledger: the Propositions labeled \emph{computer-assisted} are exhaustive machine
+computations with pinned receipts, engines, and independent verifiers in the ancillary files;
+their scope (which levels, which move family) is stated in each. Everything else is proved.
+The obstruction theory of the closed odd classes (exact Frobenius certificates, the negative
+answer to da Silva's Question~1 at $m=33$) is in \cite{BN} and not repeated here.
+
+\section{The lattice is Aoki's $S_m$}\label{sec:lattice}
+
+$S_m$ denotes Aoki's lattice: the subgroup of $\Z^{m-1}$ generated by the $\nu(\delta)$ over the
+vanishing pairs $\delta=\{k,m-k\}$ (the self-pair included at even $m$) and the
+$\nu(\sigma_{p,x})$ over the standard characters, for all primes $p\mid m$; membership is decided
+exactly by integer linear algebra (Hermite normal form), and in lattice
+statements we freely identify $a$ with $\nu(a)$ --- statements about the formal calculus, not
+about the character group. The first result pins the object.
+
+\begin{proposition}[the implemented lattice is Aoki's $S_m$]\label{prop:ident}
+Aoki \cite[\S2]{Aoki00} defines $A_m$ as the zero-sum sublattice of the free abelian group on
+$\Z/m\smallsetminus\{0\}$; $u$ --- our $\nu$ --- as the multiplicity-vector map, additive
+under juxtaposition, $\nu(\alpha*\beta)=\nu(\alpha)+\nu(\beta)$; the standard elements,
+verbatim, as
+$\sigma_{p,a}=(a,\,a+\frac mp,\dots,a+\frac{(p-1)m}p,\,m-pa)$ for $p\ge3$ and
+$\sigma_{2,a}=(a,\,a+\frac m2,\,m-2a,\,\frac m2)$ for $p=2$, over primes $p\mid m$ ($m>p$) and
+$0<a<\frac mp$ with nonzero entries; $\mathfrak S_m$ as the set of $\alpha$ admitting
+$\alpha*\delta\sim\sigma_1*\cdots*\sigma_k*\delta'$ with $\delta,\delta'$ unions of vanishing
+pairs, with $\mathfrak D_m\subset\mathfrak S_m$; and $S_m\subset A_m$ as the subgroup generated
+by $\nu(\mathfrak S_m)$. Consequently $S_m$ equals the $\Z$-span of the pair vectors
+$\nu(\{k,m-k\})$ and the standard vectors $\nu(\sigma_{p,a})$, $p=2$ included --- exactly the
+generator list of the implemented lattice --- so the machine verdicts $\nu\in S_m$ /
+$\nu\notin S_m$ are statements about Aoki's group itself.
+\end{proposition}
+\begin{proof}
+$\supseteq$: every pair class lies in $\mathfrak D_m\subset\mathfrak S_m$, and every standard
+element $\sigma$ satisfies $\sigma*\delta\sim\sigma*\delta$, so $\sigma\in\mathfrak S_m$: each
+listed generator is in $\nu(\mathfrak S_m)$. $\subseteq$: if
+$\alpha*\delta\sim\sigma_1*\cdots*\sigma_k*\delta'$, then
+$\nu(\alpha)=\sum_i\nu(\sigma_i)+\nu(\delta')-\nu(\delta)$, an integer combination of the listed
+generators. The two spans coincide.
+\end{proof}
+
+\begin{lemma}[$p=2$ standards; negation closure]\label{lem:p2neg}
+\begin{enumerate}
+\item[(i)] Every $\sigma_{2,x}$ is a grade-$2$ Hodge quadruple identically in $x$, so
+$\V(\sigma_{2,x})$ is algebraic by Lefschetz $(1,1)$ on the Fermat surface $X^2_m$: the $p=2$
+generators carry the same unconditional algebraicity as the odd-$p$ standards (Theorem~2-1 of
+\cite{Aoki87}, with the inflation lemma of \cite{BN} when $\gcd(x,m/p)>1$).
+\item[(ii)] For every prime $p\mid m$ and admissible $x$, $\sigma_{p,x}\uplus\sigma_{p,\,m/p-x}$
+is a union of vanishing pairs --- $p+1$ of them for odd $p$, four for $p=2$; in the lattice,
+$-\nu(\sigma_{p,x})\equiv \nu(\sigma_{p,\,m/p-x})\bmod D_m$, so an integer membership certificate
+converts to one with nonnegative standard coefficients at the cost of pair classes.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(i) For odd $t$ write $r=\fr{tx}$; $t\cdot\frac m2\equiv\frac m2$, and the residues of
+$t\cdot\sigma_{2,x}$ are $r,\,r+\frac m2,\,m-2r,\,\frac m2$ if $r<\frac m2$ and
+$r,\,r-\frac m2,\,2m-2r,\,\frac m2$ if $r>\frac m2$ ($r=\frac m2$ is excluded: $x+\frac m2
+\not\equiv0$) --- both sum to $2m$. Grade-$2$ Hodge quadruples are the $(1,1)$ characters of
+$X^2_m$; the rational part of their Galois block is divisorial by Lefschetz $(1,1)$, whence the
+claim. (ii) For odd $p$, $d=m/p$: the translates pair off as
+$(x+jd)+\bigl((d-x)+(p-1-j)d\bigr)=pd=m$ for $j=0,\dots,p-1$, and $(m-px)+(px)=m$. For $p=2$:
+$\{x,m-x\}$, $\{x+\frac m2,\frac m2-x\}$, $\{m-2x,2x\}$, and the self-pair
+$\{\frac m2,\frac m2\}$. Each pair lies in the span of the pair vectors.
+\end{proof}
+
+\begin{remark}[even-$m$ standard admissibility]\label{rem:evenstd}
+For even $m$ and odd $p\mid m$ Aoki's 1987 admissibility hypothesis $d/\gcd(x,d)>2$ ($d=m/p$) is
+strictly stronger than ``entries nonzero'': it excludes $x\equiv d/2\pmod d$. Every excluded
+multiset contains a vanishing pair --- $(x+k_1d)+(x+k_2d)\equiv0\pmod m$ reduces to
+$1+2j+k_1+k_2\equiv0\pmod p$ for $x=d/2+jd$, solvable with $0\le k_1<k_2\le p-1$ --- so it is
+decomposable, hence algebraic for the trivial reason, and the census classifier (which tests
+decomposability first) is unaffected. The lattice of Proposition~\ref{prop:ident} follows the
+range of \cite[\S2]{Aoki00} (nonzero entries only), matching his definition of $S_m$.
+\end{remark}
+
+\begin{remark}[the gap group]\label{rem:gap}
+Aoki's Theorem~2.1 \cite{Aoki00} (after \cite[Thm.~D]{AokiD}; the gap-group structure goes back
+to Yamamoto \cite{Yamamoto}) proves $2\alpha\in S_m$ for \emph{every} Hodge class $\alpha\in
+B_m$: the gap group $B_m/S_m$ is an elementary abelian $2$-group, generated by level-raised gap
+generators $\xi_d$. Every ``$2u\in S_m$'' certificate below therefore instantiates a general theorem; the
+content of a \emph{gap} verdict is the non-membership half $u\notin S_m$.
+\end{remark}
+
+\section{The even census}\label{sec:census}
+
+For each even $m$: enumerate grade-$3$ Hodge multisets (meet-in-the-middle on half-unit sum
+profiles); reduce to Galois orbits of sorted representatives; classify
+decomposable $\to$ quasi-decomposable $\to$ standard $\to$ $*$-split (the transport theorem of
+\cite{BN}, stated there for all $m$) $\to$ survivors. The
+census-completeness lemma of \cite{BN} is stated and proved there for both parities (the even
+self-pair $m/2$ included in $M_m(1)$); the even-parity engine is calibrated against direct brute
+force --- exact match of representative counts for $m\le14$ --- while the independent blind
+reimplementations of \cite{BN} cover the odd census.
+Throughout, \emph{primitive} means content $\gcd(a_0,\dots,a_5,m)=1$, i.e.\ not an inflation
+from a lower level; eigenvalue-field labels are \emph{numerical observations} (an mpmath
+heuristic over finitely many split primes), used as descriptors only --- no formal statement
+rests on them. Two engine-tier facts are recorded for transparency. The receipt engine (the v3
+pipeline over the even-safe base library) is multiplicity-aware throughout: its decomposability
+requires both members of a vanishing pair, the self-paired $m/2$ requiring multiplicity two, and
+its quasi loop includes the self-pair $\{m/2,m/2\}$ (e.g.\ $(1,3,36,38,64,68)$ at $m=70$ is
+genuinely quasi-decomposable through the self-pair, and the engine closes it). The odd-heritage
+display engine and the first version of the independent reimplementation carried set-based tests
+unsound at even $m$ --- a single $m/2$ reads as a vanishing pair; regression class
+$(1,29,35,43,45,57)$ at $m=70$, neither decomposable nor quasi-decomposable. The independent
+reimplementation is fixed (multiplicity-aware), both regression classes are asserted afresh by
+the runner, and its fresh key-level runs reproduce the engine receipt's representative and
+base-closure counts exactly at $50,70,110,114,168$ (pinned receipt). Independently of any
+engine, an exhaustive self-pair-inclusive quasi test --- every pair, every split, all units ---
+certifies all ten residual-table classes non-quasi (pinned receipt): no wall is affected. For
+self-containedness we recall the imported transport statement: \emph{a Hodge $(2,2)$ character
+of $X^4_m$, $m$ arbitrary, whose $6$-multiset splits into two zero-sum triples has algebraic
+rational Hodge classes in its Galois block} (\cite[Thm.~A]{BN}; its transport uses only the
+Galois-stable block, Lefschetz $(1,1)$, and the $\Q$-linear joining-line correspondence, so no
+rational point on the curve and no parity hypothesis enters). Counting convention: \emph{beyond-machinery} counts the primitive
+orbits surviving all four base predicates (decomposable / quasi-decomposable / standard /
+$*$-split), before the iterated and deep tiers; the paper's $38=21+14+3$ is this base-tier
+primitive count over $m\le108$, $108<m\le200$, $200<m\le250$. Surviving orbits are then attacked by the \emph{closure
+operator}: $T$ closes at depth $k$ if
+$T\uplus(k\text{ vanishing pairs})$, $k\le4$, partitions into blocks each of which is a
+vanishing pair, a grade-$2$ Hodge quadruple (Lefschetz $(1,1)$), an admissible standard block
+(Theorem~2-1 of \cite{Aoki87}; Lemma~\ref{lem:p2neg}(i) at $p=2$), or a previously certified
+sextuple (iteration: two-generation certificate trees); $\mathrm{claim}(T)$ then follows by
+Theorems~1-4(i),(ii) of \cite{Aoki87}. Every closure is stored as an explicit route in the
+deep-closure ledger and re-verified by the standalone checkers.
+
+\begin{proposition}[even census]\label{prop:evencensus}
+{\rm(Computer-assisted; engines, closure ledger, and receipts in the ancillary.)}
+(i) For even $m\le108$ there are twenty-one primitive beyond-machinery orbits, beginning at
+$m=50$, with indicated eigenvalue fields up to degree $32$; the odd law ``survivor
+$\Rightarrow3\mid m$'' fails in the even sector. (ii) Eighteen of the twenty-one close by
+depth-$3/4$ partition certificates (two closed sextuples, or quadruple--standard--quadruple);
+iterating the closure operator (blocks certified by their own certificates --- two-generation
+trees) closes $m=54$ and $m=90$ as well, so exactly one even class of degree $\le108$ resists:
+$m=70$, $(1,20,24,42,61,62)$, indicated eigenvalue field $\Q(\zt_{35})$. (iii) The census through degree
+$200$ yields fourteen further primitive classes, of which the same machinery closes eight (every
+open row in $178$--$200$ is an induced copy of an already-closed class); the residual at
+$m\le200$ is seven classes ($70$; two at $110$; three at $114$; one at $168$) and their induced
+copies. (iv) Through degree $250$ exactly three more primitive classes appear:
+$(2,9,129,142,168,180)$ and $(1,79,109,121,151,169)$ at $210$, and $(1,62,111,142,162,182)$ at
+$220$.
+\end{proposition}
+
+Among the eighteen closures of (ii) is the $m=66$, $\Q(\sqrt{-3})$ class --- closed through the
+self-paired element $(33,33)$, the same resource that closes da Silva's $m=33$ witness at level
+$66$ in \cite[Thm.~A$''$]{BN} --- so at that census depth every known Fermat-fourfold Hodge
+class with imaginary-quadratic \emph{indicated} eigenvalue field was algebraic; the deeper
+census produces a third such class at $m=168$, closed in \S\ref{sec:closures}. That survivor,
+$(1,25,79,121,127,151)$, has indicated eigenvalue field $\Q(\sqrt{-3})$, and its Frobenius
+character has a kernel prime ($p=673$), so the field-of-definition obstruction of
+\cite[Thm.~C]{BN} vanishes there.
+
+\section{Exchange and the wall structure}\label{sec:exchange}
+
+\begin{theorem}[Exchange]\label{thm:exchange}
+Let $T=S\uplus A$ and $T'=S\uplus B$ be Hodge sextuples $\bmod\ m$ (entries nonzero) with
+$|A|=|B|=2$, and suppose $q:=A\uplus(-B)$ has nonzero entries and is a Hodge $(1,1)$ quadruple.
+Then $\mathrm{claim}(T')\Rightarrow\mathrm{claim}(T)$; since $-q$ serves the reverse direction,
+$T$ and $T'$ are \emph{claim-equivalent}. The same holds for $|A|=3$ with $q$ a sextuple whose
+claim is known.
+\end{theorem}
+\begin{proof}
+$V(q)$ is algebraic by Lefschetz $(1,1)$ on the Fermat surface $X^2_m$ (no membership in
+$\mathfrak D_m$ is required). By Theorem~1-4(i) of \cite{Aoki87} (juxtaposition join, $r,s$ even),
+$\mathrm{claim}(T')$ and $\mathrm{claim}(q)$ give $\mathrm{claim}(T'\ast q)$. As multisets,
+$T'\uplus q = T\uplus(y_1,-y_1)\uplus(y_2,-y_2) = T\ast\delta$ with
+$\delta=(y_1,-y_1,y_2,-y_2)$ decomposable, so $\delta\in\mathfrak D^2_m$ and Theorem~1-4(ii) of
+\cite{Aoki87} cancels it. For $|A|=3$ the same two steps apply with $q$ a sextuple of known claim
+and $\delta=B\uplus(-B)$ three vanishing pairs, $\delta\in\mathfrak D^4_m$ ($s=4$ even); and
+$\mathrm{claim}(-q)=\mathrm{claim}(q)$ since $-q=(-1)\cdot q$ is a Galois conjugate. (Landing on a
+Galois conjugate $t\cdot T'$ suffices, claim being orbit-level; the
+$(m/2,m/2)$ self-pair is a legitimate multiset entry.)
+\end{proof}
+
+\begin{proposition}[wall structure through degree 250]\label{prop:walls}
+{\rm(Computer-assisted: exhaustive exchange scan, both $|A|$ shapes, own levels and level-lifts.)}
+The two $m=110$ classes are claim-equivalent --- the $\Q(\zt_5)$ class stands or falls with
+the $\Q(\zt_{110})$ one --- and the three $m=114$ classes form a complete triangle at
+Galois-orbit level, while $m=70$ and $m=168$ are exchange-isolated. The three primitive classes
+of Proposition~\ref{prop:evencensus}(iv) are already placed by the exchange graph:
+$(2,9,129,142,168,180)$ at $210$ is equivalent to the $3$-lift of the $m=70$ class; the $220$
+class is equivalent to the $2$-lifts of the $m=110$ pair; $(1,79,109,121,151,169)$ at $210$ is
+new and isolated. The residual boundary after the census machinery --- before the closures of
+Propositions~\ref{prop:w168} and~\ref{prop:w210} --- is thus ten primitive classes organized in
+five claim-equivalence walls
+\begin{gather*}
+W_{70}=\{70\simeq210\#2\},\qquad W_{110}=\{110\#1\simeq110\#2\simeq220\},\\
+W_{114}=\{\#1\simeq\#2\simeq\#3\},\qquad W_{168},\qquad W_{210}=\{210\#1\},
+\end{gather*}
+and closing any member of a wall closes the wall (Theorem~\ref{thm:exchange}). Precisely: call
+$T\leftrightarrow T'$ an \emph{exchange move} when $T=S\uplus A$, $T'=S\uplus B$ with
+$|A|=|B|\in\{2,3\}$ and the exchanger $q=A\uplus(-B)$ has nonzero entries and is a grade-$2$
+Hodge quadruple ($|A|=2$; unconditional by Lefschetz) or a grade-$3$ sextuple of known claim
+($|A|=3$). The scan enumerated \emph{every} move out of \emph{every} open class --- all entry
+positions, all $B$ --- at its own level and its lifts within the census range (pinned receipts:
+the own levels $70,110,114,168,210$ and the lifted levels $140,220,228$); the open set supplied
+to the scan at each level is the complete final list of unresolved orbits there, so an $|A|=3$
+exchanger outside it carries a known algebraicity claim; each lands on the
+class's own wall, never on a closed class. Within this move family and level range, the
+transitive exchange closure of each open class is therefore exactly its wall.
+\end{proposition}
+
+\section{Two closures}\label{sec:closures}
+
+\begin{proposition}[the $m=168$ class closes]\label{prop:w168}
+The class $(1,25,79,121,127,151)$ on $X^4_{168}$ is algebraic; with it every class of the two
+census ranges (odd $m\le199$, even $m\le250$) whose indicated eigenvalue field is imaginary
+quadratic ($m=33,66,168$) is closed.
+\end{proposition}
+
+\begin{proof}
+The closure rests on the published theorem: Aoki \cite{Aoki00} proves (Theorem~0.1(i)) the Hodge
+conjecture for all abelian varieties of Fermat type of degree $m=2^a3^b5^c7^d$ ($c=0$ or $d=0$),
+and the proof's \S4 route opens with the bridge through Corollary~3.2 there, establishing the
+statement for the Fermat varieties $X^n_m$ themselves, for all $n$, at these degrees; $168 =
+2^3\cdot3\cdot7$ qualifies. We do not re-derive that proof; we record two errata of the printed
+text, both verified against the primary and neither affecting the theorem as stated. First, the
+paper's own later citation of this statement
+(\cite[Thm.~1.2(ii)]{Aoki02}, attributed to a then-preprint on Catalan curves) is a
+citation slip --- the published Catalan paper (Tokyo J.\ Math.\ \textbf{27} (2004)) concerns the
+Jacobians of generalized Catalan curves, not the degree form; the theorem is \cite{Aoki00}'s own
+Thm.~0.1(i). Second, in the \S4 list of gap generators the $m=28$ entry
+$\xi_{28}=(1,9,25,12,20,24)$ is a misprint (it is not a zero-sum character), while Aoki's own
+text requires $\xi_m\in B^2\cup\bigl(B^4\cap(\mathfrak A^1*\mathfrak A^1)\bigr)$ and algebraizes
+these $\V(\xi_m)$ by the proof of Theorem~4.3 of Shioda \cite{Shioda81} (cited there); a
+machine-verified \emph{possible replacement} of exactly the required join form is
+$\xi_{28}=(1,9,18)\ast(10,21,25)\in B^4_{28}\cap(\mathfrak A^1_{28}*\mathfrak A^1_{28})$,
+$\nu(\xi_{28})\notin S_{28}$, $2\nu(\xi_{28})\in S_{28}$ (whether it is the intended
+generator modulo $S_{28}$ is not established here; the closure of $168$ does not depend on
+it). At the class level our lattice computation
+gives $\nu(a)\notin S_{168}$ with $\nu(a)\equiv \nu(6\cdot\xi_{28})\bmod S_{168}$ (entrywise product
+--- the level-raising map of \cite[\S2]{Aoki00}): the class is a genuine gap class, and no
+Fermat-internal route of this paper or of \cite{BN} reaches it (its multiset admits no
+zero-sum-triple split, so the $*$-split theorem --- stated in \cite{BN} for all $m$ --- does not
+fire, machine-checked; $5\nmid168$ leaves no standard block for the two-pair genre; the
+iterated and lift searches also failed) --- Theorem~0.1(i) is what closes it.
+\end{proof}
+
+\begin{proposition}[the isolated degree-210 class closes]\label{prop:w210}
+$\V(1,79,109,121,151,169)$ on $X^4_{210}$ is algebraic.
+\end{proposition}
+
+\begin{proof}
+The class closes by an explicit
+certificate: $\nu(1,79,109,121,151,169) \in S_{210}$, realized by $40$ generators with coefficients
+$\pm1$ (re-summed independently in the ancillary; stored as a data artifact). In full, with $(k)$
+denoting the pair $\{k,210-k\}$:
+\begin{gather*}
+\scriptstyle \nu(a)\;=\;
+-(7)-(8)+(12)-(21)-(27)-(28)-(29)+(36)+(41)+(42)-(61)\\
+\scriptstyle
++(66)+(74)-(76)-(77)-(78)+(82)+(84)-(91)+(96)-(105)\\
+\scriptstyle
++\,\sigma_{2,4}-\sigma_{2,9}+\sigma_{2,14}+\sigma_{2,21}+\sigma_{2,27}+\sigma_{2,28}+\sigma_{2,29}
+-\sigma_{2,31}-\sigma_{2,41}-\sigma_{2,42}\\
+\scriptstyle
+-\sigma_{3,4}+\sigma_{3,6}+\sigma_{3,7}+\sigma_{3,8}+\sigma_{3,9}-\sigma_{3,12}-\sigma_{3,14}
++\sigma_{7,1}-\sigma_{7,6}\,.
+\end{gather*}
+Every generator's eigenspace is algebraic --- pairs: linear cycles, Theorem~1-1 of \cite{Aoki87};
+$\sigma_{3,x},\sigma_{7,x}$: Theorem~2-1 of \cite{Aoki87}, with the inflation lemma of \cite{BN}
+when $\gcd(x,m/p)>1$; $\sigma_{2,x}$: Lemma~\ref{lem:p2neg}(i) --- so converting the negative
+terms by Lemma~\ref{lem:p2neg}(ii) produces the literal
+membership $a\ast\delta \sim \sigma_1\ast\cdots\ast\sigma_{19}\ast\delta'$ ($\delta,\delta'$
+unions of vanishing pairs), and $\V(a)$ is algebraic by Theorems~1-4(i),(ii) of \cite{Aoki87} ---
+the calculus of Lemma~4.1 of \cite{Aoki00} (which carries no hypothesis on $m$), with every block
+certified above.
+\end{proof}
+
+Negative-coefficient certificates of this kind are invisible to
+monoid/partition search engines --- the lattice membership test ($\nu(a)\in S_m$, Hermite normal
+form) decides standard-calculus reachability exactly and is the instrument we now run first. (The
+two directions, with the scope stated precisely: a certificate all of whose blocks are vanishing
+pairs, standard blocks, or classes already certified inside $S_m$ forces $\nu(a)\in S_m$, since $\nu$
+is additive under $*$; a certificate routed through a Lefschetz quadruple whose own $\nu$ lies
+outside $S_m$ escapes the lattice --- the $\Q(\zt_{21})$ class at $105$ closes exactly this way
+in \cite[Thm.~A$'$]{BN} while remaining a gap class --- so gap-ness bounds the \emph{standard}
+calculus, not partition search as such. Conversely an integer membership combination converts to
+a literal Aoki chain by negation closure (Lemma~\ref{lem:p2neg}(ii)), as carried out in
+Proposition~\ref{prop:w210}.)
+
+\section{The boundary at $m\le250$}\label{sec:boundary}
+
+\begin{corollary}[the even-degree boundary at $m\le250$]\label{cor:evenbdry}
+The residual boundary for all \emph{even} degrees $m\le250$ --- unresolved by the implemented
+closure family and the cited published theorems --- is eight primitive classes in three
+walls ($W_{70}$: two members, $W_{110}$: three, $W_{114}$: three, including the displayed
+lift-equivalent members at $210$ and $220$), and
+all eight are certified gap classes: $\nu\notin S_m$, $2\nu\in S_m$ (the doubling holds for
+\emph{every} Hodge class by \cite[Thm.~2.1]{Aoki00}; the certificates make it explicit). The
+residual question is uniform: algebraicity of gap-group
+classes at degrees $70, 110, 114$ --- outside the degree forms of Aoki's theorem ($70$ and $210$
+contain both $5$ and $7$; $110$ contains $11$; $114$ contains $19$).
+\end{corollary}
+
+\medskip
+\begin{center}\small
+\begin{tabular}{llll}
+\toprule
+$m$ & class & $\nu\in S_m$? & status\\
+\midrule
+$70$  & $(1,20,24,42,61,62)$      & no  & unresolved ($W_{70}$)\\
+$110$ & $(1,24,62,71,81,91)$      & no  & unresolved ($W_{110}$)\\
+$110$ & $(1,31,55,71,81,91)$      & no  & unresolved ($W_{110}$)\\
+$114$ & $(1,13,43,72,103,110)$    & no  & unresolved ($W_{114}$)\\
+$114$ & $(1,13,43,80,102,103)$    & no  & unresolved ($W_{114}$)\\
+$114$ & $(1,7,78,79,86,91)$       & no  & unresolved ($W_{114}$)\\
+$168$ & $(1,25,79,121,127,151)$   & no  & closed (Prop.~\ref{prop:w168})\\
+$210$ & $(1,79,109,121,151,169)$  & yes & closed (Prop.~\ref{prop:w210})\\
+$210$ & $(2,9,129,142,168,180)$   & no  & unresolved ($W_{70}$)\\
+$220$ & $(1,62,111,142,162,182)$  & no  & unresolved ($W_{110}$)\\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\parbox{0.92\linewidth}{\footnotesize The ten primitive classes of degree $\le250$ beyond the
+base machinery. Every lattice verdict carries an independent certificate in the ancillary: a
+modular kernel witness ($q=2$) for each ``no'', the re-summed $\pm1$ combination for the ``yes''.}
+\end{center}
+
+A systematic treatment of the even sector beyond degree $250$ is deferred.
+
+\section{Methods, code availability, and provenance}\label{sec:methods}
+Exact objects throughout: multiset identities, Hodge grades, and lattice membership are decided
+in exact integer arithmetic; no floating point enters any certificate. Every lattice verdict has an
+independent exact certificate (modular kernel witnesses found by the standalone script's own
+elimination for each non-membership; exact re-summation for each membership and for the doubled
+vectors); the full census and exchange sweeps are reproducible from the supplied engines and are
+accompanied by checksummed campaign receipts; independent brute-force calibration is performed
+at small levels ($m\le14$), and the algorithmically independent reimplementation re-derives the
+representative counts fresh at the key levels $50,70,110,114,168$ (pinned receipt). The author
+takes full responsibility for all proofs, code, and bibliographic claims. The ancillary package is shared with the companion note: engines (census, closure
+oracle, exchange scan, lift sweeps, lattice membership), the deep-closure ledger, the stored
+degree-$210$ certificate, the complete even census receipt over all even $6\le m\le250$, and the
+pinned exchange/negative-sweep logs, with a checksum manifest and a fresh-run runner
+(\texttt{run\_all.sh}; ``PASSED'' always means executed now, never cached). This manuscript was
+prepared with AI assistance; all computational claims are backed by the ancillary code and
+receipts.
+
+\appendix
+\section{The cited Aoki statements}\label{app:aoki}
+
+For self-containedness we reproduce the exact statements used, in the numbering of the primary
+texts.
+
+\emph{From \cite{Aoki87}} (notation as there: $\mathfrak B^n_m$ the Hodge characters of $X^n_m$,
+$\mathfrak D^n_m$ the classes that are coordinate permutations of $(a_0,-a_0,\dots,a_r,-a_r)$,
+$r=n/2$; $*$ juxtaposition; \textsc{claim}$(\alpha)$: $\V(\alpha)$ is generated by classes of
+algebraic cycles on $X^n_m$):
+
+\begin{itemize}
+\item[--] \textbf{Theorem 1-1} (Shioda). \emph{The linear space $L$ represents
+$\delta\in\mathfrak D^n_m$; more precisely
+$\omega_\delta(L)\cdot\overline{\omega_\delta(L)}=(-1)^r m^{n+1}$.}
+\item[--] \textbf{Theorem 1-4} (Shioda, Ran). \emph{Let $r$ and $s$ be non-negative even integers
+such that $n=r+s+2$, and let $\alpha\in\mathfrak B^r_m$, $\beta\in\mathfrak B^s_m$. Then:
+(i) if \textsc{claim}$(\alpha)$ and \textsc{claim}$(\beta)$ are true, then
+\textsc{claim}$(\alpha*\beta)$ is also true; (ii) if there exists $\delta\in\mathfrak D^s_m$ such
+that \textsc{claim}$(\alpha*\delta)$ is true, then \textsc{claim}$(\alpha)$ is also true.}
+\item[--] \textbf{Theorem 2-1.} \emph{For an odd prime $p\mid m$, $d=m/p$, $\gcd(a,d)=1$, the
+variety $Y$ defined by (2.1) there is a subvariety of $X^{p-1}_m$ of codimension $r=(p-1)/2$
+representing $\alpha=\sigma_{p,a}$; more precisely
+$\omega_\alpha(Y)\cdot\overline{\omega_\alpha(Y)}=(-1)^r p^{p-2}m^p$.}
+\end{itemize}
+
+\emph{From \cite{Aoki00}} (verified verbatim against the open-access copy in the Rikkyo
+University repository, doi:10.14992/00009819; \S\ref{sec:closures} records two errata of the
+printed text, both likewise verified against the primary):
+
+\begin{itemize}
+\item[--] \textbf{\S2 definitions} (verbatim). \emph{If $m$ is divisible by a prime number $p$
+and $m>p$, then we have explicitly defined elements of $\mathfrak B_m$:
+$\sigma_{p,a}=(a,\,a+\frac mp,\,\dots,\,a+\frac{(p-1)m}p,\,m-pa)$ if $p\ge3$;
+$(a,\,a+\frac m2,\,m-2a,\,\frac m2)$ if $p=2$ --- where $a$ is an integer such that
+$0<a<\frac mp$. We call $\sigma_{p,a}$ a standard element.} Further (\S2 there): $A_m$ is the
+zero-sum sublattice of the free abelian group on $\Z/m\smallsetminus\{0\}$; $u$ (our $\nu$) the
+multiplicity-vector map, $\nu(\alpha*\beta)=\nu(\alpha)+\nu(\beta)$; $B_m,S_m,D_m\subset A_m$ the
+subgroups generated by $u(\mathfrak B_m),u(\mathfrak S_m),u(\mathfrak D_m)$, with
+$\mathfrak D_m\subset\mathfrak S_m\subset\mathfrak B_m$ and $\mathfrak S_m$ the set of $\alpha$
+admitting $\alpha*\delta\sim\sigma_1*\cdots*\sigma_k*\delta'$ ($\delta,\delta'\in\mathfrak
+D_m$).
+\item[--] \textbf{Theorem 0.1.} \emph{Suppose the prime factorization of $m$ is one of the
+following forms: (i) $m=2^a3^b5^c7^d$, where $a,b,c,d$ are non-negative integers such that either
+$c=0$ or $d=0$; (ii) $m=p^e$ or $2p^e$, $p$ an odd prime. Then the Hodge conjecture is true for
+all abelian varieties of Fermat type of degree $m$.} Its proof (\S4 there, p.~185) opens: ``In view of
+Corollary~3.2, it suffices to show that the Hodge conjecture for $X^n_m$ is true for all $n$'' ---
+the bridge to the Fermat varieties themselves used in Proposition~\ref{prop:w168}; the
+verification then reduces, via Lemma~4.1 and Theorem~2.1 there, to the gap generators $\xi_m$ at
+$m=12,15,20,21,28$ (the $m=28$ entry being the misprint recorded in \S\ref{sec:closures}).
+\item[--] \textbf{Theorem 2.1} (verbatim; proved as Theorem~D of \cite{AokiD}). \emph{For each
+divisor $d>1$ of $m$ such that $\mu'(d)=1$, there exists an element $\xi_d$ of $B_d-S_d$ with
+the property that the $\Gamma_m$-module $B_m$ is generated by $(m/d)\xi_d$ for all such divisors
+$d$ of $m$ and $S_m$. Moreover, we have $2\alpha\in S_m$ for every $\alpha\in B_m$.} ($\mu'$ is
+Aoki's modified M\"obius function and $(m/d)$ his level-raising product map; their exact forms
+are not needed here.)
+\item[--] \textbf{Lemma 4.1} (verbatim). \emph{Let $\alpha,\beta\in B_m$. Then:
+(i) if both $\V(\alpha)$ and $\V(\beta)$ are algebraic, then so is $\V(\alpha*\beta)$;
+(ii) if $\V(\alpha*\delta)$ is algebraic for some $\delta\in D_m$, then so is $\V(\alpha)$;
+(iii) if $\alpha\in S_m$, then $\V(\alpha)$ is algebraic.} No hypothesis on $m$ is imposed;
+Proposition~\ref{prop:ident} identifies the implemented lattice with $S_m$
+generator-by-generator.
+\end{itemize}
+
+\begin{thebibliography}{99}
+\bibitem{Aoki87} N.~Aoki, \emph{Some new algebraic cycles on Fermat varieties}, J.~Math.\ Soc.\ Japan
+\textbf{39} (1987), 385--396.
+\bibitem{AokiD} N.~Aoki, \emph{On some arithmetic problems related to the Hodge cycles on the
+Fermat varieties}, Math.\ Ann.\ \textbf{266} (1983), 23--54; Erratum: Math.\ Ann.\ \textbf{267}
+(1984), 572.
+\bibitem{Aoki00} N.~Aoki, \emph{Some remarks on the Hodge conjecture for abelian varieties of Fermat
+type}, Comment.\ Math.\ Univ.\ Sancti Pauli \textbf{49} (2000), 177--194; doi:10.14992/00009819
+(open access, Rikkyo University repository).
+\bibitem{Aoki02} N.~Aoki, \emph{Hodge cycles on CM abelian varieties of Fermat type}, Comment.\
+Math.\ Univ.\ Sancti Pauli \textbf{51} (2002), 99--130; doi:10.14992/00008725.
+\bibitem{daSilva} G.~da Silva Jr., \emph{Notes on the Hodge conjecture for Fermat varieties},
+Experimental Results \textbf{2} (2021), e22, doi:10.1017/exp.2021.14; arXiv:2101.04739.
+\bibitem{BN} R.~Jumagulov, \emph{The Hodge conjecture for Fermat fourfolds of odd degree at
+most 199}, companion note, 2026 (arXiv, to appear; the ancillary package is shared).
+\bibitem{P1} R.~Jumagulov, \emph{Galois-invariant N\'eron--Severi ranks of Fermat surfaces over
+number fields: a Galois module, closed forms, a threshold, and exact tables}, arXiv:2607.17387.
+\bibitem{Shioda79} T.~Shioda, \emph{The Hodge conjecture for Fermat varieties}, Math.\ Ann.\ \textbf{245}
+(1979), 175--184.
+\bibitem{Shioda81} T.~Shioda, \emph{Algebraic cycles on abelian varieties of Fermat type}, Math.\
+Ann.\ \textbf{258} (1981/82), 65--80.
+\bibitem{SK} T.~Shioda, T.~Katsura, \emph{On Fermat varieties}, T\^ohoku Math.\ J.\ \textbf{31} (1979),
+97--115.
+\bibitem{Weil49} A.~Weil, \emph{Numbers of solutions of equations in finite fields}, Bull.\ Amer.\
+Math.\ Soc.\ \textbf{55} (1949), 497--508.
+\bibitem{Yamamoto} K.~Yamamoto, \emph{The gap group of multiplicative relationship of Gauss
+sums}, Symp.\ Math.\ \textbf{XV} (1975), 427--440.
+\bibitem{Weil52} A.~Weil, \emph{Jacobi sums as ``Gr\"ossencharaktere''}, Trans.\ Amer.\ Math.\ Soc.\
+\textbf{73} (1952), 487--495.
+\end{thebibliography}
+\end{document}

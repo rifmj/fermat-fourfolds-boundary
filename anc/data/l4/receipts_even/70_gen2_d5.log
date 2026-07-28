@@ -1,0 +1,12 @@
+  d=1 exhausted [0s]
+CALIB m=54 (must fire d<=3): FIRE d=2
+  d=1 exhausted [0s]
+  d=2 exhausted [0s]
+CALIB m=33 d2 (must NOT fire): NO-FIRE
+CALIBRATION PASS
+  d=1 exhausted [0s]
+  d=2 exhausted [0s]
+  d=3 exhausted [5s]
+  d=4 exhausted [126s]
+  d=5 exhausted [2472s]
+NO-FIRE depth<=5 gen=2  [2603s]

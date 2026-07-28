@@ -1,0 +1,10 @@
+m=33: reps=104 dec=102 indec=2 quasi=1 nonquasi=1 std-covered=0 split-covered=0 TRULY-OPEN=1
+  m=33 OPEN (1, 4, 16, 22, 25, 31)  diag=[3]  eig-field-degree(max over 2 primes)=2  IMAG-QUADRATIC candidate
+=== m=33 DONE ===
+m=39: reps=140 dec=137 indec=3 quasi=1 nonquasi=2 std-covered=0 split-covered=2 TRULY-OPEN=0
+  m=39 SPLIT-CLOSED (1, 7, 16, 22, 34, 37)
+  m=39 SPLIT-CLOSED (1, 14, 16, 22, 29, 35)
+=== m=39 DONE ===
+m=45: reps=245 dec=237 indec=8 quasi=6 nonquasi=2 std-covered=1 split-covered=0 TRULY-OPEN=1
+  m=45 OPEN (1, 19, 20, 28, 30, 37)  diag=none  eig-field-degree(max over 2 primes)=6  BEYOND imaginary quadratic
+=== m=45 DONE ===

@@ -1,0 +1,24 @@
+# Receipt (2026-07-28): EXHAUSTIVE exact quasi-decomposability check — every pair {k,m-k},
+# k=1..m/2 INCLUDING the self-pair k=m/2, every 4+4 split of the augmented 8-multiset, both
+# halves tested grade-2 Hodge over ALL units — for every class of the residual table (all ten
+# rows). Attribution (corrected): the receipt engine census_scan_v3 -> census_even is even-safe by
+# construction (multiplicity-aware decomposability; self-pair quasi — see its module docstring);
+# the odd-era display engine census_scan_v2 and the pre-fix independent reimplementation carried
+# odd-heritage set-based tests unsound at even m. This receipt certifies independently that NO
+# final-tier residual class becomes quasi-decomposable once the self-pair is included: the walls
+# stand. It also pins one genuine self-pair-quasi witness (correctly closed by the receipt
+# engine; missed only by the odd-era display tally).
+
+m=70 (1, 20, 24, 42, 61, 62): NOT quasi (0 witnesses)
+m=110 (1, 24, 62, 71, 81, 91): NOT quasi (0 witnesses)
+m=110 (1, 31, 55, 71, 81, 91): NOT quasi (0 witnesses)
+m=114 (1, 13, 43, 72, 103, 110): NOT quasi (0 witnesses)
+m=114 (1, 13, 43, 80, 102, 103): NOT quasi (0 witnesses)
+m=114 (1, 7, 78, 79, 86, 91): NOT quasi (0 witnesses)
+m=168 (1, 25, 79, 121, 127, 151): NOT quasi (0 witnesses)
+m=210 (1, 79, 109, 121, 151, 169): NOT quasi (0 witnesses)
+m=210 (2, 9, 129, 142, 168, 180): NOT quasi (0 witnesses)
+m=220 (1, 62, 111, 142, 162, 182): NOT quasi (0 witnesses)
+
+ALL TEN RESIDUAL-TABLE CLASSES NON-QUASI UNDER SELF-PAIR-INCLUSIVE EXHAUSTIVE TEST: True
+Documented tier-discrepancy witness: m=70 (1, 3, 36, 38, 64, 68) IS quasi via the self-pair: (35, (1, 35, 36, 68), (3, 35, 38, 64))

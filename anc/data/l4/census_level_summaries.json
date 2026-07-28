@@ -1,0 +1,925 @@
+{
+ "format": "sha256_reps = SHA-256 of the canonically sorted representative list, one class per line 'a0,a1,...,a5\\n'",
+ "levels": [
+  {
+   "m": 21,
+   "n_reps": 64,
+   "sha256_reps": "8e050471385fd2cf7c53c1a53bfb2180f0c0ea29716f264c2e97ad3337443493",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 61,
+    "quasi": 3
+   }
+  },
+  {
+   "m": 25,
+   "n_reps": 39,
+   "sha256_reps": "1afb5fd5c2e1af113ee39e5807e379bff8ddb13e00a6e035794446a4d3f65cb1",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 38,
+    "standard": 1
+   }
+  },
+  {
+   "m": 27,
+   "n_reps": 68,
+   "sha256_reps": "b528d9bff3b5688c7f2d44fec8b3b7f6c171b1c57a609ef0239231b102265cb2",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 67,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 29,
+   "n_reps": 40,
+   "sha256_reps": "08a954cc48eecdc79e41427bb60f773a11d05a2edb77370d79f8c4277b879a28",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 40
+   }
+  },
+  {
+   "m": 31,
+   "n_reps": 46,
+   "sha256_reps": "b11e62cd768fd050aef50b86e5b12ae4dc61d88a9aec5c7dbb3f811e0c55875d",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 46
+   }
+  },
+  {
+   "m": 33,
+   "n_reps": 104,
+   "sha256_reps": "d5ceaa95a64b2533677b791172dec62697cc6fd072ee202548c142a4d4b34902",
+   "survivors": [
+    [
+     1,
+     4,
+     16,
+     22,
+     25,
+     31
+    ]
+   ],
+   "tallies": {
+    "decomposable": 102,
+    "quasi": 1,
+    "survivor": 1
+   }
+  },
+  {
+   "m": 35,
+   "n_reps": 92,
+   "sha256_reps": "1bc625b8ffd4e2a41f484c23c028c98cce31654275b0fd96af8d717ba6872583",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 91,
+    "standard": 1
+   }
+  },
+  {
+   "m": 37,
+   "n_reps": 64,
+   "sha256_reps": "0b47632b8c6bd3c6bb3710bd849435d9833fe99e5588e4cb2b23fcb506bdeafb",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 64
+   }
+  },
+  {
+   "m": 39,
+   "n_reps": 140,
+   "sha256_reps": "46bb9e70c3570d7614dd43ee8112e317bcbce40b0c4b3a90068030ba593b7fe7",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 137,
+    "quasi": 1,
+    "star-split": 2
+   }
+  },
+  {
+   "m": 41,
+   "n_reps": 77,
+   "sha256_reps": "7acdc0618e16110c564fa81d1786e04f6007ebbd27a8f29883e5a11dc198649f",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 77
+   }
+  },
+  {
+   "m": 43,
+   "n_reps": 85,
+   "sha256_reps": "b0ab265946804d0632960df609f5ca168c4c1f943be315e0474e6ac484fa8d1a",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 85
+   }
+  },
+  {
+   "m": 45,
+   "n_reps": 245,
+   "sha256_reps": "86a4e3913f61d02be30dd3ffafcce496f6e6adf9d643854c8a9523a138b82d00",
+   "survivors": [
+    [
+     1,
+     19,
+     20,
+     28,
+     30,
+     37
+    ]
+   ],
+   "tallies": {
+    "decomposable": 237,
+    "quasi": 6,
+    "standard": 1,
+    "survivor": 1
+   }
+  },
+  {
+   "m": 47,
+   "n_reps": 100,
+   "sha256_reps": "b9e8f16c497b8b6a505c7075e9c65c69369a299a2d117ae72db2ab3b59f3600d",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 100
+   }
+  },
+  {
+   "m": 49,
+   "n_reps": 128,
+   "sha256_reps": "f59b639e99dedf77069c9867666d6f1fe2f5c334fea9a590c6a4a42e6e39ec35",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 128
+   }
+  },
+  {
+   "m": 51,
+   "n_reps": 217,
+   "sha256_reps": "143264e8a663dec2fcea0883f28a968158380ddc5a9789e6c4db86d8548858f5",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 216,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 53,
+   "n_reps": 126,
+   "sha256_reps": "51f9377cdc68a24e976e8e186b617682b570734fd426786d421ee9782d4d94c0",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 126
+   }
+  },
+  {
+   "m": 55,
+   "n_reps": 197,
+   "sha256_reps": "cead5862ebe9a7219efe150f6b554e528706cbe7ed330acd127c786c113038f1",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 196,
+    "standard": 1
+   }
+  },
+  {
+   "m": 57,
+   "n_reps": 265,
+   "sha256_reps": "0608955f6e3cfb1ca3e9729140b50e1f843a652f854b15d7acdc4c04e80c3862",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 264,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 59,
+   "n_reps": 155,
+   "sha256_reps": "a2ce64a3e14c694059107b3346d8c6dca0fb46f7c7109e6985cf76f3a8df64da",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 155
+   }
+  },
+  {
+   "m": 61,
+   "n_reps": 166,
+   "sha256_reps": "c5affc25723cd00403d0c45ed3ca7c18d7426d629e2b5641415098657c3fc0ba",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 166
+   }
+  },
+  {
+   "m": 63,
+   "n_reps": 407,
+   "sha256_reps": "6f1da3c01043248a3f373968fa075c406e6d3986a544d070615066eb3ac0d5cc",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 400,
+    "quasi": 7
+   }
+  },
+  {
+   "m": 65,
+   "n_reps": 268,
+   "sha256_reps": "e004dffe9bb3c9c4e64f2b8b93205994618d4c99f279c24ebca48b76382c0e6d",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 267,
+    "standard": 1
+   }
+  },
+  {
+   "m": 67,
+   "n_reps": 199,
+   "sha256_reps": "bb14e132146f76a54c6d4fbb267524bf16fc5624fc8aa0e1d3c3d4b2467cb594",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 199
+   }
+  },
+  {
+   "m": 69,
+   "n_reps": 372,
+   "sha256_reps": "5a261d955745221e6e7626dbc822b1af461278281ea15443e5292c186f3162fb",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 371,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 71,
+   "n_reps": 222,
+   "sha256_reps": "c11517a62b086b86f0699b792a5b18f345b8eb6ecabae6e8f83454bd6cd1f3c6",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 222
+   }
+  },
+  {
+   "m": 73,
+   "n_reps": 235,
+   "sha256_reps": "ade33a938fad081be7dbd7d629e15a6bd2ae078a3365bbc82f26e0d1d0db85b9",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 235
+   }
+  },
+  {
+   "m": 75,
+   "n_reps": 561,
+   "sha256_reps": "7dab9820d50f5010818d177ef02119a162b3dfb708d8b78a047c04bbe61a922d",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 556,
+    "quasi": 3,
+    "standard": 2
+   }
+  },
+  {
+   "m": 77,
+   "n_reps": 346,
+   "sha256_reps": "38a3b8139fae885569319ec371dec0a736d488e05e2250f37867321a175c4dc8",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 346
+   }
+  },
+  {
+   "m": 79,
+   "n_reps": 274,
+   "sha256_reps": "26b28312f4cf8a5a0ca567245e784d3014acda37d5646501f79c837e36c8e13a",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 274
+   }
+  },
+  {
+   "m": 81,
+   "n_reps": 504,
+   "sha256_reps": "60700696e7e4d73c2e166a831b84395f8a8f4e8fc31243db2d30d1257b29d97c",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 502,
+    "quasi": 2
+   }
+  },
+  {
+   "m": 83,
+   "n_reps": 301,
+   "sha256_reps": "eb1ae59ad87def18fbc4339bbe470031043596974da36e34cbdeb5340ab894d4",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 301
+   }
+  },
+  {
+   "m": 85,
+   "n_reps": 437,
+   "sha256_reps": "84bec170c884a308094920506a853c484b34de888552e816eb96485084ffa8b7",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 436,
+    "standard": 1
+   }
+  },
+  {
+   "m": 87,
+   "n_reps": 570,
+   "sha256_reps": "23d9034ba142b9738c5c21ad22ae6331594de7eec08697be1feb310508c73c11",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 569,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 89,
+   "n_reps": 345,
+   "sha256_reps": "b4733f354d59e8aa307b531bb66e5ea10c5aebd8fbb6e757494716034f03aee8",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 345
+   }
+  },
+  {
+   "m": 91,
+   "n_reps": 473,
+   "sha256_reps": "be66ddee387a7c8253ae58dd280d5fd90016d46ade6d35c26500b6470a6dcd84",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 473
+   }
+  },
+  {
+   "m": 93,
+   "n_reps": 646,
+   "sha256_reps": "a66b1a256833ae37d6ac0327978a8977512b474fdb0c312a7ae7b6fe7ac203d4",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 645,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 95,
+   "n_reps": 539,
+   "sha256_reps": "b13761fd1b3d07af326fcc645b551dd03eccf71c2bed0957e683268aedd3f881",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 538,
+    "standard": 1
+   }
+  },
+  {
+   "m": 97,
+   "n_reps": 409,
+   "sha256_reps": "6316ea7507f726052354937db1ac061a39a29e47bd6cc4ddea58ab710cdfde77",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 409
+   }
+  },
+  {
+   "m": 99,
+   "n_reps": 825,
+   "sha256_reps": "0d686af402797f1ba74ba974e746ee9fb6bf1bb5dda02b08c49207cdd544e9e8",
+   "survivors": [
+    [
+     3,
+     12,
+     48,
+     66,
+     75,
+     93
+    ]
+   ],
+   "tallies": {
+    "decomposable": 822,
+    "quasi": 2,
+    "survivor": 1
+   }
+  },
+  {
+   "m": 101,
+   "n_reps": 442,
+   "sha256_reps": "57dbf2d83ff7794619a151c05d7e727bcb79255c22a3c1b23369a577a7ff762f",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 442
+   }
+  },
+  {
+   "m": 103,
+   "n_reps": 460,
+   "sha256_reps": "7d40511094e2db9aed502d0cc79e6b9ad4ee62a6c015d2692f1ea9fe7902e029",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 460
+   }
+  },
+  {
+   "m": 105,
+   "n_reps": 1286,
+   "sha256_reps": "584345d7f41fd855ad437f122f7646086a095ae8e7ffc9e8faeb726468bf1520",
+   "survivors": [
+    [
+     1,
+     22,
+     43,
+     64,
+     90,
+     95
+    ],
+    [
+     3,
+     24,
+     50,
+     66,
+     85,
+     87
+    ]
+   ],
+   "tallies": {
+    "decomposable": 1276,
+    "quasi": 6,
+    "standard": 2,
+    "survivor": 2
+   }
+  },
+  {
+   "m": 107,
+   "n_reps": 495,
+   "sha256_reps": "740dbcc844302cd4e64aebb7f95b101fdeb19f8dc28cd71db4241d820d50ef6f",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 495
+   }
+  },
+  {
+   "m": 109,
+   "n_reps": 514,
+   "sha256_reps": "e4f7d75c761beadf3a069bacdbdf4904f3c0e4d26d9d994d8a92f1ac55212a3d",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 514
+   }
+  },
+  {
+   "m": 111,
+   "n_reps": 900,
+   "sha256_reps": "5c7a638fa53fb18c087f52e75a258f2b0a20d6f4690387afa86497a3c8989d98",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 899,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 113,
+   "n_reps": 551,
+   "sha256_reps": "f3d943cc54c63951de66eb3fd951a6944471fde8b0cd42e8cd49cdbd6d168c8c",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 551
+   }
+  },
+  {
+   "m": 115,
+   "n_reps": 772,
+   "sha256_reps": "cffa40b36ecda3b9e1292c3e24e6d2eefa9f8a8ffb6906b506102d236921e0b7",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 771,
+    "standard": 1
+   }
+  },
+  {
+   "m": 117,
+   "n_reps": 1117,
+   "sha256_reps": "5e6cdd3d2651e06f4c191c8c3871f0292534bd7ea69cd180f10e38fa5c5585f1",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1113,
+    "quasi": 2,
+    "star-split": 2
+   }
+  },
+  {
+   "m": 119,
+   "n_reps": 776,
+   "sha256_reps": "5dfda05307b7132cf55ee2491cf8c209de881f542a0400f74cf2267e434d8b02",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 776
+   }
+  },
+  {
+   "m": 121,
+   "n_reps": 694,
+   "sha256_reps": "ba56b0ed888312420afa4ca3989cb59f483859021c0fd0c9d7f4dbde807fbd00",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 694
+   }
+  },
+  {
+   "m": 123,
+   "n_reps": 1091,
+   "sha256_reps": "e893f555a8ab6385a3ec46807ed6a9f31caa949c171d76cabb9c5d282019b2b2",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1090,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 125,
+   "n_reps": 866,
+   "sha256_reps": "d4a54de51c41fd51118390580c74d1d9ad5f66bee1b44d4aa24b5e6f71ef8c0f",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 864,
+    "standard": 2
+   }
+  },
+  {
+   "m": 127,
+   "n_reps": 694,
+   "sha256_reps": "3a5d54445954dd6b247911e01cbb6d719573aa1bbb9a71542ec13994d724d068",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 694
+   }
+  },
+  {
+   "m": 129,
+   "n_reps": 1195,
+   "sha256_reps": "92d7b3f4b27b9acd5414f2fa8d641ffa0c45bcf1cdf8b6298eeb865e0360b695",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1194,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 131,
+   "n_reps": 737,
+   "sha256_reps": "ca2a5386ec28895323e26e48533de0afd68e2a6532a3d04d2efc23f02b00983c",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 737
+   }
+  },
+  {
+   "m": 133,
+   "n_reps": 960,
+   "sha256_reps": "8437c7884aac063fa68e9e2f9cf5d1e3fdc5e6cd612b97a035e016c80175e21c",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 960
+   }
+  },
+  {
+   "m": 135,
+   "n_reps": 1767,
+   "sha256_reps": "a96b03ee34016530513fe6c10edfd7ab618c5ab9c4da91f05becfd200e20f6e3",
+   "survivors": [
+    [
+     3,
+     57,
+     60,
+     84,
+     90,
+     111
+    ]
+   ],
+   "tallies": {
+    "decomposable": 1756,
+    "quasi": 8,
+    "standard": 2,
+    "survivor": 1
+   }
+  },
+  {
+   "m": 137,
+   "n_reps": 805,
+   "sha256_reps": "217d04dcf7ab00814be75b878b25185c3956c3b970bf2a6a32714ae715ca407d",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 805
+   }
+  },
+  {
+   "m": 139,
+   "n_reps": 829,
+   "sha256_reps": "947058803301b71c05c80b3b86312cd074e28ae3df75e549e9162af3e00518b4",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 829
+   }
+  },
+  {
+   "m": 141,
+   "n_reps": 1414,
+   "sha256_reps": "b658dc0c3263b004b4ce6152ff06585c03a63247199bd8f351d2953b997f3d4f",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1413,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 143,
+   "n_reps": 1062,
+   "sha256_reps": "0ffdfaaad96c2a07d268032fa4c5ef684c188522c161452e6d7a5da050b8a174",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1062
+   }
+  },
+  {
+   "m": 145,
+   "n_reps": 1204,
+   "sha256_reps": "9922f1946f2d2e2df9a8dbb6354d5366f106dc6e7509a01e0b6dcb727dfb708e",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1203,
+    "standard": 1
+   }
+  },
+  {
+   "m": 147,
+   "n_reps": 1816,
+   "sha256_reps": "d7c719abdb6792391aaec7a4ae774ba824a0b22afb691b76a3456ea9dd65b62f",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1812,
+    "quasi": 4
+   }
+  },
+  {
+   "m": 149,
+   "n_reps": 950,
+   "sha256_reps": "98f35337e2c3ae4ec911c855d72d5160dac337c211d8dc68ba8783c9c9fe8082",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 950
+   }
+  },
+  {
+   "m": 151,
+   "n_reps": 976,
+   "sha256_reps": "6e47b951171a041097fc4b5efd3465e1250307a7ef14ef087d504a3e65b7452c",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 976
+   }
+  },
+  {
+   "m": 153,
+   "n_reps": 1816,
+   "sha256_reps": "69118417f3999f29be206a4f2887a28ae2b80e2c2ab732f0526ed98be8057754",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1814,
+    "quasi": 2
+   }
+  },
+  {
+   "m": 155,
+   "n_reps": 1370,
+   "sha256_reps": "4099a67b1865f3b32b43d40b25102a0078b39b209ce3f5d8a3dabdd3e9fc81b6",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1369,
+    "standard": 1
+   }
+  },
+  {
+   "m": 157,
+   "n_reps": 1054,
+   "sha256_reps": "5cd04d89301555819f94e573769037353394a91fc708f53702206cf1f722b588",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1054
+   }
+  },
+  {
+   "m": 159,
+   "n_reps": 1780,
+   "sha256_reps": "3e1bb88004b24673ab2a6e4b93265589d8d4ff71f3f6535db08852532867e072",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1779,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 161,
+   "n_reps": 1379,
+   "sha256_reps": "6965d229e9ef487f1aa8c18e0facde9f93930ab3467eda705e79d6cebb1f9466",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1379
+   }
+  },
+  {
+   "m": 163,
+   "n_reps": 1135,
+   "sha256_reps": "4385e9252f7d7fe5551dde818ba5ebf34a010c69c669635a01a40b54eba5883b",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1135
+   }
+  },
+  {
+   "m": 165,
+   "n_reps": 2743,
+   "sha256_reps": "7181db4b1872907126f9b527158787caef5fc56ba6f8fd062679a0777a7c310c",
+   "survivors": [
+    [
+     5,
+     20,
+     80,
+     110,
+     125,
+     155
+    ]
+   ],
+   "tallies": {
+    "decomposable": 2736,
+    "quasi": 4,
+    "standard": 2,
+    "survivor": 1
+   }
+  },
+  {
+   "m": 167,
+   "n_reps": 1190,
+   "sha256_reps": "49406b03bc4f0ef62277c9db40c80995f503ffbb31ee098ee778bda604fb37e4",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1190
+   }
+  },
+  {
+   "m": 169,
+   "n_reps": 1322,
+   "sha256_reps": "56a215ac31fb32251e1077e6511c6534cdd5b791cc7bdf46bc8e2daae1cb9fde",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1322
+   }
+  },
+  {
+   "m": 171,
+   "n_reps": 2236,
+   "sha256_reps": "901468f64ee8d30a4e1144606ab64b84b1e5687202c90d6e7e4c291dafcef018",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 2234,
+    "quasi": 2
+   }
+  },
+  {
+   "m": 173,
+   "n_reps": 1276,
+   "sha256_reps": "67e0f4f87b5c53a9d9b060a1a6be54175cabfa262905e02092aab6a616747ed3",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1276
+   }
+  },
+  {
+   "m": 175,
+   "n_reps": 2015,
+   "sha256_reps": "289bd946c10b44d15e5ce6ff8281b2ee7d199833bb72eb01d97d753a21c79377",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 2012,
+    "standard": 3
+   }
+  },
+  {
+   "m": 177,
+   "n_reps": 2187,
+   "sha256_reps": "73137d8cb1fca74c4f2d7d7798d97c78367ad60a9e8253c7dfc319c2f5631e49",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 2186,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 179,
+   "n_reps": 1365,
+   "sha256_reps": "9ef327d843c53cb3b61bf2aeb681d42af88c016bd6a9a48023a2d91fdd13d93c",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1365
+   }
+  },
+  {
+   "m": 181,
+   "n_reps": 1396,
+   "sha256_reps": "9a87fee3e0a82be7cbefbc5d480c52ce56d05004cb01bc1a543b62f85061bca7",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1396
+   }
+  },
+  {
+   "m": 183,
+   "n_reps": 2334,
+   "sha256_reps": "3821eb7be695592b7aa2e30267003422006da944d9cd73527204058ea27955a1",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 2333,
+    "quasi": 1
+   }
+  },
+  {
+   "m": 185,
+   "n_reps": 1930,
+   "sha256_reps": "c350aaf6d1084185db88e4f55e7575de9fd5f5d905b62c2920f74cb8998c3c7a",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1929,
+    "standard": 1
+   }
+  },
+  {
+   "m": 187,
+   "n_reps": 1761,
+   "sha256_reps": "f80574de3b689b143d79ae00d918c225c4d9b4871c400ff8fc154e099520dfa5",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1761
+   }
+  },
+  {
+   "m": 189,
+   "n_reps": 3100,
+   "sha256_reps": "11bfe81672cd22c14870a5be5d348b52075412f34881c9335518c1207c0e707a",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 3091,
+    "quasi": 9
+   }
+  },
+  {
+   "m": 191,
+   "n_reps": 1552,
+   "sha256_reps": "00d87a88015d830761ec4f144d59ee1facc7031e13aed0db7c111ab4d1e27792",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1552
+   }
+  },
+  {
+   "m": 193,
+   "n_reps": 1585,
+   "sha256_reps": "20139648db60b55839832e0b7d3043b7872257f86bea06efdd338cf9b849b142",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1585
+   }
+  },
+  {
+   "m": 195,
+   "n_reps": 3715,
+   "sha256_reps": "d2ffa2a4d81c513dbbcddeffbc3e8c0787418fe3bfabe95c26dad7eba93bde44",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 3707,
+    "quasi": 4,
+    "standard": 2,
+    "star-split": 2
+   }
+  },
+  {
+   "m": 197,
+   "n_reps": 1650,
+   "sha256_reps": "552fe286ed510dbe3d2636bd421090b26b146d8a8852fd4481704ebb70be5201",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1650
+   }
+  },
+  {
+   "m": 199,
+   "n_reps": 1684,
+   "sha256_reps": "e6f8fde633c17bd8f0d6fd70390674a83e743f371c293b6f1672cba126a1e80a",
+   "survivors": [],
+   "tallies": {
+    "decomposable": 1684
+   }
+  }
+ ]
+}

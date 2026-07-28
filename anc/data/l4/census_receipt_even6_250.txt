@@ -1,0 +1,388 @@
+=== FULL EVEN CENSUS RECEIPT (v3, ledger transport) Mon Jul 27 18:19:19 UTC 2026 ===
+m=6: reps=14 base-closed=14 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=6 DONE (v3 d3) ===
+  [m=6 took 0s]
+m=8: reps=17 base-closed=17 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=8 DONE (v3 d3) ===
+  [m=8 took 0s]
+m=10: reps=30 base-closed=30 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=10 DONE (v3 d3) ===
+  [m=10 took 0s]
+m=12: reps=79 base-closed=79 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=12 DONE (v3 d3) ===
+  [m=12 took 0s]
+m=14: reps=51 base-closed=51 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=14 DONE (v3 d3) ===
+  [m=14 took 0s]
+m=16: reps=62 base-closed=62 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=16 DONE (v3 d3) ===
+  [m=16 took 0s]
+m=18: reps=143 base-closed=143 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=18 DONE (v3 d3) ===
+  [m=18 took 0s]
+m=20: reps=161 base-closed=161 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=20 DONE (v3 d3) ===
+  [m=20 took 0s]
+m=22: reps=86 base-closed=86 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=22 DONE (v3 d3) ===
+  [m=22 took 0s]
+m=24: reps=355 base-closed=355 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=24 DONE (v3 d3) ===
+  [m=24 took 0s]
+m=26: reps=112 base-closed=112 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=26 DONE (v3 d3) ===
+  [m=26 took 0s]
+m=28: reps=209 base-closed=209 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=28 DONE (v3 d3) ===
+  [m=28 took 0s]
+m=30: reps=650 base-closed=650 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=30 DONE (v3 d3) ===
+  [m=30 took 0s]
+m=32: reps=196 base-closed=195 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=32 DONE (v3 d3) ===
+  [m=32 took 0s]
+m=34: reps=166 base-closed=166 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=34 DONE (v3 d3) ===
+  [m=34 took 0s]
+m=36: reps=574 base-closed=566 deep-closed(d<=3,iter)=8 transport-closed=0 OPEN=0
+=== m=36 DONE (v3 d3) ===
+  [m=36 took 0s]
+m=38: reps=198 base-closed=198 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=38 DONE (v3 d3) ===
+  [m=38 took 0s]
+m=40: reps=496 base-closed=496 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=40 DONE (v3 d3) ===
+  [m=40 took 0s]
+m=42: reps=1030 base-closed=1029 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=42 DONE (v3 d3) ===
+  [m=42 took 0s]
+m=44: reps=342 base-closed=341 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=44 DONE (v3 d3) ===
+  [m=44 took 0s]
+m=46: reps=268 base-closed=268 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=46 DONE (v3 d3) ===
+  [m=46 took 0s]
+m=48: reps=959 base-closed=947 deep-closed(d<=3,iter)=12 transport-closed=0 OPEN=0
+=== m=48 DONE (v3 d3) ===
+  [m=48 took 0s]
+m=50: reps=397 base-closed=395 deep-closed(d<=3,iter)=2 transport-closed=0 OPEN=0
+=== m=50 DONE (v3 d3) ===
+  [m=50 took 0s]
+m=52: reps=444 base-closed=443 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=52 DONE (v3 d3) ===
+  [m=52 took 0s]
+m=54: reps=719 base-closed=701 deep-closed(d<=3,iter)=18 transport-closed=0 OPEN=0
+=== m=54 DONE (v3 d3) ===
+  [m=54 took 1s]
+m=56: reps=651 base-closed=644 deep-closed(d<=3,iter)=7 transport-closed=0 OPEN=0
+=== m=56 DONE (v3 d3) ===
+  [m=56 took 0s]
+m=58: reps=396 base-closed=396 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=58 DONE (v3 d3) ===
+  [m=58 took 0s]
+m=60: reps=2794 base-closed=2786 deep-closed(d<=3,iter)=8 transport-closed=0 OPEN=0
+=== m=60 DONE (v3 d3) ===
+  [m=60 took 1s]
+m=62: reps=445 base-closed=444 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=62 DONE (v3 d3) ===
+  [m=62 took 0s]
+m=64: reps=615 base-closed=613 deep-closed(d<=3,iter)=2 transport-closed=0 OPEN=0
+=== m=64 DONE (v3 d3) ===
+  [m=64 took 0s]
+m=66: reps=1041 base-closed=1018 deep-closed(d<=3,iter)=23 transport-closed=0 OPEN=0
+=== m=66 DONE (v3 d3) ===
+  [m=66 took 1s]
+m=68: reps=674 base-closed=673 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=68 DONE (v3 d3) ===
+  [m=68 took 1s]
+m=70: reps=882 base-closed=878 deep-closed(d<=3,iter)=3 transport-closed=0 OPEN=1
+  m=70 OPEN (1, 20, 24, 42, 61, 62)  content-gcd=1 (primitive) [KNOWN-OPEN]
+=== m=70 DONE (v3 d3) ===
+  [m=70 took 3s]
+m=72: reps=1842 base-closed=1815 deep-closed(d<=3,iter)=27 transport-closed=0 OPEN=0
+=== m=72 DONE (v3 d3) ===
+  [m=72 took 1s]
+m=74: reps=604 base-closed=604 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=74 DONE (v3 d3) ===
+  [m=74 took 1s]
+m=76: reps=808 base-closed=807 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=76 DONE (v3 d3) ===
+  [m=76 took 1s]
+m=78: reps=1357 base-closed=1319 deep-closed(d<=3,iter)=38 transport-closed=0 OPEN=0
+=== m=78 DONE (v3 d3) ===
+  [m=78 took 2s]
+m=80: reps=1377 base-closed=1374 deep-closed(d<=3,iter)=3 transport-closed=0 OPEN=0
+=== m=80 DONE (v3 d3) ===
+  [m=80 took 1s]
+m=82: reps=722 base-closed=722 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=82 DONE (v3 d3) ===
+  [m=82 took 1s]
+m=84: reps=3135 base-closed=3110 deep-closed(d<=3,iter)=25 transport-closed=0 OPEN=0
+=== m=84 DONE (v3 d3) ===
+  [m=84 took 2s]
+m=86: reps=786 base-closed=786 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=86 DONE (v3 d3) ===
+  [m=86 took 1s]
+m=88: reps=1180 base-closed=1178 deep-closed(d<=3,iter)=2 transport-closed=0 OPEN=0
+=== m=88 DONE (v3 d3) ===
+  [m=88 took 1s]
+m=90: reps=2713 base-closed=2691 deep-closed(d<=3,iter)=22 transport-closed=0 OPEN=0
+=== m=90 DONE (v3 d3) ===
+  [m=90 took 3s]
+m=92: reps=1110 base-closed=1109 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=92 DONE (v3 d3) ===
+  [m=92 took 2s]
+m=94: reps=920 base-closed=920 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=94 DONE (v3 d3) ===
+  [m=94 took 2s]
+m=96: reps=2503 base-closed=2469 deep-closed(d<=3,iter)=34 transport-closed=0 OPEN=0
+=== m=96 DONE (v3 d3) ===
+  [m=96 took 3s]
+m=98: reps=1182 base-closed=1182 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=98 DONE (v3 d3) ===
+  [m=98 took 2s]
+m=100: reps=1711 base-closed=1708 deep-closed(d<=3,iter)=3 transport-closed=0 OPEN=0
+=== m=100 DONE (v3 d3) ===
+  [m=100 took 2s]
+m=102: reps=1922 base-closed=1897 deep-closed(d<=3,iter)=25 transport-closed=0 OPEN=0
+=== m=102 DONE (v3 d3) ===
+  [m=102 took 4s]
+m=104: reps=1550 base-closed=1548 deep-closed(d<=3,iter)=2 transport-closed=0 OPEN=0
+=== m=104 DONE (v3 d3) ===
+  [m=104 took 3s]
+m=106: reps=1144 base-closed=1144 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=106 DONE (v3 d3) ===
+  [m=106 took 3s]
+m=108: reps=2798 base-closed=2759 deep-closed(d<=3,iter)=39 transport-closed=0 OPEN=0
+=== m=108 DONE (v3 d3) ===
+  [m=108 took 8s]
+m=110: reps=1785 base-closed=1782 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=2
+  m=110 OPEN (1, 24, 62, 71, 81, 91)  content-gcd=1 (primitive) [KNOWN-OPEN]
+  m=110 OPEN (1, 31, 55, 71, 81, 91)  content-gcd=1 (primitive) [KNOWN-OPEN]
+=== m=110 DONE (v3 d3) ===
+  [m=110 took 19s]
+m=112: reps=2046 base-closed=2038 deep-closed(d<=3,iter)=8 transport-closed=0 OPEN=0
+=== m=112 DONE (v3 d3) ===
+  [m=112 took 4s]
+m=114: reps=2313 base-closed=2289 deep-closed(d<=3,iter)=21 transport-closed=0 OPEN=3
+  m=114 OPEN (1, 7, 78, 79, 86, 91)  content-gcd=1 (primitive) [KNOWN-OPEN]
+  m=114 OPEN (1, 13, 43, 72, 103, 110)  content-gcd=1 (primitive) [KNOWN-OPEN]
+  m=114 OPEN (1, 13, 43, 80, 102, 103)  content-gcd=1 (primitive) [KNOWN-OPEN]
+=== m=114 DONE (v3 d3) ===
+  [m=114 took 30s]
+m=116: reps=1658 base-closed=1657 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=116 DONE (v3 d3) ===
+  [m=116 took 4s]
+m=118: reps=1390 base-closed=1390 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=118 DONE (v3 d3) ===
+  [m=118 took 4s]
+m=120: reps=7002 base-closed=6954 deep-closed(d<=3,iter)=48 transport-closed=0 OPEN=0
+=== m=120 DONE (v3 d3) ===
+  [m=120 took 6s]
+m=122: reps=1480 base-closed=1480 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=122 DONE (v3 d3) ===
+  [m=122 took 5s]
+m=124: reps=1866 base-closed=1863 deep-closed(d<=3,iter)=3 transport-closed=0 OPEN=0
+=== m=124 DONE (v3 d3) ===
+  [m=124 took 5s]
+m=126: reps=4241 base-closed=4221 deep-closed(d<=3,iter)=20 transport-closed=0 OPEN=0
+=== m=126 DONE (v3 d3) ===
+  [m=126 took 6s]
+m=128: reps=2050 base-closed=2047 deep-closed(d<=3,iter)=3 transport-closed=0 OPEN=0
+=== m=128 DONE (v3 d3) ===
+  [m=128 took 6s]
+m=130: reps=2376 base-closed=2376 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=130 DONE (v3 d3) ===
+  [m=130 took 5s]
+m=132: reps=4010 base-closed=3956 deep-closed(d<=3,iter)=54 transport-closed=0 OPEN=0
+=== m=132 DONE (v3 d3) ===
+  [m=132 took 9s]
+m=134: reps=1758 base-closed=1758 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=134 DONE (v3 d3) ===
+  [m=134 took 7s]
+m=136: reps=2424 base-closed=2422 deep-closed(d<=3,iter)=2 transport-closed=0 OPEN=0
+=== m=136 DONE (v3 d3) ===
+  [m=136 took 7s]
+m=138: reps=3205 base-closed=3183 deep-closed(d<=3,iter)=22 transport-closed=0 OPEN=0
+=== m=138 DONE (v3 d3) ===
+  [m=138 took 8s]
+m=140: reps=3756 base-closed=3749 deep-closed(d<=3,iter)=6 transport-closed=0 OPEN=1
+  m=140 OPEN (2, 40, 48, 84, 122, 124)  content-gcd=2 -> level 70 (NOT in ledger)
+=== m=140 DONE (v3 d3) ===
+  [m=140 took 25s]
+m=142: reps=1956 base-closed=1956 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=142 DONE (v3 d3) ===
+  [m=142 took 9s]
+m=144: reps=5241 base-closed=5190 deep-closed(d<=3,iter)=51 transport-closed=0 OPEN=0
+=== m=144 DONE (v3 d3) ===
+  [m=144 took 14s]
+m=146: reps=2062 base-closed=2062 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=146 DONE (v3 d3) ===
+  [m=146 took 9s]
+m=148: reps=2556 base-closed=2555 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=148 DONE (v3 d3) ===
+  [m=148 took 10s]
+m=150: reps=5232 base-closed=5209 deep-closed(d<=3,iter)=23 transport-closed=0 OPEN=0
+=== m=150 DONE (v3 d3) ===
+  [m=150 took 13s]
+m=152: reps=2936 base-closed=2934 deep-closed(d<=3,iter)=2 transport-closed=0 OPEN=0
+=== m=152 DONE (v3 d3) ===
+  [m=152 took 11s]
+m=154: reps=3048 base-closed=3048 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=154 DONE (v3 d3) ===
+  [m=154 took 10s]
+m=156: reps=5314 base-closed=5251 deep-closed(d<=3,iter)=63 transport-closed=0 OPEN=0
+=== m=156 DONE (v3 d3) ===
+  [m=156 took 18s]
+m=158: reps=2388 base-closed=2388 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=158 DONE (v3 d3) ===
+  [m=158 took 13s]
+m=160: reps=4268 base-closed=4263 deep-closed(d<=3,iter)=5 transport-closed=0 OPEN=0
+=== m=160 DONE (v3 d3) ===
+  [m=160 took 12s]
+m=162: reps=4410 base-closed=4382 deep-closed(d<=3,iter)=28 transport-closed=0 OPEN=0
+=== m=162 DONE (v3 d3) ===
+  [m=162 took 25s]
+m=164: reps=3074 base-closed=3073 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=164 DONE (v3 d3) ===
+  [m=164 took 15s]
+m=166: reps=2618 base-closed=2618 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=166 DONE (v3 d3) ===
+  [m=166 took 16s]
+m=168: reps=8582 base-closed=8505 deep-closed(d<=3,iter)=76 transport-closed=0 OPEN=1
+  m=168 OPEN (1, 25, 79, 121, 127, 151)  content-gcd=1 (primitive)
+=== m=168 DONE (v3 d3) ===
+  [m=168 took 50s]
+m=170: reps=3802 base-closed=3802 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=170 DONE (v3 d3) ===
+  [m=170 took 14s]
+m=172: reps=3352 base-closed=3351 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=172 DONE (v3 d3) ===
+  [m=172 took 18s]
+m=174: reps=4830 base-closed=4811 deep-closed(d<=3,iter)=19 transport-closed=0 OPEN=0
+=== m=174 DONE (v3 d3) ===
+  [m=174 took 16s]
+m=176: reps=4104 base-closed=4101 deep-closed(d<=3,iter)=3 transport-closed=0 OPEN=0
+=== m=176 DONE (v3 d3) ===
+  [m=176 took 19s]
+m=178: reps=2986 base-closed=2986 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=178 DONE (v3 d3) ===
+  [m=178 took 21s]
+m=180: reps=10973 base-closed=10917 deep-closed(d<=3,iter)=56 transport-closed=0 OPEN=0
+=== m=180 DONE (v3 d3) ===
+  [m=180 took 33s]
+m=182: reps=4090 base-closed=4090 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=182 DONE (v3 d3) ===
+  [m=182 took 19s]
+m=184: reps=4106 base-closed=4104 deep-closed(d<=3,iter)=2 transport-closed=0 OPEN=0
+=== m=184 DONE (v3 d3) ===
+  [m=184 took 23s]
+m=186: reps=5447 base-closed=5427 deep-closed(d<=3,iter)=20 transport-closed=0 OPEN=0
+=== m=186 DONE (v3 d3) ===
+  [m=186 took 21s]
+m=188: reps=3942 base-closed=3941 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=188 DONE (v3 d3) ===
+  [m=188 took 25s]
+m=190: reps=4643 base-closed=4642 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=190 DONE (v3 d3) ===
+  [m=190 took 21s]
+m=192: reps=7545 base-closed=7494 deep-closed(d<=3,iter)=51 transport-closed=0 OPEN=0
+=== m=192 DONE (v3 d3) ===
+  [m=192 took 32s]
+m=194: reps=3514 base-closed=3514 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=194 DONE (v3 d3) ===
+  [m=194 took 29s]
+m=196: reps=5065 base-closed=5064 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=196 DONE (v3 d3) ===
+  [m=196 took 27s]
+m=198: reps=7164 base-closed=7129 deep-closed(d<=3,iter)=35 transport-closed=0 OPEN=0
+=== m=198 DONE (v3 d3) ===
+  [m=198 took 32s]
+m=200: reps=6211 base-closed=6207 deep-closed(d<=3,iter)=4 transport-closed=0 OPEN=0
+=== m=200 DONE (v3 d3) ===
+  [m=200 took 30s]
+m=202: reps=3792 base-closed=3792 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=202 DONE (v3 d3) ===
+  [m=202 took 35s]
+m=204: reps=7982 base-closed=7939 deep-closed(d<=3,iter)=43 transport-closed=0 OPEN=0
+=== m=204 DONE (v3 d3) ===
+  [m=204 took 38s]
+m=206: reps=3936 base-closed=3936 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=206 DONE (v3 d3) ===
+  [m=206 took 37s]
+m=208: reps=5472 base-closed=5469 deep-closed(d<=3,iter)=3 transport-closed=0 OPEN=0
+=== m=208 DONE (v3 d3) ===
+  [m=208 took 37s]
+m=210: reps=12026 base-closed=11989 deep-closed(d<=3,iter)=34 transport-closed=0 OPEN=3
+  m=210 OPEN (1, 79, 109, 121, 151, 169)  content-gcd=1 (primitive)
+  m=210 OPEN (2, 9, 129, 142, 168, 180)  content-gcd=1 (primitive)
+  m=210 OPEN (3, 60, 72, 126, 183, 186)  content-gcd=3 -> level 70 (NOT in ledger)
+=== m=210 DONE (v3 d3) ===
+  [m=210 took 199s]
+m=212: reps=4922 base-closed=4921 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=212 DONE (v3 d3) ===
+  [m=212 took 43s]
+m=214: reps=4230 base-closed=4230 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=214 DONE (v3 d3) ===
+  [m=214 took 44s]
+m=216: reps=9814 base-closed=9747 deep-closed(d<=3,iter)=67 transport-closed=0 OPEN=0
+=== m=216 DONE (v3 d3) ===
+  [m=216 took 82s]
+m=218: reps=4384 base-closed=4384 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=218 DONE (v3 d3) ===
+  [m=218 took 48s]
+m=220: reps=7687 base-closed=7681 deep-closed(d<=3,iter)=3 transport-closed=0 OPEN=3
+  m=220 OPEN (1, 62, 111, 142, 162, 182)  content-gcd=1 (primitive)
+  m=220 OPEN (2, 48, 124, 142, 162, 182)  content-gcd=2 -> level 110 (NOT in ledger)
+  m=220 OPEN (2, 62, 110, 142, 162, 182)  content-gcd=2 -> level 110 (NOT in ledger)
+=== m=220 DONE (v3 d3) ===
+  [m=220 took 257s]
+m=222: reps=7522 base-closed=7503 deep-closed(d<=3,iter)=19 transport-closed=0 OPEN=0
+=== m=222 DONE (v3 d3) ===
+  [m=222 took 41s]
+m=224: reps=6973 base-closed=6963 deep-closed(d<=3,iter)=10 transport-closed=0 OPEN=0
+=== m=224 DONE (v3 d3) ===
+  [m=224 took 49s]
+m=226: reps=4694 base-closed=4694 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=226 DONE (v3 d3) ===
+  [m=226 took 54s]
+m=228: reps=9680 base-closed=9639 deep-closed(d<=3,iter)=38 transport-closed=0 OPEN=3
+  m=228 OPEN (2, 14, 156, 158, 172, 182)  content-gcd=2 -> level 114 (NOT in ledger)
+  m=228 OPEN (2, 26, 86, 144, 206, 220)  content-gcd=2 -> level 114 (NOT in ledger)
+  m=228 OPEN (2, 26, 86, 160, 204, 206)  content-gcd=2 -> level 114 (NOT in ledger)
+=== m=228 DONE (v3 d3) ===
+  [m=228 took 332s]
+m=230: reps=6580 base-closed=6580 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=230 DONE (v3 d3) ===
+  [m=230 took 47s]
+m=232: reps=6238 base-closed=6236 deep-closed(d<=3,iter)=2 transport-closed=0 OPEN=0
+=== m=232 DONE (v3 d3) ===
+  [m=232 took 61s]
+m=234: reps=9558 base-closed=9509 deep-closed(d<=3,iter)=49 transport-closed=0 OPEN=0
+=== m=234 DONE (v3 d3) ===
+  [m=234 took 64s]
+m=236: reps=6006 base-closed=6005 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=236 DONE (v3 d3) ===
+  [m=236 took 65s]
+m=238: reps=6616 base-closed=6616 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=238 DONE (v3 d3) ===
+  [m=238 took 57s]
+m=240: reps=17782 base-closed=17690 deep-closed(d<=3,iter)=92 transport-closed=0 OPEN=0
+=== m=240 DONE (v3 d3) ===
+  [m=240 took 67s]
+m=242: reps=5911 base-closed=5911 deep-closed(d<=3,iter)=0 transport-closed=0 OPEN=0
+=== m=242 DONE (v3 d3) ===
+  [m=242 took 67s]
+m=244: reps=6396 base-closed=6395 deep-closed(d<=3,iter)=1 transport-closed=0 OPEN=0
+=== m=244 DONE (v3 d3) ===
+  [m=244 took 73s]
+m=246: reps=9088 base-closed=9069 deep-closed(d<=3,iter)=19 transport-closed=0 OPEN=0
+=== m=246 DONE (v3 d3) ===
+  [m=246 took 60s]
+m=248: reps=7048 base-closed=7044 deep-closed(d<=3,iter)=4 transport-closed=0 OPEN=0
+=== m=248 DONE (v3 d3) ===
+  [m=248 took 78s]
+m=250: reps=7382 base-closed=7380 deep-closed(d<=3,iter)=2 transport-closed=0 OPEN=0
+=== m=250 DONE (v3 d3) ===
+  [m=250 took 68s]
+=== EVEN V3 COMPLETE ===

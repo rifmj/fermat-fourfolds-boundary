@@ -1,0 +1,18 @@
+CALIB 110-pair link: FOUND (must find)
+CALIB 70 isolation: eq=0 closed=0 (must be 0/0)
+CALIBRATION PASS
+m=70 T=(1, 20, 24, 42, 61, 62): EQ-links=0 -> 0 classes; CLOSED-links=0  [0s]
+m=110 T=(1, 24, 62, 71, 81, 91): EQ-links=5 -> 1 classes; CLOSED-links=0  [0s]
+   EQUIV: (1, 31, 55, 71, 81, 91)
+m=110 T=(1, 31, 55, 71, 81, 91): EQ-links=25 -> 1 classes; CLOSED-links=0  [0s]
+   EQUIV: (1, 24, 62, 71, 81, 91)
+m=114 T=(1, 7, 78, 79, 86, 91): EQ-links=14 -> 2 classes; CLOSED-links=0  [0s]
+   EQUIV: (1, 13, 43, 72, 103, 110)
+   EQUIV: (1, 13, 43, 80, 102, 103)
+m=114 T=(1, 13, 43, 72, 103, 110): EQ-links=13 -> 2 classes; CLOSED-links=0  [0s]
+   EQUIV: (1, 7, 78, 79, 86, 91)
+   EQUIV: (1, 13, 43, 80, 102, 103)
+m=114 T=(1, 13, 43, 80, 102, 103): EQ-links=13 -> 2 classes; CLOSED-links=0  [0s]
+   EQUIV: (1, 7, 78, 79, 86, 91)
+   EQUIV: (1, 13, 43, 72, 103, 110)
+m=168 T=(1, 25, 79, 121, 127, 151): EQ-links=0 -> 0 classes; CLOSED-links=0  [0s]

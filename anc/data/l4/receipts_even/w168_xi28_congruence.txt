@@ -1,0 +1,6 @@
+a = (1, 25, 79, 121, 127, 151)
+6*xi_28 = (6, 54, 108, 60, 126, 150) (entrywise product into level 168)
+S_168: 328 generators, rank 143
+u(a) - u(6*xi_28) in S_168: True
+sanity: u(a) not in S_168: True | u(6*xi_28) not in S_168: True
+RECEIPT: u(a) == u(6*xi_28) mod S_168  [ASSERTED]

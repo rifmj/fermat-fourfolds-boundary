@@ -1,0 +1,27 @@
+# Independent even-census check at key levels (regenerated 2026-07-28 after the multiplicity fix)
+# Instrument: census_independent.py (algorithmically independent reimplementation; no code shared
+# with the engines), decomposability now multiplicity-aware (the earlier set-based test was
+# unsound at even m: a single m/2 read as a vanishing pair — regression class (1,29,35,43,45,57)
+# at m=70). Run FRESH per level below; compared against the pinned engine receipt
+# census_receipt_even6_250.txt on: representative count AND base-closure count
+# (reps - base survivors). The receipt engine (census_scan_v3 -> census_even) is even-safe by
+# construction (Counter-based decomposability, self-pair quasi) — see its module docstring.
+
+m=50: reps=397 tallies={'decomposable': 377, 'quasi': 16, 'survivor': 2, 'standard': 2}
+m=70: reps=882 tallies={'decomposable': 843, 'quasi': 33, 'survivor': 4, 'standard': 2}
+m=110: reps=1785 tallies={'decomposable': 1736, 'quasi': 44, 'standard': 2, 'survivor': 3}
+m=114: reps=2313 tallies={'decomposable': 2214, 'quasi': 75, 'survivor': 24}
+m=168: reps=8582 tallies={'decomposable': 7581, 'quasi': 924, 'survivor': 77}
+
+# Comparison against the pinned engine receipt (census_scan_v3 -> census_even):
+m=50: independent reps=397 base-closed=395  |  engine reps=397 base-closed=395  => MATCH
+m=70: independent reps=882 base-closed=878  |  engine reps=882 base-closed=878  => MATCH
+m=110: independent reps=1785 base-closed=1782  |  engine reps=1785 base-closed=1782  => MATCH
+m=114: independent reps=2313 base-closed=2289  |  engine reps=2313 base-closed=2289  => MATCH
+m=168: independent reps=8582 base-closed=8505  |  engine reps=8582 base-closed=8505  => MATCH
+
+REPRESENTATIVE COUNTS AND BASE-CLOSURE COUNTS MATCH AT ALL FIVE KEY LEVELS: True
+# The final-OPEN classes of the engine receipt are non-decomposable, non-quasi (self-pair
+# inclusive), non-standard and non-*-split by the exhaustive per-class receipts
+# (walls_selfpair_quasi_exhaustive.txt and the zero-sum-triple checks), hence lie in every
+# correct base-survivor set, in particular in the independent run's survivors.

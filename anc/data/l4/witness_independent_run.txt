@@ -1,0 +1,183 @@
+=== WITNESS + INDEPENDENT CENSUS FULL RUNS Mon Jul 27 17:30:03 UTC 2026 ===
+m=21: reps=64 tallies={'decomposable': 61, 'quasi': 3}
+m=25: reps=39 tallies={'decomposable': 38, 'standard': 1}
+m=27: reps=68 tallies={'decomposable': 67, 'quasi': 1}
+m=29: reps=40 tallies={'decomposable': 40}
+m=31: reps=46 tallies={'decomposable': 46}
+m=33: reps=104 tallies={'decomposable': 102, 'quasi': 1, 'survivor': 1}
+m=35: reps=92 tallies={'decomposable': 91, 'standard': 1}
+m=37: reps=64 tallies={'decomposable': 64}
+m=39: reps=140 tallies={'decomposable': 137, 'star-split': 2, 'quasi': 1}
+m=41: reps=77 tallies={'decomposable': 77}
+m=43: reps=85 tallies={'decomposable': 85}
+m=45: reps=245 tallies={'decomposable': 237, 'standard': 1, 'quasi': 6, 'survivor': 1}
+m=47: reps=100 tallies={'decomposable': 100}
+m=49: reps=128 tallies={'decomposable': 128}
+m=51: reps=217 tallies={'decomposable': 216, 'quasi': 1}
+m=53: reps=126 tallies={'decomposable': 126}
+m=55: reps=197 tallies={'decomposable': 196, 'standard': 1}
+m=57: reps=265 tallies={'decomposable': 264, 'quasi': 1}
+m=59: reps=155 tallies={'decomposable': 155}
+m=61: reps=166 tallies={'decomposable': 166}
+m=63: reps=407 tallies={'decomposable': 400, 'quasi': 7}
+m=65: reps=268 tallies={'decomposable': 267, 'standard': 1}
+m=67: reps=199 tallies={'decomposable': 199}
+m=69: reps=372 tallies={'decomposable': 371, 'quasi': 1}
+m=71: reps=222 tallies={'decomposable': 222}
+m=73: reps=235 tallies={'decomposable': 235}
+m=75: reps=561 tallies={'decomposable': 556, 'standard': 2, 'quasi': 3}
+m=77: reps=346 tallies={'decomposable': 346}
+m=79: reps=274 tallies={'decomposable': 274}
+m=81: reps=504 tallies={'decomposable': 502, 'quasi': 2}
+m=83: reps=301 tallies={'decomposable': 301}
+m=85: reps=437 tallies={'decomposable': 436, 'standard': 1}
+m=87: reps=570 tallies={'decomposable': 569, 'quasi': 1}
+m=89: reps=345 tallies={'decomposable': 345}
+m=91: reps=473 tallies={'decomposable': 473}
+m=93: reps=646 tallies={'decomposable': 645, 'quasi': 1}
+m=95: reps=539 tallies={'decomposable': 538, 'standard': 1}
+m=97: reps=409 tallies={'decomposable': 409}
+m=99: reps=825 tallies={'decomposable': 822, 'quasi': 2, 'survivor': 1}
+m=101: reps=442 tallies={'decomposable': 442}
+m=103: reps=460 tallies={'decomposable': 460}
+m=105: reps=1286 tallies={'decomposable': 1276, 'quasi': 6, 'standard': 2, 'survivor': 2}
+m=107: reps=495 tallies={'decomposable': 495}
+m=109: reps=514 tallies={'decomposable': 514}
+m=111: reps=900 tallies={'decomposable': 899, 'quasi': 1}
+m=113: reps=551 tallies={'decomposable': 551}
+m=115: reps=772 tallies={'decomposable': 771, 'standard': 1}
+m=117: reps=1117 tallies={'decomposable': 1113, 'quasi': 2, 'star-split': 2}
+m=119: reps=776 tallies={'decomposable': 776}
+m=121: reps=694 tallies={'decomposable': 694}
+m=123: reps=1091 tallies={'decomposable': 1090, 'quasi': 1}
+m=125: reps=866 tallies={'decomposable': 864, 'standard': 2}
+m=127: reps=694 tallies={'decomposable': 694}
+m=129: reps=1195 tallies={'decomposable': 1194, 'quasi': 1}
+m=131: reps=737 tallies={'decomposable': 737}
+m=133: reps=960 tallies={'decomposable': 960}
+m=135: reps=1767 tallies={'decomposable': 1756, 'standard': 2, 'quasi': 8, 'survivor': 1}
+m=137: reps=805 tallies={'decomposable': 805}
+m=139: reps=829 tallies={'decomposable': 829}
+m=141: reps=1414 tallies={'decomposable': 1413, 'quasi': 1}
+m=143: reps=1062 tallies={'decomposable': 1062}
+m=145: reps=1204 tallies={'decomposable': 1203, 'standard': 1}
+m=147: reps=1816 tallies={'decomposable': 1812, 'quasi': 4}
+m=149: reps=950 tallies={'decomposable': 950}
+m=151: reps=976 tallies={'decomposable': 976}
+m=153: reps=1816 tallies={'decomposable': 1814, 'quasi': 2}
+m=155: reps=1370 tallies={'decomposable': 1369, 'standard': 1}
+m=157: reps=1054 tallies={'decomposable': 1054}
+m=159: reps=1780 tallies={'decomposable': 1779, 'quasi': 1}
+m=161: reps=1379 tallies={'decomposable': 1379}
+m=163: reps=1135 tallies={'decomposable': 1135}
+m=165: reps=2743 tallies={'decomposable': 2736, 'standard': 2, 'quasi': 4, 'survivor': 1}
+m=167: reps=1190 tallies={'decomposable': 1190}
+m=169: reps=1322 tallies={'decomposable': 1322}
+m=171: reps=2236 tallies={'decomposable': 2234, 'quasi': 2}
+m=173: reps=1276 tallies={'decomposable': 1276}
+m=175: reps=2015 tallies={'decomposable': 2012, 'standard': 3}
+m=177: reps=2187 tallies={'decomposable': 2186, 'quasi': 1}
+m=179: reps=1365 tallies={'decomposable': 1365}
+m=181: reps=1396 tallies={'decomposable': 1396}
+m=183: reps=2334 tallies={'decomposable': 2333, 'quasi': 1}
+m=185: reps=1930 tallies={'decomposable': 1929, 'standard': 1}
+m=187: reps=1761 tallies={'decomposable': 1761}
+m=189: reps=3100 tallies={'decomposable': 3091, 'quasi': 9}
+m=191: reps=1552 tallies={'decomposable': 1552}
+m=193: reps=1585 tallies={'decomposable': 1585}
+m=195: reps=3715 tallies={'decomposable': 3707, 'quasi': 4, 'standard': 2, 'star-split': 2}
+m=197: reps=1650 tallies={'decomposable': 1650}
+m=199: reps=1684 tallies={'decomposable': 1684}
+WROTE /Users/rifatjumagulov/workspace/ai/NS/starters/millennium/Hodge_cycles/campaigns/C1_periods_line/preprint_boundary/anc/data/l4/census_witnesses_odd.json: 89 levels, 78299 orbit witnesses, 7 survivors (expected 7 on the full list). ALL WITNESSES VERIFIED AT EMISSION.
+=== WITNESSES COMPLETE ===
+m=21: reps=64 tallies={'decomposable': 61, 'quasi': 3}   vs receipt: MATCH
+m=25: reps=39 tallies={'decomposable': 38, 'standard': 1}   vs receipt: MATCH
+m=27: reps=68 tallies={'decomposable': 67, 'quasi': 1}   vs receipt: MATCH
+m=29: reps=40 tallies={'decomposable': 40}   vs receipt: MATCH
+m=31: reps=46 tallies={'decomposable': 46}   vs receipt: MATCH
+m=33: reps=104 tallies={'decomposable': 102, 'quasi': 1, 'survivor': 1}   vs receipt: MATCH
+m=35: reps=92 tallies={'decomposable': 91, 'standard': 1}   vs receipt: MATCH
+m=37: reps=64 tallies={'decomposable': 64}   vs receipt: MATCH
+m=39: reps=140 tallies={'decomposable': 137, 'star-split': 2, 'quasi': 1}   vs receipt: MATCH
+m=41: reps=77 tallies={'decomposable': 77}   vs receipt: MATCH
+m=43: reps=85 tallies={'decomposable': 85}   vs receipt: MATCH
+m=45: reps=245 tallies={'decomposable': 237, 'standard': 1, 'quasi': 6, 'survivor': 1}   vs receipt: MATCH
+m=47: reps=100 tallies={'decomposable': 100}   vs receipt: MATCH
+m=49: reps=128 tallies={'decomposable': 128}   vs receipt: MATCH
+m=51: reps=217 tallies={'decomposable': 216, 'quasi': 1}   vs receipt: MATCH
+m=53: reps=126 tallies={'decomposable': 126}   vs receipt: MATCH
+m=55: reps=197 tallies={'decomposable': 196, 'standard': 1}   vs receipt: MATCH
+m=57: reps=265 tallies={'decomposable': 264, 'quasi': 1}   vs receipt: MATCH
+m=59: reps=155 tallies={'decomposable': 155}   vs receipt: MATCH
+m=61: reps=166 tallies={'decomposable': 166}   vs receipt: MATCH
+m=63: reps=407 tallies={'decomposable': 400, 'quasi': 7}   vs receipt: MATCH
+m=65: reps=268 tallies={'decomposable': 267, 'standard': 1}   vs receipt: MATCH
+m=67: reps=199 tallies={'decomposable': 199}   vs receipt: MATCH
+m=69: reps=372 tallies={'decomposable': 371, 'quasi': 1}   vs receipt: MATCH
+m=71: reps=222 tallies={'decomposable': 222}   vs receipt: MATCH
+m=73: reps=235 tallies={'decomposable': 235}   vs receipt: MATCH
+m=75: reps=561 tallies={'decomposable': 556, 'standard': 2, 'quasi': 3}   vs receipt: MATCH
+m=77: reps=346 tallies={'decomposable': 346}   vs receipt: MATCH
+m=79: reps=274 tallies={'decomposable': 274}   vs receipt: MATCH
+m=81: reps=504 tallies={'decomposable': 502, 'quasi': 2}   vs receipt: MATCH
+m=83: reps=301 tallies={'decomposable': 301}   vs receipt: MATCH
+m=85: reps=437 tallies={'decomposable': 436, 'standard': 1}   vs receipt: MATCH
+m=87: reps=570 tallies={'decomposable': 569, 'quasi': 1}   vs receipt: MATCH
+m=89: reps=345 tallies={'decomposable': 345}   vs receipt: MATCH
+m=91: reps=473 tallies={'decomposable': 473}   vs receipt: MATCH
+m=93: reps=646 tallies={'decomposable': 645, 'quasi': 1}   vs receipt: MATCH
+m=95: reps=539 tallies={'decomposable': 538, 'standard': 1}   vs receipt: MATCH
+m=97: reps=409 tallies={'decomposable': 409}   vs receipt: MATCH
+m=99: reps=825 tallies={'decomposable': 822, 'quasi': 2, 'survivor': 1}   vs receipt: MATCH
+m=101: reps=442 tallies={'decomposable': 442}   vs receipt: MATCH
+m=103: reps=460 tallies={'decomposable': 460}   vs receipt: MATCH
+m=105: reps=1286 tallies={'decomposable': 1276, 'quasi': 6, 'standard': 2, 'survivor': 2}   vs receipt: MATCH
+m=107: reps=495 tallies={'decomposable': 495}   vs receipt: MATCH
+m=109: reps=514 tallies={'decomposable': 514}   vs receipt: MATCH
+m=111: reps=900 tallies={'decomposable': 899, 'quasi': 1}   vs receipt: MATCH
+m=113: reps=551 tallies={'decomposable': 551}   vs receipt: MATCH
+m=115: reps=772 tallies={'decomposable': 771, 'standard': 1}   vs receipt: MATCH
+m=117: reps=1117 tallies={'decomposable': 1113, 'quasi': 2, 'star-split': 2}   vs receipt: MATCH
+m=119: reps=776 tallies={'decomposable': 776}   vs receipt: MATCH
+m=121: reps=694 tallies={'decomposable': 694}   vs receipt: MATCH
+m=123: reps=1091 tallies={'decomposable': 1090, 'quasi': 1}   vs receipt: MATCH
+m=125: reps=866 tallies={'decomposable': 864, 'standard': 2}   vs receipt: MATCH
+m=127: reps=694 tallies={'decomposable': 694}   vs receipt: MATCH
+m=129: reps=1195 tallies={'decomposable': 1194, 'quasi': 1}   vs receipt: MATCH
+m=131: reps=737 tallies={'decomposable': 737}   vs receipt: MATCH
+m=133: reps=960 tallies={'decomposable': 960}   vs receipt: MATCH
+m=135: reps=1767 tallies={'decomposable': 1756, 'standard': 2, 'quasi': 8, 'survivor': 1}   vs receipt: MATCH
+m=137: reps=805 tallies={'decomposable': 805}   vs receipt: MATCH
+m=139: reps=829 tallies={'decomposable': 829}   vs receipt: MATCH
+m=141: reps=1414 tallies={'decomposable': 1413, 'quasi': 1}   vs receipt: MATCH
+m=143: reps=1062 tallies={'decomposable': 1062}   vs receipt: MATCH
+m=145: reps=1204 tallies={'decomposable': 1203, 'standard': 1}   vs receipt: MATCH
+m=147: reps=1816 tallies={'decomposable': 1812, 'quasi': 4}   vs receipt: MATCH
+m=149: reps=950 tallies={'decomposable': 950}   vs receipt: MATCH
+m=151: reps=976 tallies={'decomposable': 976}   vs receipt: MATCH
+m=153: reps=1816 tallies={'decomposable': 1814, 'quasi': 2}   vs receipt: MATCH
+m=155: reps=1370 tallies={'decomposable': 1369, 'standard': 1}   vs receipt: MATCH
+m=157: reps=1054 tallies={'decomposable': 1054}   vs receipt: MATCH
+m=159: reps=1780 tallies={'decomposable': 1779, 'quasi': 1}   vs receipt: MATCH
+m=161: reps=1379 tallies={'decomposable': 1379}   vs receipt: MATCH
+m=163: reps=1135 tallies={'decomposable': 1135}   vs receipt: MATCH
+m=165: reps=2743 tallies={'decomposable': 2736, 'standard': 2, 'quasi': 4, 'survivor': 1}   vs receipt: MATCH
+m=167: reps=1190 tallies={'decomposable': 1190}   vs receipt: MATCH
+m=169: reps=1322 tallies={'decomposable': 1322}   vs receipt: MATCH
+m=171: reps=2236 tallies={'decomposable': 2234, 'quasi': 2}   vs receipt: MATCH
+m=173: reps=1276 tallies={'decomposable': 1276}   vs receipt: MATCH
+m=175: reps=2015 tallies={'decomposable': 2012, 'standard': 3}   vs receipt: MATCH
+m=177: reps=2187 tallies={'decomposable': 2186, 'quasi': 1}   vs receipt: MATCH
+m=179: reps=1365 tallies={'decomposable': 1365}   vs receipt: MATCH
+m=181: reps=1396 tallies={'decomposable': 1396}   vs receipt: MATCH
+m=183: reps=2334 tallies={'decomposable': 2333, 'quasi': 1}   vs receipt: MATCH
+m=185: reps=1930 tallies={'decomposable': 1929, 'standard': 1}   vs receipt: MATCH
+m=187: reps=1761 tallies={'decomposable': 1761}   vs receipt: MATCH
+m=189: reps=3100 tallies={'decomposable': 3091, 'quasi': 9}   vs receipt: MATCH
+m=191: reps=1552 tallies={'decomposable': 1552}   vs receipt: MATCH
+m=193: reps=1585 tallies={'decomposable': 1585}   vs receipt: MATCH
+m=195: reps=3715 tallies={'decomposable': 3707, 'quasi': 4, 'standard': 2, 'star-split': 2}   vs receipt: MATCH
+m=197: reps=1650 tallies={'decomposable': 1650}   vs receipt: MATCH
+m=199: reps=1684 tallies={'decomposable': 1684}   vs receipt: MATCH
+INDEPENDENT CENSUS: every level matches the receipt exactly (rep counts, tallies, survivor lists).
+=== INDEPENDENT COMPLETE ===

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this code, the certificates, or the Lean formalisation, please cite the note below."
+title: "The Hodge conjecture for Fermat fourfolds of odd degree at most 199 — papers, code, certificates, and Lean formalisation"
+authors:
+  - family-names: Jumagulov
+    given-names: Rifat
+    email: jum.rifm@gmail.com
+license: MIT
+repository-code: "https://github.com/rifmj/fermat-fourfolds-boundary"
+keywords:
+  - Hodge conjecture
+  - Fermat fourfolds
+  - algebraic cycles
+  - Hodge classes
+  - Jacobi sums
+  - exact arithmetic
+  - Lean 4
+preferred-citation:
+  type: article
+  title: "The Hodge conjecture for Fermat fourfolds of odd degree at most 199"
+  authors:
+    - family-names: Jumagulov
+      given-names: Rifat
+  year: 2026

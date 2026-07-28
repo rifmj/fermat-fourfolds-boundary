@@ -1,0 +1,268 @@
+=== CALIBRATION (brute vs engine) 2026-07-13 ===
+m=6: brute_reps=14 engine_reps=14 reps_match=True brute_tot=18 decomp_sound=True
+m=8: brute_reps=17 engine_reps=17 reps_match=True brute_tot=30 decomp_sound=True
+m=10: brute_reps=30 engine_reps=30 reps_match=True brute_tot=79 decomp_sound=True
+m=12: brute_reps=79 engine_reps=79 reps_match=True brute_tot=174 decomp_sound=True
+m=14: brute_reps=51 engine_reps=51 reps_match=True brute_tot=202 decomp_sound=True
+CALIBRATION PASS
+m=6: reps=14 closed@0=14 closed@1=0 closed@2=0 OPEN=0
+=== m=6 DONE ===
+m=8: reps=17 closed@0=17 closed@1=0 closed@2=0 OPEN=0
+=== m=8 DONE ===
+m=10: reps=30 closed@0=30 closed@1=0 closed@2=0 OPEN=0
+=== m=10 DONE ===
+m=12: reps=79 closed@0=79 closed@1=0 closed@2=0 OPEN=0
+=== m=12 DONE ===
+m=14: reps=51 closed@0=51 closed@1=0 closed@2=0 OPEN=0
+=== m=14 DONE ===
+m=16: reps=62 closed@0=62 closed@1=0 closed@2=0 OPEN=0
+=== m=16 DONE ===
+m=18: reps=143 closed@0=143 closed@1=0 closed@2=0 OPEN=0
+=== m=18 DONE ===
+m=20: reps=161 closed@0=161 closed@1=0 closed@2=0 OPEN=0
+=== m=20 DONE ===
+m=22: reps=86 closed@0=86 closed@1=0 closed@2=0 OPEN=0
+=== m=22 DONE ===
+m=24: reps=355 closed@0=355 closed@1=0 closed@2=0 OPEN=0
+=== m=24 DONE ===
+m=26: reps=112 closed@0=112 closed@1=0 closed@2=0 OPEN=0
+=== m=26 DONE ===
+m=28: reps=209 closed@0=209 closed@1=0 closed@2=0 OPEN=0
+=== m=28 DONE ===
+m=30: reps=650 closed@0=650 closed@1=0 closed@2=0 OPEN=0
+=== m=30 DONE ===
+m=32: reps=196 closed@0=195 closed@1=0 closed@2=1 OPEN=0
+=== m=32 DONE ===
+m=34: reps=166 closed@0=166 closed@1=0 closed@2=0 OPEN=0
+=== m=34 DONE ===
+m=36: reps=574 closed@0=566 closed@1=0 closed@2=8 OPEN=0
+=== m=36 DONE ===
+m=38: reps=198 closed@0=198 closed@1=0 closed@2=0 OPEN=0
+=== m=38 DONE ===
+m=40: reps=496 closed@0=496 closed@1=0 closed@2=0 OPEN=0
+=== m=40 DONE ===
+m=42: reps=1030 closed@0=1029 closed@1=0 closed@2=1 OPEN=0
+=== m=42 DONE ===
+m=44: reps=342 closed@0=341 closed@1=0 closed@2=1 OPEN=0
+=== m=44 DONE ===
+m=46: reps=268 closed@0=268 closed@1=0 closed@2=0 OPEN=0
+=== m=46 DONE ===
+m=48: reps=959 closed@0=947 closed@1=0 closed@2=12 OPEN=0
+=== m=48 DONE ===
+m=50: reps=397 closed@0=395 closed@1=0 closed@2=1 OPEN=1
+  m=50 OPEN (1, 7, 27, 30, 41, 44)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=20
+=== m=50 DONE ===
+m=52: reps=444 closed@0=443 closed@1=0 closed@2=1 OPEN=0
+=== m=52 DONE ===
+m=54: reps=719 closed@0=701 closed@1=0 closed@2=15 OPEN=3
+  m=54 OPEN (1, 7, 19, 36, 49, 50)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=18
+  m=54 OPEN (1, 7, 24, 38, 41, 51)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=18
+  m=54 OPEN (1, 7, 36, 38, 39, 41)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=18
+=== m=54 DONE ===
+m=56: reps=651 closed@0=644 closed@1=0 closed@2=7 OPEN=0
+=== m=56 DONE ===
+m=58: reps=396 closed@0=396 closed@1=0 closed@2=0 OPEN=0
+=== m=58 DONE ===
+m=60: reps=2794 closed@0=2786 closed@1=0 closed@2=8 OPEN=0
+=== m=60 DONE ===
+m=62: reps=445 closed@0=444 closed@1=0 closed@2=1 OPEN=0
+=== m=62 DONE ===
+m=64: reps=615 closed@0=613 closed@1=0 closed@2=2 OPEN=0
+=== m=64 DONE ===
+m=66: reps=1041 closed@0=1018 closed@1=0 closed@2=21 OPEN=2
+  m=66 OPEN (1, 8, 23, 52, 54, 60)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=10
+  m=66 OPEN (1, 25, 31, 37, 49, 55)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=2
+=== m=66 DONE ===
+m=68: reps=674 closed@0=673 closed@1=0 closed@2=1 OPEN=0
+=== m=68 DONE ===
+m=70: reps=882 closed@0=878 closed@1=0 closed@2=2 OPEN=2
+  m=70 OPEN (1, 6, 43, 45, 57, 58)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+  m=70 OPEN (1, 20, 24, 42, 61, 62)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+=== m=70 DONE ===
+m=72: reps=1842 closed@0=1815 closed@1=0 closed@2=25 OPEN=2
+  m=72 OPEN (1, 10, 37, 50, 54, 64)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=12
+  m=72 OPEN (1, 26, 37, 40, 54, 58)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=12
+=== m=72 DONE ===
+m=74: reps=604 closed@0=604 closed@1=0 closed@2=0 OPEN=0
+=== m=74 DONE ===
+m=76: reps=808 closed@0=807 closed@1=0 closed@2=1 OPEN=0
+=== m=76 DONE ===
+m=78: reps=1357 closed@0=1319 closed@1=0 closed@2=35 OPEN=3
+  m=78 OPEN (1, 12, 43, 55, 60, 63)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+  m=78 OPEN (1, 20, 43, 45, 62, 63)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+  m=78 OPEN (1, 28, 42, 45, 54, 64)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+=== m=78 DONE ===
+m=80: reps=1377 closed@0=1374 closed@1=0 closed@2=3 OPEN=0
+=== m=80 DONE ===
+m=82: reps=722 closed@0=722 closed@1=0 closed@2=0 OPEN=0
+=== m=82 DONE ===
+m=84: reps=3135 closed@0=3110 closed@1=0 closed@2=25 OPEN=0
+=== m=84 DONE ===
+m=86: reps=786 closed@0=786 closed@1=0 closed@2=0 OPEN=0
+=== m=86 DONE ===
+m=88: reps=1180 closed@0=1178 closed@1=0 closed@2=2 OPEN=0
+=== m=88 DONE ===
+m=90: reps=2713 closed@0=2691 closed@1=0 closed@2=19 OPEN=3
+  m=90 OPEN (1, 8, 26, 62, 85, 88)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+  m=90 OPEN (1, 23, 38, 55, 74, 79)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+  m=90 OPEN (1, 38, 46, 55, 56, 74)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+=== m=90 DONE ===
+m=92: reps=1110 closed@0=1109 closed@1=0 closed@2=1 OPEN=0
+=== m=92 DONE ===
+m=94: reps=920 closed@0=920 closed@1=0 closed@2=0 OPEN=0
+=== m=94 DONE ===
+m=96: reps=2503 closed@0=2469 closed@1=0 closed@2=34 OPEN=0
+=== m=96 DONE ===
+m=98: reps=1182 closed@0=1182 closed@1=0 closed@2=0 OPEN=0
+=== m=98 DONE ===
+m=100: reps=1711 closed@0=1708 closed@1=0 closed@2=2 OPEN=1
+  m=100 OPEN (2, 14, 54, 60, 82, 88)  content-gcd=2 -> reduces to level 50  eig-field-degree(max 2 primes)=20
+=== m=100 DONE ===
+m=102: reps=1922 closed@0=1897 closed@1=0 closed@2=21 OPEN=4
+  m=102 OPEN (1, 14, 16, 82, 93, 100)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=32
+  m=102 OPEN (1, 16, 28, 62, 99, 100)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=32
+  m=102 OPEN (1, 40, 52, 69, 70, 74)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=32
+  m=102 OPEN (1, 46, 52, 57, 70, 80)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=32
+=== m=102 DONE ===
+m=104: reps=1550 closed@0=1548 closed@1=0 closed@2=2 OPEN=0
+=== m=104 DONE ===
+m=106: reps=1144 closed@0=1144 closed@1=0 closed@2=0 OPEN=0
+=== m=106 DONE ===
+m=108: reps=2798 closed@0=2759 closed@1=0 closed@2=35 OPEN=4
+  m=108 OPEN (1, 44, 55, 58, 82, 84)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=6
+  m=108 OPEN (2, 14, 38, 72, 98, 100)  content-gcd=2 -> reduces to level 54  eig-field-degree(max 2 primes)=6
+  m=108 OPEN (2, 14, 48, 76, 82, 102)  content-gcd=2 -> reduces to level 54  eig-field-degree(max 2 primes)=6
+  m=108 OPEN (2, 14, 72, 76, 78, 82)  content-gcd=2 -> reduces to level 54  eig-field-degree(max 2 primes)=6
+=== m=108 DONE ===
+m=110: reps=1785 closed@0=1782 closed@1=0 closed@2=1 OPEN=2
+  m=110 OPEN (1, 24, 62, 71, 81, 91)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=40
+  m=110 OPEN (1, 31, 55, 71, 81, 91)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=4
+=== m=110 DONE ===
+m=112: reps=2046 closed@0=2038 closed@1=0 closed@2=8 OPEN=0
+=== m=112 DONE ===
+m=114: reps=2313 closed@0=2289 closed@1=0 closed@2=20 OPEN=4
+  m=114 OPEN (1, 7, 78, 79, 86, 91)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=36
+  m=114 OPEN (1, 13, 43, 72, 103, 110)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=36
+  m=114 OPEN (1, 13, 43, 80, 102, 103)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=36
+  m=114 OPEN (1, 44, 60, 77, 78, 82)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=18
+=== m=114 DONE ===
+m=116: reps=1658 closed@0=1657 closed@1=0 closed@2=1 OPEN=0
+=== m=116 DONE ===
+m=118: reps=1390 closed@0=1390 closed@1=0 closed@2=0 OPEN=0
+=== m=118 DONE ===
+m=120: reps=7002 closed@0=6954 closed@1=0 closed@2=48 OPEN=0
+=== m=120 DONE ===
+m=122: reps=1480 closed@0=1480 closed@1=0 closed@2=0 OPEN=0
+=== m=122 DONE ===
+m=124: reps=1866 closed@0=1863 closed@1=0 closed@2=3 OPEN=0
+=== m=124 DONE ===
+m=126: reps=4241 closed@0=4221 closed@1=0 closed@2=20 OPEN=0
+=== m=126 DONE ===
+m=128: reps=2050 closed@0=2047 closed@1=0 closed@2=3 OPEN=0
+=== m=128 DONE ===
+m=130: reps=2376 closed@0=2376 closed@1=0 closed@2=0 OPEN=0
+=== m=130 DONE ===
+m=132: reps=4010 closed@0=3956 closed@1=0 closed@2=52 OPEN=2
+  m=132 OPEN (2, 16, 46, 104, 108, 120)  content-gcd=2 -> reduces to level 66  eig-field-degree(max 2 primes)=10
+  m=132 OPEN (2, 50, 62, 74, 98, 110)  content-gcd=2 -> reduces to level 66  eig-field-degree(max 2 primes)=2
+=== m=132 DONE ===
+m=134: reps=1758 closed@0=1758 closed@1=0 closed@2=0 OPEN=0
+=== m=134 DONE ===
+m=136: reps=2424 closed@0=2422 closed@1=0 closed@2=2 OPEN=0
+=== m=136 DONE ===
+m=138: reps=3205 closed@0=3183 closed@1=0 closed@2=20 OPEN=2
+  m=138 OPEN (1, 22, 57, 63, 135, 136)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=44
+  m=138 OPEN (1, 70, 75, 81, 93, 94)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=44
+=== m=138 DONE ===
+m=140: reps=3756 closed@0=3749 closed@1=0 closed@2=4 OPEN=3
+  m=140 OPEN (1, 58, 71, 86, 90, 114)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+  m=140 OPEN (2, 12, 86, 90, 114, 116)  content-gcd=2 -> reduces to level 70  eig-field-degree(max 2 primes)=24
+  m=140 OPEN (2, 40, 48, 84, 122, 124)  content-gcd=2 -> reduces to level 70  eig-field-degree(max 2 primes)=24
+=== m=140 DONE ===
+m=142: reps=1956 closed@0=1956 closed@1=0 closed@2=0 OPEN=0
+=== m=142 DONE ===
+m=144: reps=5241 closed@0=5190 closed@1=0 closed@2=49 OPEN=2
+  m=144 OPEN (2, 20, 74, 100, 108, 128)  content-gcd=2 -> reduces to level 72  eig-field-degree(max 2 primes)=6
+  m=144 OPEN (2, 52, 74, 80, 108, 116)  content-gcd=2 -> reduces to level 72  eig-field-degree(max 2 primes)=6
+=== m=144 DONE ===
+m=146: reps=2062 closed@0=2062 closed@1=0 closed@2=0 OPEN=0
+=== m=146 DONE ===
+m=148: reps=2556 closed@0=2555 closed@1=0 closed@2=1 OPEN=0
+=== m=148 DONE ===
+m=150: reps=5232 closed@0=5209 closed@1=0 closed@2=21 OPEN=2
+  m=150 OPEN (1, 39, 66, 101, 120, 123)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=20
+  m=150 OPEN (3, 21, 81, 90, 123, 132)  content-gcd=3 -> reduces to level 50  eig-field-degree(max 2 primes)=20
+=== m=150 DONE ===
+m=152: reps=2936 closed@0=2934 closed@1=0 closed@2=2 OPEN=0
+=== m=152 DONE ===
+m=154: reps=3048 closed@0=3048 closed@1=0 closed@2=0 OPEN=0
+=== m=154 DONE ===
+m=156: reps=5314 closed@0=5251 closed@1=0 closed@2=58 OPEN=5
+  m=156 OPEN (1, 79, 84, 90, 106, 108)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=24
+  m=156 OPEN (2, 24, 86, 110, 120, 126)  content-gcd=2 -> reduces to level 78  eig-field-degree(max 2 primes)=24
+  m=156 OPEN (2, 40, 86, 90, 124, 126)  content-gcd=2 -> reduces to level 78  eig-field-degree(max 2 primes)=24
+  m=156 OPEN (2, 45, 84, 106, 108, 123)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=12
+  m=156 OPEN (2, 56, 84, 90, 108, 128)  content-gcd=2 -> reduces to level 78  eig-field-degree(max 2 primes)=12
+=== m=156 DONE ===
+m=158: reps=2388 closed@0=2388 closed@1=0 closed@2=0 OPEN=0
+=== m=158 DONE ===
+m=160: reps=4268 closed@0=4263 closed@1=0 closed@2=5 OPEN=0
+=== m=160 DONE ===
+m=162: reps=4410 closed@0=4382 closed@1=0 closed@2=25 OPEN=3
+  m=162 OPEN (3, 21, 57, 108, 147, 150)  content-gcd=3 -> reduces to level 54  eig-field-degree(max 2 primes)=18
+  m=162 OPEN (3, 21, 72, 114, 123, 153)  content-gcd=3 -> reduces to level 54  eig-field-degree(max 2 primes)=18
+  m=162 OPEN (3, 21, 108, 114, 117, 123)  content-gcd=3 -> reduces to level 54  eig-field-degree(max 2 primes)=18
+=== m=162 DONE ===
+m=164: reps=3074 closed@0=3073 closed@1=0 closed@2=1 OPEN=0
+=== m=164 DONE ===
+m=166: reps=2618 closed@0=2618 closed@1=0 closed@2=0 OPEN=0
+=== m=166 DONE ===
+m=168: reps=8582 closed@0=8505 closed@1=0 closed@2=75 OPEN=2
+  m=168 OPEN (1, 25, 79, 121, 127, 151)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=1
+  m=168 OPEN (1, 27, 87, 113, 126, 150)  content-gcd=1 (primitive candidate)  eig-field-degree(max 2 primes)=12
+=== m=168 DONE ===
+m=170: reps=3802 closed@0=3802 closed@1=0 closed@2=0 OPEN=0
+=== m=170 DONE ===
+m=172: reps=3352 closed@0=3351 closed@1=0 closed@2=1 OPEN=0
+=== m=172 DONE ===
+m=174: reps=4830 closed@0=4811 closed@1=0 closed@2=19 OPEN=0
+=== m=174 DONE ===
+m=176: reps=4104 closed@0=4101 closed@1=0 closed@2=3 OPEN=0
+=== m=176 DONE ===
+m=178: reps=2986 closed@0=2986 closed@1=0 closed@2=0 OPEN=0
+=== m=178 DONE ===
+m=180: reps=10973 closed@0=10917 closed@1=0 closed@2=53 OPEN=3
+  m=180 OPEN (2, 16, 52, 124, 170, 176)  content-gcd=2 -> reduces to level 90  eig-field-degree(max 2 primes)=24
+  m=180 OPEN (2, 46, 76, 110, 148, 158)  content-gcd=2 -> reduces to level 90  eig-field-degree(max 2 primes)=24
+  m=180 OPEN (2, 76, 92, 110, 112, 148)  content-gcd=2 -> reduces to level 90  eig-field-degree(max 2 primes)=24
+=== m=180 DONE ===
+m=182: reps=4090 closed@0=4090 closed@1=0 closed@2=0 OPEN=0
+=== m=182 DONE ===
+m=184: reps=4106 closed@0=4104 closed@1=0 closed@2=2 OPEN=0
+=== m=184 DONE ===
+m=186: reps=5447 closed@0=5427 closed@1=0 closed@2=20 OPEN=0
+=== m=186 DONE ===
+m=188: reps=3942 closed@0=3941 closed@1=0 closed@2=1 OPEN=0
+=== m=188 DONE ===
+m=190: reps=4643 closed@0=4642 closed@1=0 closed@2=1 OPEN=0
+=== m=190 DONE ===
+m=192: reps=7545 closed@0=7494 closed@1=0 closed@2=51 OPEN=0
+=== m=192 DONE ===
+m=194: reps=3514 closed@0=3514 closed@1=0 closed@2=0 OPEN=0
+=== m=194 DONE ===
+m=196: reps=5065 closed@0=5064 closed@1=0 closed@2=1 OPEN=0
+=== m=196 DONE ===
+m=198: reps=7164 closed@0=7129 closed@1=0 closed@2=33 OPEN=2
+  m=198 OPEN (3, 24, 69, 156, 162, 180)  content-gcd=3 -> reduces to level 66  eig-field-degree(max 2 primes)=10
+  m=198 OPEN (3, 75, 93, 111, 147, 165)  content-gcd=3 -> reduces to level 66  eig-field-degree(max 2 primes)=2
+=== m=198 DONE ===
+m=200: reps=6211 closed@0=6207 closed@1=0 closed@2=3 OPEN=1
+  m=200 OPEN (4, 28, 108, 120, 164, 176)  content-gcd=4 -> reduces to level 50  eig-field-degree(max 2 primes)=20
+=== m=200 DONE ===
+=== CALIBRATION (brute vs engine) 2026-07-14 ===
+m=6: brute_reps=14 engine_reps=14 reps_match=True brute_tot=18 decomp_sound=True
+m=8: brute_reps=17 engine_reps=17 reps_match=True brute_tot=30 decomp_sound=True
+m=10: brute_reps=30 engine_reps=30 reps_match=True brute_tot=79 decomp_sound=True
+m=12: brute_reps=79 engine_reps=79 reps_match=True brute_tot=174 decomp_sound=True
+m=14: brute_reps=51 engine_reps=51 reps_match=True brute_tot=202 decomp_sound=True
+CALIBRATION PASS
