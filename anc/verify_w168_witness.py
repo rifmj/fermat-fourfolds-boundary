@@ -72,6 +72,34 @@ def main():
     print(f"(c) nu(a) - nu(beta) in S_168 — OK   [S_168 rank {rank}]")
     print("(d) nu(a) not in S_168 and nu(beta) not in S_168 — the congruence is NOT vacuous — OK")
     print("(e) 2*nu(a) in S_168 — OK")
+    # (f) TRANSPORTABLE certificate: read the stored integer combination from disk and RE-SUM it
+    import json
+    cert = json.load(open(HERE + '/data/l4/w168_coset_certificate.json'))
+    gens = gens_S(M)
+    assert cert["a"] == list(A) and cert["beta"] == list(B), "certificate is for other classes"
+    acc = [0] * (M - 1)
+    for j, c in cert["coefficients"].items():
+        g = gens[int(j)]
+        for i in range(M - 1):
+            acc[i] += c * g[i]
+    assert acc == diff, "stored certificate does NOT re-sum to nu(a) - nu(beta)"
+    cvals = [int(c) for c in cert["coefficients"].values()]
+    print(f"(f) stored certificate re-summed from disk: {len(cvals)} nonzero coefficients in "
+          f"[{min(cvals)},{max(cvals)}] over the {len(gens)} generators — reproduces "
+          f"nu(a) - nu(beta) EXACTLY")
+    # (g) the modular kernel witness certifies BOTH non-memberships at once
+    kw = cert["kernel_witness"]; q = kw["q"]
+    phi = [0] * (M - 1)
+    for i in kw["phi_support"]:
+        phi[i] = 1
+    assert all(sum(p * g[i] for i, p in enumerate(phi)) % q == 0 for g in gens), \
+        "kernel witness does not annihilate every generator"
+    pa = sum(p * x for p, x in zip(phi, va)) % q
+    pb = sum(p * x for p, x in zip(phi, vb)) % q
+    assert pa % q and pb % q, "kernel witness fails to separate a or beta from S_168"
+    print(f"(g) modular kernel witness (q={q}, support {len(kw['phi_support'])}): annihilates every "
+          f"generator, phi.nu(a)={pa} and phi.nu(beta)={pb} both nonzero — a transportable proof "
+          f"that NEITHER lies in S_168")
     # negative control
     asplit = [c for c in itertools.combinations(range(6), 3) if 0 in c
               and sum(A[i] for i in c) % M == 0

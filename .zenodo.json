@@ -1,0 +1,47 @@
+{
+  "upload_type": "software",
+  "title": "The Hodge conjecture for Fermat fourfolds: odd degrees up to 199 and the even-degree census to 250 — papers, exact certificates and verifiers",
+  "creators": [
+    {
+      "name": "Jumagulov, Rifat"
+    }
+  ],
+  "description": "<p>Two companion manuscripts and the single self-verifying computational package they share.</p><p><strong>The odd-degree note</strong> proves the Hodge conjecture for the Fermat fourfold <em>X</em><sup>4</sup><sub><em>m</em></sub> for every odd degree <em>m</em> &le; 199, by three closure mechanisms — a <em>*</em>-split transport theorem, a two-pair standard closure, and a level-lifted closure of the exceptional degree-33 class — together with a complete computer-assisted census and its completeness proof. An exact Jacobi-sum computation at <em>p</em> = 67, carried out in Z[<em>x</em>]/&Phi;<sub>33</sub> with no floating point, shows that no cycle defined over Q(&zeta;<sub>33</sub>) projects onto the exceptional block, and constrains the residue degrees of any field of definition.</p><p><strong>The even-degree companion</strong> maps the even sector through degree 250: forty primitive classes survive the base predicates and the depth-2 closure oracle, deeper certificates close all but ten, an exchange theorem organises the residual into claim-equivalence walls, and two of them close — one by a coset transfer from an explicit <em>*</em>-split class, one by a 40-generator lattice certificate. Eight certified gap classes remain; they are <em>not</em> claimed to be non-algebraic.</p><p><strong>The package.</strong> Three algorithmically independent census implementations; per-orbit witness certificates for all 78,299 orbit representatives across the 89 odd levels, with the terminal classes re-screened live rather than trusted from a label; per-level canonical SHA-256 hashes for both parities; exact Hermite-normal-form lattice tests with modular kernel witnesses for every non-membership and re-summed integer certificates for every membership; explicit machine-checkable routes for all thirty deep closures; and the sweeps behind the wall structure. One command runs every check with fresh-run semantics, and each verifier is tested to reject a deliberately corrupted certificate.</p><p>Code: MIT. Data, receipts and documentation: CC BY 4.0. See LICENSE.</p>",
+  "access_right": "open",
+  "license": "MIT",
+  "language": "eng",
+  "keywords": [
+    "Hodge conjecture",
+    "Fermat varieties",
+    "algebraic cycles",
+    "Aoki lattice",
+    "computer-assisted proof",
+    "exact arithmetic",
+    "Jacobi sums",
+    "Lean",
+    "reproducible research"
+  ],
+  "subjects": [
+    {
+      "term": "Algebraic geometry — cycles and subschemes",
+      "identifier": "14C25",
+      "scheme": "msc2020"
+    },
+    {
+      "term": "Transcendental methods, Hodge theory",
+      "identifier": "14C30",
+      "scheme": "msc2020"
+    },
+    {
+      "term": "Hypersurfaces and algebraic geometry",
+      "identifier": "14J70",
+      "scheme": "msc2020"
+    },
+    {
+      "term": "Other character sums and Gauss sums",
+      "identifier": "11T24",
+      "scheme": "msc2020"
+    }
+  ],
+  "notes": "The arXiv identifiers of the two manuscripts are added as related identifiers in the next version of this record, once the papers are posted; Zenodo rejects placeholder identifiers, so they are deliberately absent here."
+}

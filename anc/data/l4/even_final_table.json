@@ -15,7 +15,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "depth-4 4+6+4 std"
+   "route": "depth-4 [pairs (4,46),(14,36),(16,34),(24,26) -> G2(1, 26, 27, 46) + G3closed(4, 14, 24, 30, 34, 44) + G2(7, 16, 36, 41)]"
   },
   {
    "m": 54,
@@ -31,7 +31,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d3 gen-2 (+direct d5)"
+   "route": "iterated-d3 gen-2 [pairs (6,48),(8,46),(13,41) -> G3closed(1, 7, 19, 41, 46, 48) + G3d2(6, 8, 13, 36, 49, 50)]"
   },
   {
    "m": 54,
@@ -239,7 +239,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d3 gen-2 (45,45)"
+   "route": "iterated-d3 gen-2 [pairs (2,88),(34,56),(45,45) -> G3closed(1, 23, 34, 45, 79, 88) + G3d2(2, 38, 45, 55, 56, 74)]"
   },
   {
    "m": 90,
@@ -495,7 +495,7 @@
    "nu_in_S_m": true,
    "two_nu_in_S_m": true,
    "status": "deep-closed",
-   "route": "iterated-d3 gen-2"
+   "route": "iterated-d3 gen-2 [pairs (3,147),(24,126),(54,96) -> G3closed(1, 24, 54, 101, 123, 147) + G3d2(3, 39, 66, 96, 120, 126)]"
   },
   {
    "m": 156,

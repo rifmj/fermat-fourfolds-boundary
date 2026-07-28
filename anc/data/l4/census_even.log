@@ -1,4 +1,4 @@
-=== CALIBRATION (brute vs engine) 2026-07-28 ===
+=== CALIBRATION (brute vs engine) 2026-07-29 ===
 m=6: brute_reps=14 engine_reps=14 reps_match=True brute_tot=18 decomp_sound=True
 m=8: brute_reps=17 engine_reps=17 reps_match=True brute_tot=30 decomp_sound=True
 m=10: brute_reps=30 engine_reps=30 reps_match=True brute_tot=79 decomp_sound=True

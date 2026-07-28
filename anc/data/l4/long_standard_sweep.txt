@@ -1,0 +1,38 @@
+=== p>=7 STANDARD-BLOCK SWEEP (receipt for the 'restriction is a no-op' statement) ===
+Scope: all 40 primitive post-depth-two survivors; every prime p >= 7 dividing the level;
+every admissible sigma_{p,x}; augmentation depth <= 2, and <= 3 for the ten residual
+classes (the eight open ones and the two closed by the propositions).
+A HIT would mean the class is closed by a long standard block, i.e. a defect.
+
+m=66 (1, 8, 23, 52, 54, 60): primes [11], depth <= 2 — no closure by a p>=7 standard block
+m=66 (1, 25, 31, 37, 49, 55): primes [11], depth <= 2 — no closure by a p>=7 standard block
+m=70 (1, 6, 43, 45, 57, 58): primes [7], depth <= 2 — no closure by a p>=7 standard block
+m=70 (1, 20, 24, 42, 61, 62): primes [7], depth <= 3 — no closure by a p>=7 standard block
+m=78 (1, 12, 43, 55, 60, 63): primes [13], depth <= 2 — no closure by a p>=7 standard block
+m=78 (1, 20, 43, 45, 62, 63): primes [13], depth <= 2 — no closure by a p>=7 standard block
+m=78 (1, 28, 42, 45, 54, 64): primes [13], depth <= 2 — no closure by a p>=7 standard block
+m=102 (1, 14, 16, 82, 93, 100): primes [17], depth <= 2 — no closure by a p>=7 standard block
+m=102 (1, 16, 28, 62, 99, 100): primes [17], depth <= 2 — no closure by a p>=7 standard block
+m=102 (1, 40, 52, 69, 70, 74): primes [17], depth <= 2 — no closure by a p>=7 standard block
+m=102 (1, 46, 52, 57, 70, 80): primes [17], depth <= 2 — no closure by a p>=7 standard block
+m=110 (1, 24, 62, 71, 81, 91): primes [11], depth <= 3 — no closure by a p>=7 standard block
+m=110 (1, 31, 55, 71, 81, 91): primes [11], depth <= 3 — no closure by a p>=7 standard block
+m=114 (1, 7, 78, 79, 86, 91): primes [19], depth <= 3 — no closure by a p>=7 standard block
+m=114 (1, 13, 43, 72, 103, 110): primes [19], depth <= 3 — no closure by a p>=7 standard block
+m=114 (1, 13, 43, 80, 102, 103): primes [19], depth <= 3 — no closure by a p>=7 standard block
+m=114 (1, 44, 60, 77, 78, 82): primes [19], depth <= 2 — no closure by a p>=7 standard block
+m=138 (1, 22, 57, 63, 135, 136): primes [23], depth <= 2 — no closure by a p>=7 standard block
+m=138 (1, 70, 75, 81, 93, 94): primes [23], depth <= 2 — no closure by a p>=7 standard block
+m=140 (1, 58, 71, 86, 90, 114): primes [7], depth <= 2 — no closure by a p>=7 standard block
+m=156 (1, 79, 84, 90, 106, 108): primes [13], depth <= 2 — no closure by a p>=7 standard block
+m=156 (2, 45, 84, 106, 108, 123): primes [13], depth <= 2 — no closure by a p>=7 standard block
+m=168 (1, 25, 79, 121, 127, 151): primes [7], depth <= 3 — no closure by a p>=7 standard block
+m=168 (1, 27, 87, 113, 126, 150): primes [7], depth <= 2 — no closure by a p>=7 standard block
+m=210 (1, 43, 44, 169, 185, 188): primes [7], depth <= 2 — no closure by a p>=7 standard block
+m=210 (1, 79, 109, 121, 151, 169): primes [7], depth <= 3 — no closure by a p>=7 standard block
+m=210 (2, 9, 129, 142, 168, 180): primes [7], depth <= 3 — no closure by a p>=7 standard block
+m=210 (2, 82, 111, 141, 142, 152): primes [7], depth <= 2 — no closure by a p>=7 standard block
+m=220 (1, 62, 111, 142, 162, 182): primes [11], depth <= 3 — no closure by a p>=7 standard block
+
+TESTED 333 (class, sigma_{p,x}) pairs; HITS: 0.
+NO closure by any p>=7 standard block within the stated depths.

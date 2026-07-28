@@ -50,7 +50,7 @@ theorem generates claim-equivalences, and an exhaustive scan organizes the ten i
 Two of the five then close, both by a coset-transfer lemma: the $m=168$ class is congruent modulo
 $S_{168}$ to an explicit $*$-split class, and the isolated degree-$210$ class lies in $S_{210}$
 itself, by an explicit $40$-generator $\pm1$ certificate displayed in full. The residual even-degree boundary at $m\le250$ --- the classes unresolved by the
-implemented closure family and the cited published theorems --- is eight certified gap classes
+implemented closure family and the cited results of the two-paper package --- is eight certified gap classes
 ($\nu\notin S_m$,
 $2\nu\in S_m$) in three exchange walls $W_{70}$, $W_{110}$, $W_{114}$; every lattice verdict
 carries an independent certificate (modular kernel witnesses for non-membership, exact
@@ -104,7 +104,7 @@ the exhaustive scan organizes the ten residual classes into five walls.
 coset transfer of Proposition~\ref{prop:coset}: the $m=168$ class is congruent modulo $S_{168}$
 to an explicit $*$-split class, and the isolated degree-$210$ class lies in $S_{210}$ itself, by
 an explicit $40$-generator $\pm1$ certificate displayed in full and converted to a literal Aoki
-chain. Both proofs are internal; Aoki's degree-form theorem and the two errata we record of its
+chain. Both proofs are internal to the two-paper package; Aoki's degree-form theorem and the two errata we record of its
 printed text (Remark~\ref{rem:aoki168}) are corroboration, not support.
 \item[--] \emph{The boundary} (Corollary~\ref{cor:evenbdry}): eight certified gap classes in
 three walls; closing any member of a wall closes the wall.
@@ -289,10 +289,13 @@ The family is bounded, and \emph{two tiers must be distinguished}. The \emph{dep
 admits as blocks only pairs, grade-$2$ Hodge quadruples, the standard blocks with $p\le5$ above,
 and grade-$3$ sextuples certified by the four base predicates --- block lengths exactly $2,4,6$.
 Standard blocks with $p\ge7$ (length $p+1\ge8$) enter only the \emph{lattice} certificates of
-\S\ref{sec:closures}, never the partition oracle; the restriction is a proved no-op for every
-verdict reported here --- an exhaustive sweep over all forty classes and every prime $p\ge7$
-dividing their level finds no closure by such a block at depth $\le2$, nor at depth $\le3$ for
-the residual ten (receipt in the ancillary). The \emph{deep tiers} add depth $k\le5$ and \emph{iteration}: a
+\S\ref{sec:closures}, never the partition oracle; the restriction changes nothing in the tier reported
+here: an exhaustive sweep over all forty classes and every prime $p\ge7$ dividing their level
+finds no closure by such a block at depth $\le2$, nor at depth $\le3$ for the residual ten
+(\texttt{long\_standard\_sweep.py} and its receipt in the ancillary). The deeper negative
+campaigns behind the walls run to depth $4$--$5$ and were not re-run with long standard blocks;
+the statement is therefore about the headline tier and the depth-$\le3$ residual check, not about
+those sweeps. The \emph{deep tiers} add depth $k\le5$ and \emph{iteration}: a
 grade-$3$ block may itself carry a depth-$\le2$ certificate (two-generation certificate trees).
 The headline tier below is the \emph{non-iterated} depth-$\le2$ oracle; iteration enters only
 in the deep tiers, where the depth and the generation used are recorded per class in the ledger.
@@ -527,7 +530,7 @@ Proposition~\ref{prop:w210}.)
 
 \begin{corollary}[the even-degree boundary at $m\le250$]\label{cor:evenbdry}
 The residual boundary for all \emph{even} degrees $m\le250$ --- unresolved by the implemented
-closure family and the cited published theorems --- is eight primitive classes in three
+closure family and the cited results of the two-paper package --- is eight primitive classes in three
 walls ($W_{70}$: two members, $W_{110}$: three, $W_{114}$: three, including the displayed
 lift-equivalent members at $210$ and $220$), and
 all eight are certified gap classes: $\nu\notin S_m$, $2\nu\in S_m$ (the doubling holds for
@@ -569,7 +572,10 @@ Exact objects throughout: multiset identities, Hodge grades, and lattice members
 in exact integer arithmetic; no floating point enters any certificate. Every lattice verdict has an
 independent exact certificate (modular kernel witnesses found by the standalone script's own
 elimination for each non-membership; exact re-summation for each membership and for the doubled
-vectors); the full census and exchange sweeps are reproducible from the supplied engines and are
+vectors). The coset congruence of Proposition~\ref{prop:w168} carries both kinds: a stored
+integer combination over the generator list ($94$ coefficients in $[-3,3]$), re-summed from disk
+by the standalone checker, and a modular kernel witness which --- because the difference lies in
+$S_{168}$ --- separates $\nu(a)$ and $\nu(\beta)$ from the lattice simultaneously; the full census and exchange sweeps are reproducible from the supplied engines and are
 accompanied by checksummed campaign receipts; independent brute-force calibration is performed
 at small levels ($m\le14$), and the algorithmically independent reimplementation re-derives the
 representative counts fresh at the key levels $50,70,110,114,168$ (pinned receipt). The
@@ -616,15 +622,15 @@ $54$ & $(1,7,24,38,41,51)$ & depth-3 & $110$ & $(1,31,55,71,81,91)$ & open, $W_{
 $54$ & $(1,7,36,38,39,41)$ & depth-3 & $114$ & $(1,7,78,79,86,91)$ & open, $W_{114}$\\
 $66$ & $(1,8,23,52,54,60)$ & depth-3 & $114$ & $(1,13,43,72,103,110)$ & open, $W_{114}$\\
 $66$ & $(1,25,31,37,49,55)$ & depth-3 & $114$ & $(1,13,43,80,102,103)$ & open, $W_{114}$\\
-$70$ & $(1,6,43,45,57,58)$ & depth-3 & $114$ & $(1,44,60,77,78,82)$ & iterated\\
-$70$ & $(1,20,24,42,61,62)$ & open, $W_{70}$ & $138$ & $(1,22,57,63,135,136)$ & iterated\\
-$72$ & $(1,10,37,50,54,64)$ & depth-3 & $138$ & $(1,70,75,81,93,94)$ & iterated\\
-$72$ & $(1,26,37,40,54,58)$ & depth-3 & $140$ & $(1,58,71,86,90,114)$ & iterated\\
+$70$ & $(1,6,43,45,57,58)$ & depth-3 & $114$ & $(1,44,60,77,78,82)$ & depth-3\\
+$70$ & $(1,20,24,42,61,62)$ & open, $W_{70}$ & $138$ & $(1,22,57,63,135,136)$ & depth-3\\
+$72$ & $(1,10,37,50,54,64)$ & depth-3 & $138$ & $(1,70,75,81,93,94)$ & depth-3\\
+$72$ & $(1,26,37,40,54,58)$ & depth-3 & $140$ & $(1,58,71,86,90,114)$ & depth-3\\
 $78$ & $(1,12,43,55,60,63)$ & depth-3 & $150$ & $(1,39,66,101,120,123)$ & iterated\\
-$78$ & $(1,20,43,45,62,63)$ & depth-3 & $156$ & $(1,79,84,90,106,108)$ & iterated\\
-$78$ & $(1,28,42,45,54,64)$ & depth-3 & $156$ & $(2,45,84,106,108,123)$ & iterated\\
+$78$ & $(1,20,43,45,62,63)$ & depth-3 & $156$ & $(1,79,84,90,106,108)$ & depth-3\\
+$78$ & $(1,28,42,45,54,64)$ & depth-3 & $156$ & $(2,45,84,106,108,123)$ & depth-3\\
 $90$ & $(1,8,26,62,85,88)$ & depth-3 & $168$ & $(1,25,79,121,127,151)$ & Prop.~\ref{prop:w168}\\
-$90$ & $(1,23,38,55,74,79)$ & iterated & $168$ & $(1,27,87,113,126,150)$ & iterated\\
+$90$ & $(1,23,38,55,74,79)$ & iterated & $168$ & $(1,27,87,113,126,150)$ & depth-3\\
 $90$ & $(1,38,46,55,56,74)$ & depth-3 & $210$ & $(1,43,44,169,185,188)$ & depth-3\\
 $102$ & $(1,14,16,82,93,100)$ & depth-3 & $210$ & $(1,79,109,121,151,169)$ & Prop.~\ref{prop:w210}\\
 $102$ & $(1,16,28,62,99,100)$ & depth-3 & $210$ & $(2,9,129,142,168,180)$ & open, $W_{70}$\\

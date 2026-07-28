@@ -1,10 +1,20 @@
 cff-version: 1.2.0
-message: "If you use this code, the certificates, or the Lean formalisation, please cite the note below."
-title: "The Hodge conjecture for Fermat fourfolds of odd degree at most 199 — papers, code, certificates, and Lean formalisation"
+message: >-
+  If you use this code, the certificates, or the Lean formalisation, please cite
+  this repository. For the mathematics, cite the manuscript the result belongs
+  to: the odd-degree note (preferred citation below) or the even-degree
+  companion (listed under references).
+title: >-
+  The Hodge conjecture for Fermat fourfolds: odd degrees at most 199 and the
+  even-degree census through 250 — papers, code, certificates, and Lean
+  formalisation
+type: software
 authors:
   - family-names: Jumagulov
     given-names: Rifat
     email: jum.rifm@gmail.com
+version: 1.0.0
+date-released: "2026-07-29"
 license: MIT
 repository-code: "https://github.com/rifmj/fermat-fourfolds-boundary"
 keywords:
@@ -12,9 +22,25 @@ keywords:
   - Fermat fourfolds
   - algebraic cycles
   - Hodge classes
+  - Aoki lattice
   - Jacobi sums
   - exact arithmetic
+  - computer-assisted proof
   - Lean 4
+abstract: >-
+  Two companion manuscripts and the single self-verifying computational package
+  they share. The odd-degree note proves the Hodge conjecture for the Fermat
+  fourfold of every odd degree at most 199, and rules out a field of definition
+  inside the 33rd cyclotomic field for the exceptional block by an exact
+  Jacobi-sum computation at p = 67. The even-degree companion maps the even
+  sector through degree 250: forty primitive classes survive the base predicates
+  and the depth-2 closure oracle, deeper certificates close all but ten, an
+  exchange theorem organises the residual into claim-equivalence walls, and two
+  walls close, leaving eight certified gap classes, which are not claimed to be
+  non-algebraic. The package carries three independent census implementations,
+  per-orbit witnesses for all 78,299 orbit representatives, canonical per-level
+  hashes, exact lattice certificates, explicit routes for all thirty deep
+  closures, and verifiers each tested to reject a corrupted certificate.
 preferred-citation:
   type: article
   title: "The Hodge conjecture for Fermat fourfolds of odd degree at most 199"
@@ -22,3 +48,14 @@ preferred-citation:
     - family-names: Jumagulov
       given-names: Rifat
   year: 2026
+references:
+  - type: article
+    title: >-
+      Residual gap classes in the even-degree Fermat-fourfold census through
+      degree 250: exchange walls and two closures
+    authors:
+      - family-names: Jumagulov
+        given-names: Rifat
+    year: 2026
+# The Zenodo concept DOI is added as an `identifiers:` entry once the first
+# release is archived; see the release procedure in README.md.

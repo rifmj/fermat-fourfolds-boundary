@@ -1,4 +1,4 @@
-# The Hodge conjecture for Fermat fourfolds of odd degree at most 199
+# Fermat fourfolds: the Hodge conjecture in odd degree ≤ 199, and the even-degree census through 250
 
 Papers, exact-arithmetic verification package, census certificates, and Lean formalisation for
 the companion pair
@@ -7,7 +7,7 @@ the companion pair
 > arXiv id pending.
 
 > R. Jumagulov, *Residual gap classes in the even-degree Fermat-fourfold census through
-> degree 250: exchange walls and two closures* (2026). arXiv id pending; submitted alongside
+> degree 250: exchange walls and two closures* (2026). arXiv id pending; the companion of
 > the note — the ancillary package is shared.
 
 **Result (the note).** For the Fermat fourfold `X_m^4 : x_0^m + … + x_5^m = 0 ⊂ P^5` the Hodge
@@ -44,11 +44,12 @@ above 67 is divisible by 6.
 classes are frequent and the odd law "survivor ⟹ 3|m" fails. The companion identifies the
 working lattice with Aoki's group `S_m` generator-by-generator, proves a negation-closure lemma
 turning integer membership certificates into literal Aoki claim chains, and runs the even-parity
-census: thirty-eight primitive beyond-machinery classes, all but ten closed by iterated
-partition certificates. An exchange theorem plus an exhaustive scan organizes the ten into five
-walls; two close (`m = 168` by Aoki's published degree-form theorem — with two errata of the
-printed text recorded — and the isolated `m = 210` class by an explicit 40-generator `±1`
-certificate). The residual even-degree boundary at `m ≤ 250` is **eight certified gap classes in
+census: forty primitive classes survive the four base predicates and the complete depth-`≤2`
+closure oracle, all but ten closed by deeper partition certificates. An exchange theorem plus an
+exhaustive scan organizes the ten into five walls; two close, both by a coset-transfer lemma
+internal to the two-paper package (the `m = 168` class is congruent modulo `S_168` to an explicit
+`*`-split class; the isolated `m = 210` class lies in `S_210` itself, by an explicit 40-generator
+`±1` certificate displayed in full). The residual even-degree boundary at `m ≤ 250` is **eight certified gap classes in
 three exchange walls `W_70`, `W_110`, `W_114`**; every lattice verdict carries an independent
 certificate (modular kernel witnesses for non-membership, exact re-summation for membership).
 
@@ -65,7 +66,7 @@ now*, never cached):
     cd anc
     python3 -m venv venv && source venv/bin/activate
     pip install -r requirements.txt          # pinned; nearby versions work (pure integer/numpy)
-    sh run_all.sh                            # smoke tier: ~55 s on the reference machine
+    sh run_all.sh                            # smoke tier; measured runtime in anc/README.md
 
 Highlights of the 19-step runner (full script ↔ claim map in [`anc/README.md`](anc/README.md)):
 
@@ -73,7 +74,7 @@ Highlights of the 19-step runner (full script ↔ claim map in [`anc/README.md`]
 |---|---|
 | 1 | every exact identity of Theorems A, A′, A″ + an exchange instance + the Prop-D even-`m` caveat |
 | 6 | Theorem C: exact dynamic programming in `Z[x]/Φ33` at `p = 67`; closed form `u′ = 1 + x^11`, all-20-conjugates nontriviality, and the exact order 6 are asserted |
-| 9 | **independent** verification of every lattice verdict in both papers — 17 OUT verdicts each get a modular kernel witness found by this script's own elimination; the 4 IN certificates are re-summed exactly |
+| 9 | **independent** verification of every lattice verdict in both papers — 17 OUT verdicts each get a modular kernel witness found by this script's own elimination; the 7 IN certificates are re-summed exactly |
 | 10 | every stored per-orbit closure witness of the Theorem B census (all 89 odd levels), incl. live re-establishment of the survivor **negative** screenings |
 | 11–12 | an algorithmically independent census reimplementation re-derives the anchor levels (odd) and the even key levels fresh, asserted against the receipts |
 | 13 | the per-level summary table is recomputed from the witness receipt AND regenerated from scratch at every odd level `21 ≤ m ≤ 45` |
@@ -117,10 +118,10 @@ bare toolchain — see `lean/README.md`).
 ## Integrity chain
 
 The top-level [`SHA256SUMS`](SHA256SUMS) pins both paper sources and `anc/SHA256SUMS`, which
-pins every ancillary file. The refereed arXiv submission tarballs (the submitted source packages; not tracked in this repository) are pinned by
+pins every ancillary file. The arXiv source packages built from this tree (not yet posted; not tracked in this repository) are pinned by
 
-    ec0822fafba64faabef4beed4ba6433a8621d97e17a7362f554823226e034c3e  boundary_note_arxiv.tar.gz (453,836 B)
-    4d74a4861b44b877df8eb9b1447bcbcc70d152af0e98b52a98e2a545aa136f1c  even_boundary_arxiv.tar.gz (445,276 B)
+    1159749b8473ec8ddf4165495dfa04568d8c9743909d230072589326b238ca2e  boundary_note_arxiv.tar.gz (459,134 B)
+    1b04bc9a3a1736b100a7d5937a5b4267651981c7cb9e7aa1716246fa724efb9d  even_boundary_arxiv.tar.gz (451,225 B)
 
 `anc/` here is byte-identical to the shared ancillary of those tarballs except two repository
 localizations disclosed in `anc/README.md` (its own title/paths, and the manuscript lines of

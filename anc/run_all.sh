@@ -2,7 +2,7 @@
 # Verification runner for the shared ancillary of the companion papers "The Hodge conjecture for
 # Fermat fourfolds of odd degree at most 199" and "Residual gap classes in the even-degree
 # Fermat-fourfold census through degree 250". FRESH-RUN SEMANTICS: all derived logs are deleted first, so every check below is
-# EXECUTED NOW — "PASSED" never means cached or skipped. ~55 s on the reference machine
+# EXECUTED NOW — "PASSED" never means cached or skipped. ~43 s on the reference machine
 # (see README). Any nonzero exit = a failed
 # check (every proof-critical equality is an assert in the scripts themselves).
 set -e
@@ -50,6 +50,7 @@ echo "== 18/19 Theorem C, SECOND independent implementation (different reduction
 python3 code/l4/obstruction105.py calib
 
 echo "== 19/19 deep-closure routes: every ledger witness re-verified from the definitions =="
-python3 verify_deep_routes.py | tail -1
+python3 verify_deep_routes.py > data/l4/deep_routes_check.out
+tail -1 data/l4/deep_routes_check.out
 
 echo "ALL CHECKS EXECUTED NOW AND PASSED."

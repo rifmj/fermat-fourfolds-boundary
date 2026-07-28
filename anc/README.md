@@ -1,8 +1,8 @@
 # Ancillary code — shared package of the two companion papers
 
-*The Hodge conjecture for Fermat fourfolds of odd degree at most 199* (the note,
-`../paper/boundary_note.tex`) and *Residual gap classes in the even-degree Fermat-fourfold census
-through degree 250* (the companion, `../paper/even_boundary.tex`). The step table below references the
+*The Hodge conjecture for Fermat fourfolds of odd degree at most 199* (the note)
+and *Residual gap classes in the even-degree Fermat-fourfold census through degree 250* (this
+submission's manuscript, `../even_boundary.tex`). The step table below references the
 note's claims; the even-sector artifacts (steps 4–5, 8–9 and the even receipts) back the
 companion's Propositions.
 
@@ -25,7 +25,7 @@ version tiers, deliberately distinguished:
 - **Additionally tested:** nearby releases of NumPy on the same code path give identical output;
   the checks are exact equalities, so agreement is bit-for-bit rather than approximate.
 
-## Verification (smoke tier, ~17 s on the reference machine below)
+## Verification (smoke tier, ~43 s on the reference machine below)
 
 ```
 sh run_all.sh
@@ -33,7 +33,7 @@ sh run_all.sh
 
 | step | script | manuscript claim it verifies |
 |---|---|---|
-| 0 | `shasum -c SHA256SUMS` | input integrity (both manuscripts at `../paper/` + every ancillary file) |
+| 0 | `shasum -c SHA256SUMS` | input integrity (manuscript at `../even_boundary.tex` + every ancillary file) |
 | 1 | `verify_closure_identities.py` | every exact identity of Theorems A, A′, A″ (splits, vanishing pairs, 10-multiset identities, 5-standard form, Hodge grades, the `(33,33)` self-pair) + an exchange instance at `m=110` + the Prop-D even-`m` caveat (125/125 inadmissible multisets decomposable) |
 | 2 | `code/l4/census_scan_v2.py 33 39 45` | census anchors: `m=33` → the unique non-quasi non-standard witness (104 = 102 dec + 2 indec); `m=39` → both classes ∗-split; `m=45` → one two-pair class |
 | 3 | `code/l4/census_scan_v3.py 33 45 66` | iterated/ledger pipeline: `45` closes (two-pair), `66` fully closes (incl. the `(33,33)` route), `33` stays open at its own level (it closes only through the level-66 lift — Thm A″) |
@@ -47,11 +47,12 @@ sh run_all.sh
 | 11 | `census_independent.py 33 39 45 105` | an algorithmically independent census reimplementation (full-unit profiles, numpy, own classifiers; no code shared with the engine) re-derives the anchor levels and asserts exact agreement with the witness receipt |
 | 12 | `census_independent.py 50 70` | the same independent implementation run FRESH at the even key levels `m=50,70` (multiplicity-aware decomposability), asserted against the even receipt tier |
 | 13 | `census_summary.py --check --independent 21 ... 45` | the per-level summary table (`census_level_summaries.json`: counts, tallies, survivors, canonical SHA-256 of the sorted representative list) is recomputed from the witness receipt AND regenerated from scratch by the independent implementation at every odd level `21 ≤ m ≤ 45` — the "no missed orbit" cross-check |
-| 15 | `even_tier_table.py --check` | the even-sector TIER table (`even_tier_table.json`): every level `m ≤ 60` is RECOMPUTED from the definitions and asserted identical to the stored row; for all 123 levels the stored counts and the canonical SHA-256 of each survivor list are re-derived from the stored class lists. A full from-scratch rebuild of every level is `--emit` (hours; the largest levels dominate) |
-| 18 | `verify_deep_routes.py` | every deep-closure route in `CLOSED_LEDGER.tsv` that carries an explicit witness is re-verified from the definitions: the listed pairs really vanish, the multiset identity `class ⊎ pairs = blocks` holds exactly, and every block is re-derived (grade-2 Hodge quadruple / grade-3 sextuple that is itself base-closed). Rows carrying only a label are reported as such, not counted as verified |
-| 17 | `verify_w168_witness.py` | Proposition w168 end to end: `a` and `beta` are Hodge (2,2) characters over ALL units, `beta` is *-split (6+54+108=168, 60+126+150=336), `ν(a)−ν(beta) ∈ S₁₆₈` with both individually OUTSIDE (non-vacuity), `2ν(a) ∈ S₁₆₈`, and the control that `a` itself is not *-split |
-| 16 | `even_final_table.py --check` | the complete reader's table (`even_final_table.json`): all 40 primitive post-depth-two survivors with content, exact lattice verdicts (`ν∈S_m`, `2ν∈S_m`), status and route; every verdict recomputed here by an independent HNF test, the 8 open classes asserted to be gap classes |
 | 14 | `census_bruteforce.py 21 ... 45` | a THIRD method: direct exhaustive enumeration of all sorted zero-sum sextuples (no meet-in-the-middle, no shared code) reproduces the representative counts and canonical hashes at every census level `m ≤ 45`; the pinned receipt `bruteforce_odd_receipt.txt` extends this to every census level `m ≤ 143` — the range quoted in the paper |
+| 15 | `even_tier_table.py --check` | the even-sector TIER table (`even_tier_table.json`): every level `m ≤ 60` is RECOMPUTED from the definitions and asserted identical to the stored row; for all 123 levels the stored counts and the canonical SHA-256 of each survivor list are re-derived from the stored class lists. A full from-scratch rebuild of every level is `--emit` (hours; the largest levels dominate) |
+| 16 | `even_final_table.py --check` | the complete reader's table (`even_final_table.json`): all 40 primitive post-depth-two survivors with content, exact lattice verdicts (`ν∈S_m`, `2ν∈S_m`), status and route; every verdict recomputed here by an independent HNF test, the 8 open classes asserted to be gap classes |
+| 17 | `verify_w168_witness.py` | Proposition w168 end to end: `a` and `beta` are Hodge (2,2) characters over ALL units, `beta` is *-split (6+54+108=168, 60+126+150=336), `ν(a)−ν(beta) ∈ S₁₆₈` with both individually OUTSIDE (non-vacuity), `2ν(a) ∈ S₁₆₈`, the stored integer certificate re-summed from disk (94 coefficients in [−3,3] over the generator list) and the modular kernel witness that separates BOTH `ν(a)` and `ν(β)` from S₁₆₈, and the control that `a` itself is not *-split |
+| 18 | `obstruction105.py calib` | the Theorem-C Frobenius certificate recomputed by a SECOND independent implementation (different reduction basis) |
+| 19 | `verify_deep_routes.py` | every deep-closure route in `CLOSED_LEDGER.tsv` that carries an explicit witness is re-verified from the definitions: the listed pairs really vanish, the multiset identity `class ⊎ pairs = blocks` holds exactly, and every block is re-derived (grade-2 Hodge quadruple / grade-3 sextuple that is itself base-closed). Rows carrying only a label are reported as such, not counted as verified |
 
 ## Reference machine and measured runtimes
 
@@ -60,7 +61,7 @@ All reported timings: Apple M4 Max (14 cores), 36 GB RAM, macOS 15.7, Python 3.1
 verifiers are single-process; the closure calibration (`fast_close.py`) uses a
 `multiprocessing.Pool`, and the archived full brute-force campaign was run with external CPU
 parallelism (one process per level).
-Measured: smoke runner 17 s (two consecutive timed runs: 16.8 s, 16.9 s); single-level engine
+Measured: smoke runner 43 s (19 steps, timed run); single-level engine
 at the largest level `m=199`: 158 s; the
 pinned two-engine 89-level receipt sweep: ≈36 min total (per-level `[m=… took …s]` lines are in
 the receipt itself); complete from-scratch independent regeneration (`sh run_full_census.sh`,
@@ -114,14 +115,14 @@ python3 -c "print(' '.join(str(m) for m in range(21,200,2) if m!=23))" | xargs p
 every check live — all 78,299 stored witnesses (incl. the survivor negative screenings), the
 anchor-level independent census, and a fresh independent regeneration of every odd level ≤ 45
 against the pinned canonical hashes, and the direct brute-force generator on every census
-level through `m = 45` — in ~17 s; (2) the complete 89-level independent
+level through `m = 45` — in ~43 s; (2) the complete 89-level independent
 regeneration is one command, `sh run_full_census.sh` (~12 min on the reference machine),
 which must reproduce every pinned per-level count and canonical hash; the log of the campaign's
 own full run ships as the checksummed receipt `data/l4/witness_independent_run.txt`. The version
 pins record the environment of the reported runs; the code is pure integer arithmetic and is not
 version-sensitive (nearby versions work). The even key-level
 receipt (50/70/110/114/168) is pinned with its regeneration command in the receipts directory.
-Fresh-vs-historical: steps 0–18 are executed now on every run; SHA-verified historical receipts
+Fresh-vs-historical: steps 0–19 are executed now on every run; SHA-verified historical receipts
 certify file integrity of the long campaign sweeps, not their fresh recomputation. `census_independent.py` (bundled, runner step 11) is an
 algorithmically independent reimplementation covering all 89 levels; the original, methodologically
 independent implementation used during the verification campaign is not part of this package and
@@ -142,8 +143,10 @@ not part of the reproducible chain — no claim in either paper rests on it.
 - `data/l4/receipts_even/` — pinned historical logs of the exchange scan and the deep negative
   sweeps behind the wall structure (see `PROVENANCE.md` there).
 - Deep-closure witnesses: the routes of `data/l4/CLOSED_LEDGER.tsv`; the eight FINAL open
-  primitives carry independent modular kernel witnesses (runner step 9), as do the two residual
-  classes the propositions close.
+  primitives carry independent modular kernel witnesses (runner step 9). Of the two residual
+  classes the propositions close, the `m=168` one also carries a non-membership witness (plus the
+  transportable coset certificate of step 17), while the `m=210` one carries a re-summed
+  MEMBERSHIP certificate — its ν lies in S₂₁₀, so a non-membership witness cannot exist.
 
 ## Full tier (hours; the deep negative sweeps)
 
@@ -176,7 +179,4 @@ check replaced by the asserted closed form. Engines log under `data/l4/`; `run_a
 logs first, so no check is ever satisfied from cache. For *manual* engine runs note that
 `census_scan_v3.py` skips an `m` already marked DONE in its own log — delete
 `data/l4/census_scan_v3.log` for a clean re-run. The manuscript was prepared with AI assistance;
-every computational claim quoted from the ancillary is backed by the supplied code or receipts. Repository copy: byte-identical to the shared
-ancillary of the two arXiv tarballs except this README (title and manuscript paths merged for the
-repository layout) and the manuscript lines of `SHA256SUMS` (`../<paper>.tex` localized to
-`../paper/`); the tarballs' canonical SHA-256 hashes are pinned in the top-level README.
+every computational claim quoted from the ancillary is backed by the supplied code or receipts.

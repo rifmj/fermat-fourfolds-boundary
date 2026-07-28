@@ -4,3 +4,6 @@ __pycache__/
 .lake/
 venv/
 *.olean
+
+# runner-produced transient (truncated and rewritten on every run; not pinned in any manifest)
+anc/data/l4/deep_routes_check.out
