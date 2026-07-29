@@ -1,5 +1,7 @@
 # Fermat fourfolds: the Hodge conjecture in odd degree ≤ 199, and the even-degree census through 250
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21670577.svg)](https://doi.org/10.5281/zenodo.21670577)
+
 Papers, exact-arithmetic verification package, census certificates, and Lean formalisation for
 the companion pair
 
@@ -120,12 +122,16 @@ bare toolchain — see `lean/README.md`).
 The top-level [`SHA256SUMS`](SHA256SUMS) pins both paper sources and `anc/SHA256SUMS`, which
 pins every ancillary file. The arXiv source packages built from this tree (not yet posted; not tracked in this repository) are pinned by
 
-    1159749b8473ec8ddf4165495dfa04568d8c9743909d230072589326b238ca2e  boundary_note_arxiv.tar.gz (459,134 B)
-    1b04bc9a3a1736b100a7d5937a5b4267651981c7cb9e7aa1716246fa724efb9d  even_boundary_arxiv.tar.gz (451,225 B)
+    6e70cc887a6d853405fb49bc669cc53416f135864b5144d86c3405ee50154c57  boundary_note_arxiv.tar.gz (459,233 B)
+    187110f5c840eb7fc0047b972a7950f7022d8a6478d0ccee41144bf5369d13e0  even_boundary_arxiv.tar.gz (451,300 B)
 
 `anc/` here is byte-identical to the shared ancillary of those tarballs except two repository
 localizations disclosed in `anc/README.md` (its own title/paths, and the manuscript lines of
 `anc/SHA256SUMS` pointing to `paper/`).
+
+Every release of this repository is archived on Zenodo. Cite the concept DOI
+[10.5281/zenodo.21670577](https://doi.org/10.5281/zenodo.21670577), which always resolves to the
+latest version; both papers cite it in their data-availability statements.
 
 ## Provenance and disclosure
 

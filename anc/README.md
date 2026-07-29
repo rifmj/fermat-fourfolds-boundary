@@ -168,8 +168,9 @@ not part of the reproducible chain — no claim in either paper rests on it.
 ## License
 
 `LICENSE` in this directory: MIT for the code (`.py`, `.sh`), CC BY 4.0 for the data, receipts
-and documentation. At acceptance the package is additionally deposited under a permanent
-identifier (DOI) as an immutable release carrying the checksums of this submission.
+and documentation. The package is also deposited as an immutable archival release under the
+concept DOI 10.5281/zenodo.21670577, which always resolves to the latest version; that record
+carries both manuscripts of the two-paper package alongside this code.
 
 ## Provenance
 

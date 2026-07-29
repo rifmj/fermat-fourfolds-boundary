@@ -13,7 +13,7 @@ authors:
   - family-names: Jumagulov
     given-names: Rifat
     email: jum.rifm@gmail.com
-version: 1.0.3
+version: 1.0.4
 date-released: "2026-07-29"
 license: MIT
 repository-code: "https://github.com/rifmj/fermat-fourfolds-boundary"
@@ -57,5 +57,7 @@ references:
       - family-names: Jumagulov
         given-names: Rifat
     year: 2026
-# The Zenodo concept DOI is added as an `identifiers:` entry once the first
-# release is archived; see the release procedure in README.md.
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21670577
+    description: Zenodo concept DOI (always resolves to the latest version)

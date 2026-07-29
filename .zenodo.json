@@ -19,29 +19,11 @@
     "exact arithmetic",
     "Jacobi sums",
     "Lean",
-    "reproducible research"
-  ],
-  "subjects": [
-    {
-      "term": "Algebraic geometry — cycles and subschemes",
-      "identifier": "14C25",
-      "scheme": "msc2020"
-    },
-    {
-      "term": "Transcendental methods, Hodge theory",
-      "identifier": "14C30",
-      "scheme": "msc2020"
-    },
-    {
-      "term": "Hypersurfaces and algebraic geometry",
-      "identifier": "14J70",
-      "scheme": "msc2020"
-    },
-    {
-      "term": "Other character sums and Gauss sums",
-      "identifier": "11T24",
-      "scheme": "msc2020"
-    }
+    "reproducible research",
+    "MSC 14C25",
+    "MSC 14C30",
+    "MSC 14J70",
+    "MSC 11T24"
   ],
   "notes": "The arXiv identifiers of the two manuscripts are added as related identifiers in the next version of this record, once the papers are posted; Zenodo rejects placeholder identifiers, so they are deliberately absent here."
 }
