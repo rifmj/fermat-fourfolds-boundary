@@ -13,7 +13,7 @@ authors:
   - family-names: Jumagulov
     given-names: Rifat
     email: jum.rifm@gmail.com
-version: 1.0.2
+version: 1.0.3
 date-released: "2026-07-29"
 license: MIT
 repository-code: "https://github.com/rifmj/fermat-fourfolds-boundary"
