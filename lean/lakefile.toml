@@ -1,5 +1,8 @@
 name = "fermat-boundary-lean"
 defaultTargets = ["BoundaryCore", "BoundaryData", "BoundaryClaim", "BoundaryValidity",
+                  "BoundaryCensus", "BoundaryCensusSweeps1", "BoundaryCensusSweeps2",
+                  "BoundaryCensusSweeps3", "BoundaryCensusSweeps4", "BoundaryCensusSweeps5",
+                  "BoundaryCensusMain", "BoundaryThmB",
                   "BoundaryForms"]
 
 # Tier-1 (BoundaryCore + BoundaryData) and Tier-2 (BoundaryClaim + BoundaryValidity) are
@@ -24,3 +27,27 @@ name = "BoundaryValidity"
 
 [[lean_lib]]
 name = "BoundaryForms"
+
+[[lean_lib]]
+name = "BoundaryCensus"
+
+[[lean_lib]]
+name = "BoundaryCensusSweeps1"
+
+[[lean_lib]]
+name = "BoundaryCensusSweeps2"
+
+[[lean_lib]]
+name = "BoundaryCensusSweeps3"
+
+[[lean_lib]]
+name = "BoundaryCensusSweeps4"
+
+[[lean_lib]]
+name = "BoundaryCensusSweeps5"
+
+[[lean_lib]]
+name = "BoundaryCensusMain"
+
+[[lean_lib]]
+name = "BoundaryThmB"

@@ -97,8 +97,10 @@ points are in `anc/README.md`.
 Machine-checks the note's combinatorial/arithmetic core **and its deduction chains**, in the
 two-tier style of the surface companion's repository
 ([rifmj/fermat-ns-ranks](https://github.com/rifmj/fermat-ns-ranks), arXiv:2607.17387), plus a
-new middle tier — a **claim calculus** certifying the citation chains themselves. No `sorry`,
-no `axiom` declarations. See [`lean/README.md`](lean/README.md).
+new middle tier — a **claim calculus** certifying the citation chains themselves, a
+**full-census tier** (a provably complete enumerator swept over every odd level 3 ≤ m ≤ 199
+and the probe levels 231/273/297) and the **Theorem-B legs** as a machine-checked reduction.
+No `sorry`, no `axiom` declarations. See [`lean/README.md`](lean/README.md).
 
 - [`BoundaryData.lean`](lean/BoundaryData.lean) — generated data (kernel witnesses, integer
   certificates, exchange edges); **untrusted input**, everything is re-verified in Lean
@@ -111,11 +113,34 @@ no `axiom` declarations. See [`lean/README.md`](lean/README.md).
 - [`BoundaryValidity.lean`](lean/BoundaryValidity.lean) — Tier 2 receipts: the validity guards
   of the calculus, proved with **standard axioms only** (every derivable class has ≥ 2 entries —
   no rule ever speaks about an object outside the cited literature).
+- [`BoundaryCensus.lean`](lean/BoundaryCensus.lean) — Tier 1.5: the FULL odd census engine —
+  a meet-in-the-middle enumerator with a machine-checked **completeness theorem**
+  (`census_enumeration_complete`: every grade-3 Hodge character, any entry order, has its
+  sorted representative in the enumerator's output, at every level, standard axioms), the
+  canonization/unit-inverse reduction, and the per-level checker.
+- [`BoundaryCensusSweeps1.lean`](lean/BoundaryCensusSweeps1.lean) … `Sweeps5` — the per-level
+  pins + closure sweeps (`native_decide`): EVERY odd level 3 ≤ m ≤ 199 (99 levels, including
+  the classically-omitted m = 23 and m < 21) and the probe levels 231/273/297;
+  representative counts pinned to the ancillary three-engine receipts, every representative
+  closed by the cited base rules, a Galois-orbit route to a beyond-machinery orbit, or level
+  transport (inflation); `rawFull_matches_core` cross-checks the two enumerators
+  element-for-element at the six original levels.
+- [`BoundaryCensusMain.lean`](lean/BoundaryCensusMain.lean) — Tier 1.5 assembly:
+  `thmB_census_full` / `thmB_full_conditional` — Theorem B's census leg at calculus level on
+  the full range (subsumes the six-level `thmB_conditional`), including the induced copies
+  `claim_w231` (7w) and `claim_w297` (9w) beyond the bound.
+- [`BoundaryThmB.lean`](lean/BoundaryThmB.lean) — Tier 2.5: Theorem B's codimension-0/1/3/4
+  legs and the h²-summand reduction as a machine-checked derivation (`HC_of_census`,
+  standard axioms only) from nine cited fields (Lefschetz (1,1), hard Lefschetz, the rational
+  primitive decomposition, Shioda's character-space spanning, …); `HC_fourfold` combines it
+  with the full census — the note's "Hodge conjecture in full" statement at calculus level,
+  at every census level.
 - [`BoundaryForms.lean`](lean/BoundaryForms.lean) — Tier 3: two `∀`-lemmas in mathlib v4.32.0
   (standard axioms; grade-constancy ⟹ length `2g`; Prop D for every unit `t`).
 
-Build: `lake exe cache get && lake build` (only Tier 3 needs mathlib; Tiers 1–2 compile with a
-bare toolchain — see `lean/README.md`).
+Build: `lake exe cache get && lake build` (only Tier 3 needs mathlib; everything else compiles
+with a bare toolchain — see `lean/README.md`; the census sweeps are heavy `native_decide`,
+hours of single-machine compute in total).
 
 ## Integrity chain
 
